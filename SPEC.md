@@ -23,7 +23,7 @@ myself is marked **(assumed)** and listed again under "Assumptions to confirm" a
 
 | Source | Used for | Key | Cost |
 |---|---|---|---|
-| CollegeFootballData (CFBD) | games, scores, past lines (open and close), pregame Elo, SP+/FPI, team logos and colors | `CFBD_API_KEY` repo secret (the same key h2h's Worker uses) | Free tier has a monthly call limit; check it before building the backtest |
+| CollegeFootballData (CFBD) | games, scores, past lines (open and close), SP+/FPI (display only), team logos and colors | `CFBD_API_KEY` repo secret (the same key h2h's Worker uses) | Free tier: 1,000 calls a month, shared with h2h |
 | The Odds API | live spreads and moneylines (`americanfootball_ncaaf`, markets `spreads,h2h`, region `us`) | `ODDS_API_KEY` repo secret, shared with te-tracker | ~2 credits per snapshot for all games (featured markets are billed per market, not per game) |
 
 **Odds API budget:** te-tracker uses ~375 of the 500 monthly credits. Three snapshots a week here add
@@ -38,23 +38,48 @@ and commit JSON, so no Worker is needed.
 CFBD's SP+ and FPI endpoints appear to return **end-of-season** ratings, not each team's rating going
 into each week. A backtest using them would already know how the season ended. So:
 
-- The backtest uses only point-in-time inputs: **CFBD pregame Elo** (stored per game, before kickoff)
-  and **our own weekly rating** (below), rebuilt each week from games already played.
+- The backtest uses only point-in-time inputs: **our own Elo** and **our own weekly margin rating**
+  (below), both rebuilt from games already played.
 - SP+ and FPI appear on the Team ratings page for context, but stay out of the picks unless a fair test
   shows they help.
 - **(assumed)** From now on, `build-data` stores a weekly SP+/FPI snapshot so a fair test of them exists
   next season.
-- **First build task:** confirm with real API calls which CFBD ratings are point-in-time (Elo by week,
-  SP+ by week, if any) before writing model code.
+### Data check results (2026-10-10)
+
+- **SP+ and FPI are end-of-season only.** `ratings/sp` and `ratings/fpi` accept `week=` but return
+  identical numbers to the season call. They stay out of the model.
+- **CFBD's stored pregame Elo can't be fully trusted as point-in-time.** In 11% of games a team's pregame
+  Elo doesn't equal its previous postgame Elo. Most of those are next to FCS games, but ~50 FBS-vs-FBS games
+  a season also differ, by up to 342 points (2023). **Decision: compute our own Elo** from game results in
+  date order. It's a few lines of code and guaranteed to see only past games.
+- **Lines, FBS vs FBS regular season (~735–760 games a year):**
+
+  | Season | Closing spread | Opening spread | Opener from a US book | Moneyline |
+  |---|---|---|---|---|
+  | 2021 | 100% | 100% | 0% (Bovada only) | 93% |
+  | 2022 | 100% | 99% | 0% (Bovada only) | 92% |
+  | 2023 | 100% | 100% | 94% | 97% |
+  | 2024 | 100% | 100% | 100% | 99% |
+  | 2025 | 100% | 100% | 100% | 97% |
+
+  2021–2022 openers come only from Bovada (offshore). That's fine for training. The 2024–2025 check seasons
+  have DraftKings and ESPN Bet openers, so the go-live test uses US-book lines. The backtest closing line is
+  the median across US providers, falling back to `consensus`, then Bovada.
+- **CFBD quota:** free tier, 1,000 calls a month, **shared with h2h** (football and basketball). 917 were
+  left on 2026-10-10. The backtest needs 10 calls (games + lines per season, `seasonType=regular`, no week),
+  so the raw season files are cached in `data/raw/` and never refetched. Live workflows must also cache:
+  a full-season games call plus a lines call per run, a few runs a week, stays well under 100 a month.
 
 ## The model
 
-1. **Our own rating:** opponent-adjusted scoring margin. Each week, fit `margin = rating_home − rating_away
+1. **Elo:** our own, computed from FBS game results in date order (CFBD's stored Elo failed the
+   point-in-time check below). K-factor, margin-of-victory multiplier and the between-season pull to the mean
+   are fit on the training seasons.
+2. **Our own rating:** opponent-adjusted scoring margin. Each week, fit `margin = rating_home − rating_away
    + home_field` over this season's FBS games so far (ridge regression, so early weeks stay stable).
    Margins are capped (**assumed** 28 points) so blowouts don't dominate. The preseason prior is last
    season's final rating pulled partway back to average. It fades as games come in, at a rate the
    backtest sets.
-2. **Elo:** CFBD's pregame Elo difference turned into points.
 3. **Blend:** the model spread is a weighted mix of the two, plus home field (0 at neutral sites).
    The weights, home-field size and prior fade are fit on the training seasons.
 4. **Win probability:** from the model spread through a normal distribution, with the spread of
@@ -161,8 +186,7 @@ data/         <season>.json, odds-<season>.json, picks-<season>.json, backtest.j
 
 ## Build order
 
-1. **Data check:** confirm the CFBD endpoints, which ratings are point-in-time, the CFBD call limit,
-   and how complete past lines are for 2021–2025 (especially openers and small-conference games).
+1. **Data check:** done 2026-10-10 (results above).
 2. **Backtest:** `model.js` ratings and blend, plus `scripts/backtest.mjs`. Fit on 2021–2023 and check
    on 2024–2025. **Stop and review the results with Rudy** before building anything else.
 3. **Live data:** `build-data`, `fetch-odds`, `record-picks`, `grade-picks` and the workflows.
