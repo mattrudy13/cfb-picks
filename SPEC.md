@@ -222,15 +222,18 @@ the final check. Adding that snapshot changes the decided schedule, so it waits 
 
 ## Picks
 
-- **Spreads (decided):** every game where the model spread differs from the best available line by at
-  least **X points**, with X set by the backtest. Some weeks have 2 picks, some have 12. **(assumed)** The
-  edge counts half-points across 3 and 7 (key numbers) as worth more. This is tested in the backtest, not
-  assumed to help.
+- **Spreads (decided):** every FBS-vs-FBS game where the model margin differs from the **median** US line
+  by at least **X points** (the backtest's rule; live X = 4, from week 7), recorded at the best line for
+  that side. Key numbers (3, 7) aren't weighted: neither backtest tested it.
 - **Moneylines (decided):** underdogs only, expected profit > 0 at the best price, no longer than +600.
 - **(assumed)** If the same game has a spread pick and a dog moneyline pick on the same team, both are
   shown, and the card notes they're the same side.
-- **Locking and CLV:** copied from te-tracker. A pick locks at kickoff, a later snapshot replaces an
-  unstarted pick but keeps its first price as `open*`, and the last snapshot before kickoff counts as the close.
+- **Locking and CLV (changed 2026-10-10 for the bet-early goal):** a pick locks the moment it's first
+  recorded, at that snapshot's line and price, because that's when it would be bet. Later snapshots never
+  move its line or remove it; they only update `closeMarket` (the market median), and the last one before
+  kickoff is the close. One spread and one moneyline pick per game at most, so a later snapshot can't take
+  the other side. This replaces te-tracker's rule (replace unstarted picks, grade at the newest price).
+- **All picks are unofficial** (`shadow: true`) while `data/backtest-v2.json` says the go-live bar failed.
 - **Grading:** spreads win, lose or push against the recorded line. Moneylines win or lose. Profit is
   per $100 at the recorded price. Canceled games are void.
 - Each pick shows a one-line reason, e.g. "Model −10.5 vs book −6.5; Elo and our rating agree."
@@ -239,13 +242,16 @@ the final check. Adding that snapshot changes the decided schedule, so it waits 
 
 | Workflow | When (ET) | Does |
 |---|---|---|
-| `update-data.yml` | Sun 6 AM, Mon 6 AM, Wed 6 AM, plus every 3 h Sat noon–Sun 3 AM | CFBD games and scores → ratings → grade picks |
-| `snapshot-odds.yml` | **Tue 10 AM, Fri 10 AM, Sat 9 AM (decided)** | build → Odds API → record picks |
+| `update-data.yml` | every 3 h Sat noon–Sun 3 AM, then Sun, Mon and Wed 6 AM | CFBD games and scores → ratings → grade picks |
+| `snapshot-odds.yml` | **Sun 9 PM (added 2026-10-10), Tue 10 AM, Fri 10 AM, Sat 9 AM** | build → Odds API → record picks |
 | `check-assets.yml` | on push | asset stamp check, copied from te-tracker |
 
 Times are UTC in cron, so they shift an hour when daylight saving ends. GitHub can start scheduled runs
 hours late (te-tracker's TNF run did), so Saturday's snapshot is at 9 AM rather than right before noon
 kickoffs. The update schedule is **(assumed)**.
+
+**Budgets:** CFBD ~2 calls per run, ~16 runs a week → ~70 a month (plus h2h's traffic, same pool).
+The Odds API: 4 snapshots × 2 credits → ~35 a month, on top of te-tracker's ~375 (500 free).
 
 ## Pages
 
