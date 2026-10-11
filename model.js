@@ -66,16 +66,26 @@ function completedGames(games) {
 // Runs Elo over every season in order and returns each game's pregame ratings by game id, plus
 // the ratings after each season. `seasons` is [{ season, games }] sorted by season.
 // Only past games feed a rating, so it's safe to backtest on (CFBD's stored Elo isn't; see SPEC.md).
+// `preLag` holds the ratings from before the previous week's games, for the cautious backtest
+// (in case an opening line was posted before those games were played).
 function runElo(seasons, p = MODEL.elo) {
   const r = new Map();
   const pre = new Map();
+  const preLag = new Map();
   const finals = {};
   for (const { season, games } of seasons) {
     for (const [t, v] of r) r.set(t, 1500 + (v - 1500) * p.carry);
+    const weekStart = new Map(); // week → ratings at the start of that week
+    const seasonStart = new Map(r);
     for (const g of completedGames(games)) {
-      const h = r.get(g.homeTeam) ?? (isFbs(g.homeClassification) ? 1500 : p.fcsStart);
-      const a = r.get(g.awayTeam) ?? (isFbs(g.awayClassification) ? 1500 : p.fcsStart);
+      if (!weekStart.has(g.week)) weekStart.set(g.week, new Map(r));
+      const start = (t, c) => r.get(t) ?? (isFbs(c) ? 1500 : p.fcsStart);
+      const h = start(g.homeTeam, g.homeClassification);
+      const a = start(g.awayTeam, g.awayClassification);
       pre.set(g.id, { home: h, away: a });
+      const lagged = weekStart.get(g.week - 1) ?? seasonStart;
+      const lagOf = (t, c) => lagged.get(t) ?? (isFbs(c) ? 1500 : p.fcsStart);
+      preLag.set(g.id, { home: lagOf(g.homeTeam, g.homeClassification), away: lagOf(g.awayTeam, g.awayClassification) });
       const diff = h - a + (g.neutralSite ? 0 : p.hfa);
       const expected = 1 / (1 + 10 ** (-diff / 400));
       const won = g.margin > 0 ? 1 : 0;
@@ -89,7 +99,7 @@ function runElo(seasons, p = MODEL.elo) {
     }
     finals[season] = Object.fromEntries(r);
   }
-  return { pre, finals };
+  return { pre, preLag, finals };
 }
 
 // ---- Margin rating ----
@@ -182,9 +192,149 @@ function lineValue(lines, field) {
   return null;
 }
 
+// ---- Model v2: efficiency ratings and fitted preseason priors (SPEC.md, "Model v2") ----
+
+// Least squares fit of y on the columns of X. Add a column of 1s for an intercept. The tiny ridge
+// term keeps the solve stable when two columns move together.
+function leastSquares(X, y, ridge = 1e-6) {
+  const k = X[0].length;
+  const A = Array.from({ length: k }, () => new Array(k + 1).fill(0));
+  for (let i = 0; i < X.length; i++) {
+    for (let j = 0; j < k; j++) {
+      A[j][k] += X[i][j] * y[i];
+      for (let l = 0; l < k; l++) A[j][l] += X[i][j] * X[i][l];
+    }
+  }
+  for (let j = 0; j < k; j++) A[j][j] += ridge * (A[j][j] || 1);
+  for (let c = 0; c < k; c++) {
+    let piv = c;
+    for (let r = c + 1; r < k; r++) if (Math.abs(A[r][c]) > Math.abs(A[piv][c])) piv = r;
+    [A[c], A[piv]] = [A[piv], A[c]];
+    for (let r = 0; r < k; r++) {
+      if (r === c) continue;
+      const f = A[r][c] / A[c][c];
+      for (let l = c; l <= k; l++) A[r][l] -= f * A[c][l];
+    }
+  }
+  return A.map((row, j) => row[k] / row[j]);
+}
+const dot = (a, b) => a.reduce((s, x, i) => s + x * b[i], 0);
+const mean = (xs) => xs.reduce((s, x) => s + x, 0) / xs.length;
+
+// Per-game efficiency from CFBD's advanced stats: the home team's offense minus what its defense
+// allowed. EPA per play is scaled by 70 plays and success rate by 100, so both read roughly like points.
+const EFFICIENCY = { ppa: 70, successRate: 100 };
+function efficiencyIndex(advancedRows) {
+  const idx = new Map();
+  for (const r of advancedRows) idx.set(`${r.gameId}|${r.team}`, r);
+  return (g, key) => {
+    const h = idx.get(`${g.id}|${g.homeTeam}`);
+    if (h?.offense?.[key] != null && h?.defense?.[key] != null) return (h.offense[key] - h.defense[key]) * EFFICIENCY[key];
+    const a = idx.get(`${g.id}|${g.awayTeam}`);
+    if (a?.offense?.[key] != null && a?.defense?.[key] != null) return (a.defense[key] - a.offense[key]) * EFFICIENCY[key];
+    return null;
+  };
+}
+
+// Runs one rating (scoring margin, EPA or success rate) week by week over every season.
+//   valueOf(g)  the game's home-minus-away value, or null to leave the game out
+//   priorFor(season, prevFinal, history)  this season's prior per team; `history` holds every finished
+//               season's { season, prevFinal, final } so a prior model can learn from earlier seasons only
+//   lag         1 = each week ignores the previous week's games too (the cautious backtest)
+function runSeries(seasons, { valueOf, priorFor, p, lag = 0 }) {
+  const pre = new Map();
+  const history = [];
+  let prevFinal = {};
+  for (const { season, games } of seasons) {
+    const all = completedGames(games);
+    const rated = all.flatMap((g) => {
+      const v = valueOf(g);
+      return v == null ? [] : [{ ...g, margin: v }];
+    });
+    const prior = priorFor(season, prevFinal, history);
+    for (const w of new Set(all.map((g) => g.week))) {
+      const ratings = solveRatings(rated.filter((g) => g.week < w - lag), prior, p);
+      const get = (g, side) => {
+        const t = isFbs(g[side + "Classification"]) ? g[side + "Team"] : "FCS";
+        return ratings.get(t) ?? prior[t] ?? p.newTeam;
+      };
+      for (const g of all.filter((x) => x.week === w)) pre.set(g.id, { home: get(g, "home"), away: get(g, "away") });
+    }
+    // The prior model learns to predict a season-end rating built from that season's games alone
+    // (almost no prior), so it isn't just learning to repeat its own prior.
+    const evidence = Object.fromEntries(solveRatings(rated, {}, { ...p, priorWeight: 0.5, newTeam: 0 }));
+    history.push({ season, prevFinal, final: evidence });
+    prevFinal = Object.fromEntries(solveRatings(rated, prior, p));
+  }
+  return pre;
+}
+
+// v1's prior: last season's final rating, pulled toward average.
+const carryPrior = (p) => (season, prevFinal) =>
+  Object.fromEntries(Object.entries(prevFinal).map(([t, v]) => [t, v * p.carry]));
+
+// What's known about each FBS team before a season: its conference, the share of last season's
+// offensive production (EPA) that returns, recruiting talent (z-score among FBS teams), and net
+// transfer portal stars (in minus out; 0 before the portal data starts in 2021).
+function priorContext(games, returning, talent, portal) {
+  const conf = {};
+  for (const g of games) {
+    if (isFbs(g.homeClassification)) conf[g.homeTeam] = g.homeConference;
+    if (isFbs(g.awayClassification)) conf[g.awayTeam] = g.awayConference;
+  }
+  const ret = Object.fromEntries(returning.filter((r) => r.percentPPA != null).map((r) => [r.team, r.percentPPA]));
+  const tal = talent.filter((r) => conf[r.team] != null && r.talent != null);
+  const tm = mean(tal.map((r) => r.talent));
+  const tsd = Math.sqrt(mean(tal.map((r) => (r.talent - tm) ** 2))) || 1;
+  const talentZ = Object.fromEntries(tal.map((r) => [r.team, (r.talent - tm) / tsd]));
+  const net = {};
+  for (const r of portal ?? []) {
+    const stars = r.stars ?? 0;
+    if (r.destination) net[r.destination] = (net[r.destination] ?? 0) + stars;
+    if (r.origin) net[r.origin] = (net[r.origin] ?? 0) - stars;
+  }
+  return { conf, returning: ret, talent: talentZ, portal: net };
+}
+
+// Features for one team's prior. Last season's rating times the returning share lets a team that
+// lost most of its production fall further than one that kept it.
+function priorFeatures(team, prevFinal, ctx, newTeam) {
+  const mates = Object.keys(ctx.conf).filter((t) => ctx.conf[t] === ctx.conf[team] && prevFinal[t] != null);
+  const confLast = mates.length ? mean(mates.map((t) => prevFinal[t])) : newTeam;
+  const last = prevFinal[team] ?? newTeam;
+  const ret = (ctx.returning[team] ?? 0.5) - 0.5;
+  return [1, last, confLast, ret, last * ret, ctx.talent[team] ?? 0, (ctx.portal[team] ?? 0) / 10];
+}
+
+// v2's prior: a regression of each season's rating on what was known before it, fit on earlier
+// seasons only. Falls back to the carry prior until two seasons of history exist.
+const fittedPrior = (contexts, p) => (season, prevFinal, history) => {
+  const usable = history.filter((h) => contexts[h.season] && Object.keys(h.prevFinal).length);
+  if (usable.length < 2 || !contexts[season]) return carryPrior(p)(season, prevFinal);
+  const X = [], y = [];
+  for (const h of usable) {
+    const ctx = contexts[h.season];
+    for (const t of Object.keys(ctx.conf)) {
+      if (h.final[t] == null) continue;
+      X.push(priorFeatures(t, h.prevFinal, ctx, p.newTeam));
+      y.push(h.final[t]);
+    }
+  }
+  const coef = leastSquares(X, y);
+  const ctx = contexts[season];
+  const out = Object.fromEntries(Object.keys(ctx.conf).map((t) => [t, dot(coef, priorFeatures(t, prevFinal, ctx, p.newTeam))]));
+  out.FCS = (prevFinal.FCS ?? p.newTeam) * p.carry;
+  return out;
+};
+
+// v2's predicted margin is a linear blend of rating differences (home − away) plus home field,
+// with weights fit on earlier seasons.
+const blendRow = (g, inputs) => [...inputs.map((pre) => pre.get(g.id).home - pre.get(g.id).away), g.neutralSite ? 0 : 1];
+
 if (typeof module !== "undefined") {
   module.exports = {
     MODEL, median, normCdf, homeWinProb, payout, evPer100, completedGames, runElo, solveRatings, runRatings,
     eloMargin, ratingMargin, modelMargin, US_BOOKS, lineValue,
+    leastSquares, dot, mean, efficiencyIndex, runSeries, carryPrior, priorContext, priorFeatures, fittedPrior, blendRow,
   };
 }
