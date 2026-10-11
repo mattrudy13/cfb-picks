@@ -192,6 +192,31 @@ version each fold picked on its own**. 2015 is warm-up for the ratings.
 **Moneylines (decided):** no backtest (CFBD has no opening moneylines). Underdog moneylines appear on the
 game board and are tracked as an unofficial record from live prices.
 
+### Model v2 results (2026-10-10)
+
+`node scripts/backtest-v2.mjs` → `data/backtest-v2.json`. **Go-live bar: not met.**
+
+| Test season | Version chosen | Threshold, start week | Picks | ATS at opener | ATS at close | ROI | CLV | Cautious CLV |
+|---|---|---|---|---|---|---|---|---|
+| 2022 | both | 1 pt, wk 7 | 306 | 49.7% | 49.3% | −5.2% | +0.12 | +0.03 |
+| 2023 | both | 1 pt, wk 7 | 340 | 55.3% | 52.5% | +5.5% | +0.69 | +0.47 |
+| 2024 | both | 4.5 pts, wk 4 | 111 | 48.2% | 42.7% | −8.0% | +1.63 | +0.75 |
+| 2025 | both | 4 pts, wk 7 | 106 | 58.5% | 52.4% | +11.7% | +2.00 | +1.10 |
+| **Total** | | | **863** | **52.8%** | **50.1%** | **+0.7%** | **+0.77** | **+0.45** |
+
+Passes: ATS ≥ 52.4%, CLV > 0, ≥ 150 picks, cautious CLV > 0. **Fails: profitable in only 2 of 4 seasons.**
+
+- **Still nothing beyond the closing line.** 50.1% ATS at the close, the same as v1.
+- **Accuracy improved a little but still trails the market.** Walk-forward RMSE in 2022–2025 was 15.5–16.2,
+  vs 15.1–15.7 for the opener. Efficiency helped every season (by ~0.07). Fitted priors helped 2018–2020 and
+  2023 but hurt 2021, 2022, 2024 and 2025. Every fold kept both changes, because priors looked good on the
+  older seasons.
+- **The threshold choice was unstable.** With only one or two seasons of openers, the 2022 and 2023 folds
+  chose a 1-point edge and week 7. That's why those seasons have ~300 picks each.
+- **Not a basis for a decision:** with each fold's own threshold rule applied to every version, efficiency
+  alone went 55.7% on 313 picks. That's one of four versions, picked after seeing the test seasons, so the
+  spec rules don't let it count.
+
 **After the backtest:** the rest of the 2026 season is tracked unofficially from a Sunday-night snapshot as
 the final check. Adding that snapshot changes the decided schedule, so it waits for Rudy's go-ahead.
 
