@@ -160,9 +160,11 @@ function spreadPicks(rows, x, minWeek = 0) {
     if (Math.abs(edge) < x) return [];
     const side = edge > 0 ? 1 : -1; // 1 = home
     const cover = (r.margin + r.open) * side;
+    const coverClose = (r.margin + r.close) * side;
     return [{
       ...r, side, edge: Math.abs(edge),
       result: cover > 0 ? "W" : cover < 0 ? "L" : "P",
+      resultClose: coverClose > 0 ? "W" : coverClose < 0 ? "L" : "P",
       clv: (r.open - r.close) * side,
     }];
   });
@@ -173,9 +175,14 @@ function summarize(picks) {
   const l = picks.filter((p) => p.result === "L").length;
   const push = picks.length - w - l;
   const units = w * M.payout(SPREAD_PRICE) - l;
+  // The same picks graded at the closing line. If this sits near 50%, the model knows nothing the close
+  // doesn't, and any profit at the opener comes only from getting ahead of the line move (CLV).
+  const wc = picks.filter((p) => p.resultClose === "W").length;
+  const lc = picks.filter((p) => p.resultClose === "L").length;
   return {
     picks: picks.length, w, l, push,
     ats: w + l ? w / (w + l) : null,
+    atsClose: wc + lc ? wc / (wc + lc) : null,
     roi: w + l ? units / (w + l) : null,
     clv: picks.length ? picks.reduce((s, p) => s + p.clv, 0) / picks.length : null,
   };
