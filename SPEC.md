@@ -137,6 +137,59 @@ edge against the opener and start at week 4 (weeks 0–3 lost badly in training)
   smaller than the backtest shows.**
 - **Openers look genuine otherwise:** they move 1–2.3 points on average by the close, and DraftKings and
   ESPN Bet open more than a point apart in 27–42% of games, which copied or stale data wouldn't do.
+- **Where the model loses to the market (training seasons, model vs closing-line RMSE):** Power 4 vs
+  Group of 5 games 17.4 vs 14.8, weeks 0–3 17.1 vs 14.7. In G5 vs G5 and weeks 4–8 the gap is only ~0.4.
+  So the weak spots are preseason priors and conference-vs-conference strength. The line moves toward the
+  model only in Power 4 vs Power 4 games (18% of the gap) and late season (15%).
+
+## Model v2 (decided 2026-10-10, written before running it)
+
+v1 failed, so the model is being rethought. These rules are set before any v2 results are seen.
+
+**Goal (decided): beat the opener and bet early.** The only edge v1 showed was getting ahead of the line
+move, so v2 aims to predict where the line is going, and picks are meant to be bet Sunday night/Monday.
+Picks are still judged against the opener.
+
+**Changes to test (decided):**
+1. **Per-play efficiency:** opponent-adjusted offense and defense from CFBD's per-game play-by-play
+   stats (EPA per play, success rate), turned into a points rating. It joins the blend alongside Elo and the
+   margin rating.
+2. **Better preseason priors:** last season's rating adjusted for returning production, recruiting
+   talent and (2021+) the transfer portal, plus a conference-strength prior so teams in a conference start
+   near their conference's level. Targets the two worst gaps: weeks 0–3 and Power 4 vs G5.
+
+Rejected for now: anchoring on the opening line, and situational spots (rest, travel, lookahead).
+
+**Rolling test (decided).** Each test season uses only earlier seasons:
+
+| Test season | Fit on |
+|---|---|
+| 2021 | 2016–2020 |
+| 2022 | 2016–2021 |
+| 2023 | 2016–2022 |
+| 2024 | 2016–2023 |
+| 2025 | 2016–2024 |
+
+Within each fold, everything is chosen on the fit seasons only: the constants, the blend weights, **which
+of the two changes to keep** (a change stays only if it lowers fit-season RMSE), the edge threshold X and the
+start week. The test season is graded once with those choices frozen. Results for all four versions
+(v1, +efficiency, +priors, both) are reported for comparison, but **the go-live decision uses only the
+version each fold picked on its own**. 2015 is warm-up for the ratings.
+
+**Go-live bar for spreads (decided)**, across the five test seasons combined:
+- ≥ 52.4% against the spread at the opener, and
+- CLV > 0, and
+- profitable at −110 in at least 3 of the 5 seasons, and
+- ≥ 150 picks, and
+- **the cautious version also shows CLV > 0.** It ignores the most recent week's games, in case some of
+  CFBD's openers were posted before them. An edge that exists only when the model knows results the
+  opener didn't is a fail.
+
+**Moneylines (decided):** no backtest (CFBD has no opening moneylines). Underdog moneylines appear on the
+game board and are tracked as an unofficial record from live prices.
+
+**After the backtest:** the rest of the 2026 season is tracked unofficially from a Sunday-night snapshot as
+the final check. Adding that snapshot changes the decided schedule, so it waits for Rudy's go-ahead.
 
 ## Picks
 
