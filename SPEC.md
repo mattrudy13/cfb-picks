@@ -118,6 +118,26 @@ Moneylines have their own bar: ROI > 0 and CLV > 0 over the same seasons.
 proven edge yet". Picks are still recorded and graded as a **shadow record** that never counts as
 official, so the model can earn its way in.
 
+### Backtest results (2026-10-10)
+
+`node scripts/backtest.mjs` → `data/backtest.json`. Fitted constants are in `model.js`. Picks need a 4.5-point
+edge against the opener and start at week 4 (weeks 0–3 lost badly in training).
+
+- **Go-live bar: not met.** On 2024–2025: 266 picks, **52.1% against the spread** at the opener (needs
+  52.4%), CLV +1.45 points, ROI −0.6%. Underdog moneylines also fail (no opening prices, so no CLV).
+- **The model knows nothing the closing line doesn't.** Graded at the close, the same picks win 47.9% in
+  2024–2025 and ~50% across 2021–2025. Its margin error (RMSE ~16.0) is worse than the opener (15.4) and
+  the close (15.3).
+- **CLV is real, and it's the model's only edge.** A point of line is worth about 2.5% cover chance here
+  (σ ≈ 16), so +1.1 points of CLV predicts ~52.7% at the opener if the close is fair. Across 2021–2025 the
+  picks went 54.1% (train 55.8%, check 52.1%). So CLV can stay in the go-live bar.
+- **About half the CLV comes from the previous week's results.** Ignoring the latest week cuts CLV from
+  1.09 to 0.63 points. CFBD's openers have no timestamps, so some may predate those games (look-ahead
+  lines). A live Tuesday snapshot comes after the market has seen them, so **the live edge is probably
+  smaller than the backtest shows.**
+- **Openers look genuine otherwise:** they move 1–2.3 points on average by the close, and DraftKings and
+  ESPN Bet open more than a point apart in 27–42% of games, which copied or stale data wouldn't do.
+
 ## Picks
 
 - **Spreads (decided):** every game where the model spread differs from the best available line by at
