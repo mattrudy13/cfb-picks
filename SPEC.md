@@ -162,13 +162,17 @@ Rejected for now: anchoring on the opening line, and situational spots (rest, tr
 
 **Rolling test (decided).** Each test season uses only earlier seasons:
 
-| Test season | Fit on |
-|---|---|
-| 2021 | 2016–2020 |
-| 2022 | 2016–2021 |
-| 2023 | 2016–2022 |
-| 2024 | 2016–2023 |
-| 2025 | 2016–2024 |
+| Test season | Ratings fit on | Threshold and start week chosen on (openers) |
+|---|---|---|
+| 2022 | 2016–2021 | 2021 |
+| 2023 | 2016–2022 | 2021–2022 |
+| 2024 | 2016–2023 | 2021–2023 |
+| 2025 | 2016–2024 | 2021–2024 |
+
+**Amended 2026-10-10, before any v2 results:** CFBD has no opening lines before 2021 (2016–2020 have closing
+lines only), so 2021 can't be a test season: its fold would have no earlier openers to choose a threshold
+from. 2021 is used only to choose the 2022 fold's threshold and start week. Ratings still fit on 2016 on,
+since that only needs game results.
 
 Within each fold, everything is chosen on the fit seasons only: the constants, the blend weights, **which
 of the two changes to keep** (a change stays only if it lowers fit-season RMSE), the edge threshold X and the
@@ -176,10 +180,10 @@ start week. The test season is graded once with those choices frozen. Results fo
 (v1, +efficiency, +priors, both) are reported for comparison, but **the go-live decision uses only the
 version each fold picked on its own**. 2015 is warm-up for the ratings.
 
-**Go-live bar for spreads (decided)**, across the five test seasons combined:
+**Go-live bar for spreads (decided)**, across the four test seasons combined:
 - ≥ 52.4% against the spread at the opener, and
 - CLV > 0, and
-- profitable at −110 in at least 3 of the 5 seasons, and
+- profitable at −110 in at least 3 of the 4 seasons, and
 - ≥ 150 picks, and
 - **the cautious version also shows CLV > 0.** It ignores the most recent week's games, in case some of
   CFBD's openers were posted before them. An edge that exists only when the model knows results the
