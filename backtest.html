@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CFB Picks: Backtest</title>
+  <meta name="description" content="How the picks model did on past seasons, and why there are no official picks yet.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css?v=d75d190a">
+</head>
+<body>
+  <main class="wrap">
+    <section class="page-head">
+      <div>
+        <div class="kicker">2016–2025 seasons</div>
+        <h1>Backtest</h1>
+      </div>
+      <p class="lede">Before any pick counts, the model had to beat past seasons' betting lines under rules written down before it ran.</p>
+    </section>
+    <section class="banner" id="verdict"></section>
+    <section class="cards">
+      <div class="card" style="padding:18px 20px">
+        <h3 style="margin-bottom:12px">The go-live bar</h3>
+        <ul class="checks" id="checks"></ul>
+      </div>
+      <div class="card" style="padding:18px 20px" id="totals"></div>
+    </section>
+    <section>
+      <div class="section-head"><h2>By season</h2><p>Each season was tested with a model fit only on the seasons before it.</p></div>
+      <div class="table-wrap" id="folds"></div>
+    </section>
+    <section>
+      <div class="section-head"><h2>Accuracy</h2><p>Average miss on the final margin, in points (lower is better). The market's lines are the bar to beat.</p></div>
+      <div class="table-wrap" id="rmse"></div>
+    </section>
+    <section class="notes">
+      <h3>How it was tested</h3>
+      <p><strong>Walk-forward.</strong> Every prediction uses only games played before it, and each test season's model, edge threshold and start week were chosen from earlier seasons only. Ratings are fit from 2016 on; opening lines exist only from 2021, so 2022 is the first season that could be tested.</p>
+      <p><strong>Bet at the opener.</strong> A backtest pick is placed at the opening line (median of US books) and graded against it at −110. <strong>Against the close</strong> grades the same picks at the closing line: around 50% there means the model knows nothing the final market price doesn't, and any profit comes from getting ahead of the line move.</p>
+      <p><strong>The cautious check</strong> reruns the picks ignoring the most recent week's games, in case some opening lines were posted before those games were played. Its line move had to stay positive too.</p>
+      <p><strong>Two models were tried.</strong> The first used Elo and a scoring-margin rating. The second added play-by-play efficiency and preseason priors from returning production, recruiting and the transfer portal. Both came up short; the second is the one running live, as an unofficial record.</p>
+    </section>
+  </main>
+  <footer class="wrap">Lines and results via <a href="https://collegefootballdata.com">CollegeFootballData.com</a>.</footer>
+
+  <script src="common.js?v=ec188685"></script>
+  <script>
+    document.body.insertAdjacentHTML("afterbegin", header("backtest.html"));
+    Promise.all([loadSite(), loadJSON("data/backtest.json", { optional: true })]).then(([{ backtest: b }, v1]) => {
+      const g = b.goLive;
+      document.getElementById("verdict").innerHTML = g.pass
+        ? `<h3>Passed</h3><p>The model cleared every part of the bar, so its picks count as official.</p>`
+        : `<h3>Didn't pass</h3><p>The model cleared ${Object.entries(g).filter(([k, v]) => k !== "pass" && v).length} of 5 checks. Picks are still tracked on <a href="./">Best Bets</a> as an unofficial record, so the live results can show whether betting early works.</p>`;
+      const t = b.total, c = b.cautious;
+      const check = (ok, text) => `<li><span class="mark ${ok ? "pos" : "neg"}">${ok ? "PASS" : "MISS"}</span><span>${text}</span></li>`;
+      document.getElementById("checks").innerHTML = [
+        check(g.ats, `Win at least 52.4% against the spread (break-even at −110): <strong>${pct(t.ats, 1)}</strong>`),
+        check(g.clv, `Lines move toward the picks on average: <strong>${signed(t.clv, 2)} pts</strong>`),
+        check(g.seasons, `Profitable in at least 3 of 4 seasons: <strong>${b.profitableSeasons} of ${b.folds.length}</strong>`),
+        check(g.sample, `At least 150 picks: <strong>${t.picks}</strong>`),
+        check(g.cautiousClv, `Cautious check still moves toward the picks: <strong>${signed(c.clv, 2)} pts</strong>`),
+      ].join("");
+      const stat = (label, value, sub = "") => `<div class="stat"><div class="label">${label}</div><div class="value num">${value}</div>${sub ? `<small class="muted">${sub}</small>` : ""}</div>`;
+      document.getElementById("totals").innerHTML = `<h3 style="margin-bottom:12px">All test seasons</h3>
+        <div class="record" style="padding:0">
+          ${stat("Picks", t.picks)}${stat("At the opener", pct(t.ats, 1), `${t.w}–${t.l}–${t.push}`)}${stat("At the close", pct(t.atsClose, 1))}${stat("ROI", signed(100 * t.roi) + "%")}
+        </div>
+        ${v1 ? `<p class="muted" style="font-size:13px;margin:14px 0 0">The first model went ${pct(v1.spread.check.summary.ats, 1)} at the opener and ${pct(v1.spread.check.summary.atsClose, 1)} at the close on 2024–2025 (${v1.spread.check.summary.picks} picks).</p>` : ""}`;
+
+      renderTable(document.getElementById("folds"), [
+        { key: "test", label: "Season", html: (f) => `<span class="num">${f.test}</span>` },
+        { key: "variant", label: "Model", html: (f) => ({ v1: "Elo + scoring", efficiency: "+ efficiency", priors: "+ priors", both: "+ efficiency + priors" })[f.variant] },
+        { key: "rule", label: "Rule", html: (f) => `${f.threshold}-pt edge<small>from week ${f.startWeek}</small>` },
+        { key: "picks", label: "Picks", right: true, html: (f) => f.result.picks },
+        { key: "ats", label: "At opener", right: true, html: (f) => `<span class="num">${pct(f.result.ats, 1)}</span><small>${f.result.w}–${f.result.l}–${f.result.push}</small>` },
+        { key: "close", label: "At close", right: true, html: (f) => pct(f.result.atsClose, 1) },
+        { key: "roi", label: "ROI", right: true, html: (f) => `<span class="${f.result.roi > 0 ? "pos" : "neg"}">${signed(100 * f.result.roi)}%</span>` },
+        { key: "clv", label: "Line move", right: true, html: (f) => signed(f.result.clv, 2) },
+        { key: "cautious", label: "Cautious", right: true, html: (f) => signed(f.cautious.clv, 2) },
+      ], b.folds, {});
+
+      const seasons = b.folds.map((f) => f.test);
+      renderTable(document.getElementById("rmse"), [
+        { key: "season", label: "Season", html: (s) => `<span class="num">${s}</span>` },
+        { key: "v1", label: "Elo + scoring", right: true, html: (s) => b.folds.find((f) => f.test === s).compare.v1.rmse.toFixed(2) },
+        { key: "both", label: "+ efficiency + priors", right: true, html: (s) => b.folds.find((f) => f.test === s).compare.both.rmse.toFixed(2) },
+        { key: "open", label: "Opening line", right: true, html: (s) => b.marketRmse[s].open.toFixed(2) },
+        { key: "close", label: "Closing line", right: true, html: (s) => b.marketRmse[s].close.toFixed(2) },
+      ], seasons, {});
+    }).catch(showError);
+  </script>
+</body>
+</html>

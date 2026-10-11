@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CFB Picks: Team</title>
+  <meta name="description" content="A team's season: the model's line, the market's line and the result for every game.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css?v=d75d190a">
+</head>
+<body>
+  <main class="wrap">
+    <section class="page-head">
+      <div>
+        <div class="kicker" id="kicker">Team</div>
+        <h1 id="name">Team</h1>
+      </div>
+      <div class="record card" id="summary" style="min-width:300px"></div>
+    </section>
+    <section>
+      <div class="section-head"><h2>Rating</h2><p>Power rating going into each game, and now.</p></div>
+      <div class="card" style="padding:12px 16px" id="chart"></div>
+    </section>
+    <section>
+      <div class="section-head"><h2>Schedule</h2><p>Lines from this team's side: −7 means this team was favored by 7.</p></div>
+      <div class="table-wrap" id="schedule"></div>
+    </section>
+    <section class="notes">
+      <p><strong>Model</strong> is the model's line going into the game. <strong>Market</strong> is the middle US sportsbook line at the last odds snapshot before kickoff (none for games before the site's first snapshot). <strong>Cover</strong> is whether the team beat the market's line.</p>
+    </section>
+  </main>
+  <footer class="wrap">Data via <a href="https://collegefootballdata.com">CollegeFootballData.com</a> and <a href="https://the-odds-api.com">The Odds API</a>.</footer>
+
+  <script src="common.js?v=ec188685"></script>
+  <script>
+    document.body.insertAdjacentHTML("afterbegin", header(""));
+
+    // Pregame power by week, as an inline SVG line chart.
+    function chartSvg(points) {
+      const W = 720, H = 220, L = 40, R = 16, T = 14, B = 30;
+      const xs = points.map((p) => p.week), ys = points.map((p) => p.value);
+      const x0 = Math.min(...xs), x1 = Math.max(...xs, x0 + 1);
+      let y0 = Math.floor(Math.min(...ys, 0) / 5) * 5, y1 = Math.ceil(Math.max(...ys, 0) / 5) * 5;
+      if (y1 - y0 < 10) y1 = y0 + 10;
+      const sx = (x) => L + ((x - x0) / (x1 - x0)) * (W - L - R);
+      const sy = (y) => T + (1 - (y - y0) / (y1 - y0)) * (H - T - B);
+      const step = (y1 - y0) / 5 > 4 ? 10 : 5;
+      let grid = "";
+      for (let y = y0; y <= y1; y += step) grid += `<line class="grid" x1="${L}" x2="${W - R}" y1="${sy(y)}" y2="${sy(y)}"/><text x="${L - 6}" y="${sy(y) + 4}" text-anchor="end">${y > 0 ? "+" : ""}${y}</text>`;
+      const labels = points.map((p) => `<text x="${sx(p.week)}" y="${H - 8}" text-anchor="middle">${esc(p.label)}</text>`).join("");
+      const path = points.map((p, i) => `${i ? "L" : "M"}${sx(p.week).toFixed(1)},${sy(p.value).toFixed(1)}`).join("");
+      const dots = points.map((p) => `<circle class="dot" cx="${sx(p.week)}" cy="${sy(p.value)}" r="4"/>`).join("");
+      const desc = points.map((p) => `${p.label}: ${signed(p.value)}`).join(", ");
+      return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Power rating by week. ${esc(desc)}">${grid}${labels}<path class="line" d="${path}"/>${dots}</svg>`;
+    }
+
+    loadSite().then(({ data, odds }) => {
+      const name = params().get("team");
+      const t = data.teams[name];
+      if (!t?.fbs) {
+        document.querySelector("main").innerHTML = `<div class="card empty">No FBS team called “${esc(name ?? "")}”. Pick one from the <a href="ratings.html">ratings</a>.</div>`;
+        return;
+      }
+      document.title = `CFB Picks: ${name}`;
+      document.getElementById("kicker").innerHTML = `${chip(name, data)} <span style="margin-left:8px">${esc(t.conference)}</span>`;
+      document.getElementById("name").textContent = name;
+      const r = data.ratings.find((x) => x.team === name);
+
+      const games = data.games.filter((g) => g.home === name || g.away === name);
+      const rows = games.map((g) => {
+        const home = g.home === name, s = home ? 1 : -1;
+        const o = odds.games[g.id];
+        const market = o?.spread?.median == null ? null : o.spread.median * s; // this team's line
+        const margin = g.completed && g.homePoints != null ? (g.homePoints - g.awayPoints) * s : null;
+        return {
+          g, home, opp: home ? g.away : g.home,
+          power: home ? g.homePower : g.awayPower,
+          model: -g.modelMargin * s,
+          win: home ? g.homeWinProb : 1 - g.homeWinProb,
+          market, margin,
+          cover: margin == null || market == null ? null : margin + market > 0 ? "W" : margin + market < 0 ? "L" : "P",
+          score: margin == null ? null : `${home ? g.homePoints : g.awayPoints}–${home ? g.awayPoints : g.homePoints}`,
+        };
+      });
+      const played = rows.filter((x) => x.margin != null);
+      const wins = played.filter((x) => x.margin > 0).length;
+      const covers = rows.filter((x) => x.cover === "W").length, coverGames = rows.filter((x) => x.cover === "W" || x.cover === "L").length;
+      document.getElementById("summary").innerHTML = `
+        <div class="stat"><div class="label">Power</div><div class="value num">${r ? signed(r.power) : "–"}</div><small class="muted">${r ? `#${r.rank} of ${data.ratings.length}` : ""}</small></div>
+        <div class="stat"><div class="label">Record</div><div class="value num">${wins}–${played.length - wins}</div></div>
+        <div class="stat"><div class="label">vs market</div><div class="value num">${coverGames ? `${covers}–${coverGames - covers}` : "–"}</div></div>`;
+
+      // Each FBS game's pregame rating, then today's.
+      const points = rows.filter((x) => x.g.homeFbs && x.g.awayFbs && (x.margin != null || x.g.week === data.week))
+        .map((x) => ({ week: x.g.week, value: x.power, label: `Wk ${x.g.week}` }));
+      if (r) points.push({ week: (points.at(-1)?.week ?? 0) + 1, value: r.power, label: "Now" });
+      document.getElementById("chart").innerHTML = points.length > 1 ? chartSvg(points) : `<div class="empty">Not enough games yet.</div>`;
+
+      renderTable(document.getElementById("schedule"), [
+        { key: "week", label: "Wk", html: (x) => x.g.week, sort: (x) => x.g.start },
+        { key: "date", label: "Kickoff", html: (x) => `<span class="muted">${esc(kickoff(x.g.start))}</span>` },
+        { key: "opp", label: "Opponent", html: (x) => `<span class="muted" style="margin-right:6px">${x.g.neutral ? "vs" : x.home ? "vs" : "at"}</span>${teamLink(x.opp, data)}${x.g.neutral ? "<small>Neutral site</small>" : ""}` },
+        { key: "model", label: "Model", right: true, html: (x) => `<span class="num">${lineText(x.model)}</span><small>win ${pct(x.win)}</small>` },
+        { key: "market", label: "Market", right: true, html: (x) => `<span class="num">${lineText(x.market)}</span>` },
+        { key: "score", label: "Result", right: true, html: (x) => x.score == null ? "–" : `<span class="num ${x.margin > 0 ? "pos" : "neg"}">${x.margin > 0 ? "W" : "L"} ${x.score}</span>` },
+        { key: "cover", label: "Cover", right: true, html: (x) => x.cover ? `<span class="result ${x.cover}">${x.cover}</span>` : "–" },
+      ], rows, { sortKey: "week", sortDir: "asc" });
+    }).catch(showError);
+  </script>
+</body>
+</html>

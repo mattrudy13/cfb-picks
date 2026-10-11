@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CFB Picks: Best Bets</title>
+  <meta name="description" content="College football spread and underdog moneyline picks from a team-rating model, with an honest track record.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css?v=d75d190a">
+</head>
+<body>
+  <main class="wrap">
+    <section class="page-head">
+      <div>
+        <div class="kicker" id="kicker">This week</div>
+        <h1>Best Bets</h1>
+      </div>
+      <p class="lede" id="lede"></p>
+    </section>
+    <section class="banner" id="banner" hidden></section>
+    <section>
+      <div class="cards" id="picks"></div>
+    </section>
+    <section>
+      <div class="section-head"><h2>Record</h2><p id="record-note"></p></div>
+      <div class="cards" id="record"></div>
+    </section>
+    <section>
+      <div class="section-head"><h2>Every pick</h2><p>Newest first. Graded at the line and price each pick was posted at.</p></div>
+      <div class="table-wrap" id="history"></div>
+    </section>
+    <section class="notes">
+      <h3>Reading this page</h3>
+      <p><strong>Spread picks</strong> come from games where the model's line and the market's middle line (the median across US sportsbooks) are at least <span id="x-note">4</span> points apart. <strong>Edge</strong> is that gap. The pick shows the best line available for that side.</p>
+      <p><strong>Underdog moneylines</strong> are picks where the model gives the underdog a better chance to win than the price implies, up to +600.</p>
+      <p><strong>Line move (CLV)</strong>: how far the market moved toward the pick between when it was posted and the last odds snapshot before kickoff. Beating the closing line is a faster, less noisy sign of a real edge than wins and losses. For moneylines it's the change in the market's implied chance, in percentage points.</p>
+      <p>A pick locks the moment it's first posted (usually Sunday night), because that's when it would be bet. Later snapshots only track where the line went.</p>
+    </section>
+  </main>
+  <footer class="wrap">Data via <a href="https://collegefootballdata.com">CollegeFootballData.com</a> and <a href="https://the-odds-api.com">The Odds API</a>. For entertainment; not betting advice.</footer>
+
+  <script src="common.js?v=ec188685"></script>
+  <script>
+    document.body.insertAdjacentHTML("afterbegin", header("index.html"));
+
+    function pickCard(p, data) {
+      const home = data.teams[p.home] ?? {}, away = data.teams[p.away] ?? {};
+      const bar = `<div class="bar"><span style="background:${esc(away.color || "#5a6782")}"></span><span style="background:${esc(home.color || "#5a6782")}"></span></div>`;
+      const opp = p.side === "home" ? `vs ${esc(p.away)}` : `at ${esc(p.home)}`;
+      const result = p.result ? `<span class="result ${p.result}">${{ W: "Win", L: "Loss", P: "Push", V: "Void" }[p.result]}</span>` : "";
+      const clv = pickClv(p);
+      if (p.cat === "spread") {
+        return `<article class="card pick">${bar}<div class="body">
+          <div class="top"><span class="cat">Spread${p.shadow ? " · unofficial" : ""}</span><span>${esc(kickoff(p.kickoff))}</span></div>
+          <div class="bet">${esc(p.team)} ${lineText(p.line)}</div>
+          <div class="where">${opp} · ${priceText(p.price)} at ${esc(bookName(p.book))} ${result}</div>
+          <div class="stats3">
+            <div class="stat"><div class="label">Model</div><div class="value num">${lineText(p.side === "home" ? p.modelLine : -p.modelLine)}</div></div>
+            <div class="stat"><div class="label">Market</div><div class="value num">${lineText(p.side === "home" ? p.marketLine : -p.marketLine)}</div></div>
+            <div class="stat"><div class="label">Edge</div><div class="value num" style="color:var(--accent-text)">${p.edge.toFixed(1)}</div></div>
+          </div>
+          <div class="why">${esc(p.why)}${clv != null ? ` · line moved ${signed(clv)} pts toward the pick` : ""}</div>
+        </div></article>`;
+      }
+      return `<article class="card pick">${bar}<div class="body">
+        <div class="top"><span class="cat">Underdog moneyline${p.shadow ? " · unofficial" : ""}</span><span>${esc(kickoff(p.kickoff))}</span></div>
+        <div class="bet">${esc(p.team)} ${priceText(p.price)}</div>
+        <div class="where">${opp} · at ${esc(bookName(p.book))} ${result}</div>
+        <div class="stats3">
+          <div class="stat"><div class="label">Model win</div><div class="value num">${pct(p.modelProb)}</div></div>
+          <div class="stat"><div class="label">Price implies</div><div class="value num">${pct(implied(p.price))}</div></div>
+          <div class="stat"><div class="label">Exp. profit</div><div class="value num" style="color:var(--accent-text)">$${p.ev.toFixed(0)}</div></div>
+        </div>
+        <div class="why">Expected profit is per $100 bet, if the model's chance is right.${clv != null ? ` Market moved ${signed(clv)} pts toward the pick.` : ""}</div>
+      </div></article>`;
+    }
+
+    function recordCard(title, r, unit) {
+      const v = (x) => `<div class="value num">${x}</div>`;
+      return `<div class="card"><div class="record">
+        <div class="stat" style="grid-column:1/-1"><h3>${title}</h3></div>
+        <div class="stat"><div class="label">Record</div>${v(`${r.w}–${r.l}${r.push ? `–${r.push}` : ""}`)}</div>
+        <div class="stat"><div class="label">Win rate</div>${v(pct(r.winPct, 1))}</div>
+        <div class="stat"><div class="label">ROI</div>${v(r.roi == null ? "–" : signed(100 * r.roi) + "%")}</div>
+        <div class="stat"><div class="label">Line move</div>${v(r.clv == null ? "–" : signed(r.clv, 2))}<small class="muted">${r.clvCount ? `${unit}, ${r.clvCount} pick${r.clvCount === 1 ? "" : "s"}` : ""}</small></div>
+      </div></div>`;
+    }
+
+    loadSite().then(({ data, picks, backtest }) => {
+      const m = data.model;
+      const week = data.week;
+      document.getElementById("kicker").textContent = week ? `Week ${week}` : "Season over";
+      document.getElementById("x-note").textContent = m.threshold;
+      document.getElementById("lede").textContent =
+        "Odds snapshots run Sunday 9 PM, Tuesday and Friday 10 AM, and Saturday 9 AM ET. A pick locks the moment it's posted.";
+
+      const all = allPicks(picks);
+      const live = backtest?.goLive?.pass;
+      if (!live && backtest) {
+        const t = backtest.total;
+        const b = document.getElementById("banner");
+        b.hidden = false;
+        b.innerHTML = `<h3>No proven edge yet</h3><p>The model missed its backtest bar: ${pct(t.ats, 1)} against the spread for 2022–2025, profitable in ${backtest.profitableSeasons} of ${backtest.folds.length} seasons (it needed 3). These picks are an unofficial record that tests one idea, betting Sunday night before the line moves. <a href="backtest.html">See the backtest</a></p>`;
+      }
+
+      // This week's picks.
+      const el = document.getElementById("picks");
+      const thisWeek = all.filter((p) => p.week === week).sort((a, b) => a.kickoff.localeCompare(b.kickoff) || b.edge - a.edge);
+      if (thisWeek.length) el.innerHTML = thisWeek.map((p) => pickCard(p, data)).join("");
+      else {
+        const msg = week == null ? "The regular season is over."
+          : week < m.startWeek ? `Picks start in week ${m.startWeek}. Early-season ratings lean too hard on last year, and the backtest lost money before then.`
+          : "No picks yet this week. The first odds snapshot is Sunday at 9 PM ET; if no game clears the edge, there are no picks.";
+        el.innerHTML = `<div class="card empty">${msg}</div>`;
+      }
+
+      // Record, by bet type.
+      const spreads = all.filter((p) => p.cat === "spread"), mls = all.filter((p) => p.cat === "ml");
+      document.getElementById("record").innerHTML = recordCard("Spreads", recordOf(spreads), "pts") + recordCard("Underdog moneylines", recordOf(mls), "% pts");
+      document.getElementById("record-note").textContent = `${live ? "Official" : "Unofficial"} record, ${all.filter((p) => p.result).length} graded picks. ROI is profit per dollar bet.`;
+
+      // Every pick.
+      const rows = [...all].sort((a, b) => b.kickoff.localeCompare(a.kickoff)).map((p) => ({ ...p, clv: pickClv(p) }));
+      const hist = document.getElementById("history");
+      if (!rows.length) { hist.innerHTML = `<div class="empty">No picks recorded yet.</div>`; return; }
+      renderTable(hist, [
+        { key: "week", label: "Wk", html: (p) => p.week, sort: (p) => p.kickoff },
+        { key: "pick", label: "Pick", html: (p) => `${teamLink(p.team, data, { strong: true })}<small>${p.cat === "spread" ? "Spread" : "Moneyline"} · ${p.side === "home" ? "vs " + esc(p.away) : "at " + esc(p.home)}</small>` },
+        { key: "bet", label: "Bet", right: true, html: (p) => `<span class="num">${p.cat === "spread" ? lineText(p.line) : priceText(p.price)}</span><small>${p.cat === "spread" ? priceText(p.price) + " · " : ""}${esc(bookName(p.book))}</small>` },
+        { key: "edge", label: "Edge", right: true, html: (p) => p.cat === "spread" ? `<span class="num">${p.edge.toFixed(1)}</span>` : `<span class="num">$${p.ev.toFixed(0)}</span>`, sort: (p) => p.edge ?? p.ev / 10 },
+        { key: "clv", label: "Line move", right: true, html: (p) => p.clv == null ? "–" : `<span class="num ${p.clv > 0 ? "pos" : p.clv < 0 ? "neg" : ""}">${signed(p.clv)}</span>`, sort: (p) => p.clv },
+        { key: "result", label: "Result", right: true, html: (p) => p.result ? `<span class="result ${p.result}">${p.result}</span><small>${esc(p.score ?? "")}</small>` : `<span class="muted">Open</span>` },
+        { key: "profit", label: "Profit", right: true, html: (p) => p.profit == null ? "–" : `<span class="num ${p.profit > 0 ? "pos" : p.profit < 0 ? "neg" : ""}">${p.profit > 0 ? "+" : p.profit < 0 ? MINUS : ""}$${Math.abs(p.profit).toFixed(0)}</span>`, sort: (p) => p.profit },
+      ], rows, { sortKey: "week", sortDir: "desc" });
+    }).catch(showError);
+  </script>
+</body>
+</html>

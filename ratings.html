@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CFB Picks: Team Ratings</title>
+  <meta name="description" content="Power ratings for every FBS team, with the Elo, scoring and efficiency ratings behind them.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css?v=d75d190a">
+</head>
+<body>
+  <main class="wrap">
+    <section class="page-head">
+      <div>
+        <div class="kicker" id="kicker">FBS</div>
+        <h1>Ratings</h1>
+      </div>
+      <p class="lede">The model's power rating for every FBS team: points better than an average FBS team on a neutral field.</p>
+    </section>
+    <section class="controls">
+      <label>Conference <select id="conf"><option value="">All FBS</option></select></label>
+    </section>
+    <section class="table-wrap" id="table"></section>
+    <section class="notes">
+      <h3>Reading the ratings</h3>
+      <p><strong>Power</strong> blends four ratings, weighted by how well each predicted past margins. Subtract two teams' power ratings and add about <span id="hfa">3</span> points for the home team to get the model's line.</p>
+      <p><strong>Elo</strong> moves after every game based on the result and the margin (1500 is average). <strong>Scoring</strong> is opponent-adjusted points margin. <strong>EPA</strong> is opponent-adjusted expected points per play, offense minus defense, scaled to about 70 plays. <strong>Success</strong> is opponent-adjusted success rate (offense minus defense, in percentage points). Each starts the season from a prior built on last season, returning production, recruiting and the transfer portal.</p>
+      <p><strong>3 wk</strong> is the change in power over the last three weeks. <strong>SP+</strong> and <strong>FPI</strong> are well-known public ratings, shown for comparison only; the model doesn't use them.</p>
+    </section>
+  </main>
+  <footer class="wrap">Data via <a href="https://collegefootballdata.com">CollegeFootballData.com</a>.</footer>
+
+  <script src="common.js?v=ec188685"></script>
+  <script>
+    document.body.insertAdjacentHTML("afterbegin", header("ratings.html"));
+    loadSite().then(({ data }) => {
+      document.getElementById("kicker").textContent = `${data.season} · through week ${data.week ? data.week - 1 : "the end"}`;
+      document.getElementById("hfa").textContent = data.model.homeField.toFixed(1);
+      const confSel = document.getElementById("conf");
+      const confs = [...new Set(data.ratings.map((r) => data.teams[r.team]?.conference).filter(Boolean))].sort();
+      confSel.innerHTML += confs.map((c) => `<option>${esc(c)}</option>`).join("");
+      confSel.value = params().get("conf") ?? "";
+      const n1 = (x) => (x == null ? "–" : x.toFixed(1));
+      const cols = [
+        { key: "rank", label: "#", html: (r) => `<span class="num">${r.rank}</span>`, sort: (r) => r.rank },
+        { key: "team", label: "Team", html: (r) => `${teamLink(r.team, data, { strong: true })}<small>${esc(data.teams[r.team]?.conference ?? "")}</small>`, sort: (r) => r.team },
+        { key: "power", label: "Power", right: true, html: (r) => `<span class="num">${signed(r.power)}</span>`, sort: (r) => r.power },
+        { key: "change3", label: "3 wk", right: true, html: (r) => r.change3 == null ? "–" : `<span class="${r.change3 > 0.05 ? "pos" : r.change3 < -0.05 ? "neg" : "muted"}">${signed(r.change3)}</span>`, sort: (r) => r.change3 },
+        { key: "elo", label: "Elo", right: true, html: (r) => Math.round(r.inputs.elo), sort: (r) => r.inputs.elo },
+        { key: "scoring", label: "Scoring", right: true, html: (r) => signed(r.inputs.marginPri ?? r.inputs.margin), sort: (r) => r.inputs.marginPri ?? r.inputs.margin },
+        { key: "epa", label: "EPA", right: true, html: (r) => signed(r.inputs.ppaPri ?? r.inputs.ppa), sort: (r) => r.inputs.ppaPri ?? r.inputs.ppa },
+        { key: "success", label: "Success", right: true, html: (r) => signed(r.inputs.srPri ?? r.inputs.sr), sort: (r) => r.inputs.srPri ?? r.inputs.sr },
+        { key: "sp", label: "SP+", right: true, html: (r) => `<span class="muted">${n1(r.sp)}</span>`, sort: (r) => r.sp },
+        { key: "fpi", label: "FPI", right: true, html: (r) => `<span class="muted">${n1(r.fpi)}</span>`, sort: (r) => r.fpi },
+      ];
+      const draw = () => {
+        const conf = confSel.value;
+        renderTable(document.getElementById("table"), cols, data.ratings.filter((r) => !conf || data.teams[r.team]?.conference === conf), { sortKey: "rank", sortDir: "asc" });
+      };
+      confSel.addEventListener("change", () => { setParam("conf", confSel.value); draw(); });
+      draw();
+    }).catch(showError);
+  </script>
+</body>
+</html>
