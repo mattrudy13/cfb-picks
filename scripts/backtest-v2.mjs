@@ -81,13 +81,13 @@ const eloP = coordSearch(M.MODEL.elo, {
 }, (p) => fitScore(M.runElo(settingsSeasons, p).pre));
 const marginP = coordSearch(M.MODEL.rating, {
   cap: [21, 28, 35, 99], priorWeight: [1, 2, 3, 5, 8], carry: [0.6, 0.75, 0.9, 1], hfa: [1.5, 2, 2.5, 3], newTeam: [-30, -20, -12],
-}, (p) => fitScore(M.runSeries(settingsSeasons, { valueOf: (g) => g.margin, priorFor: M.carryPrior(p), p })));
+}, (p) => fitScore(M.runSeries(settingsSeasons, { valueOf: (g) => g.margin, priorFor: M.carryPrior(p), p }).pre));
 // Efficiency ratings: no cap and no home adjustment inside the solve (the blend's home term covers it).
 const effBase = { cap: 999, hfa: 0, newTeam: marginP.newTeam };
 const ppaP = coordSearch({ ...effBase, priorWeight: 3, carry: 0.75 }, { priorWeight: [1, 2, 3, 5, 8], carry: [0.5, 0.75, 0.9, 1] },
-  (p) => fitScore(M.runSeries(settingsSeasons, { valueOf: (g) => eff(g, "ppa"), priorFor: M.carryPrior(p), p })));
+  (p) => fitScore(M.runSeries(settingsSeasons, { valueOf: (g) => eff(g, "ppa"), priorFor: M.carryPrior(p), p }).pre));
 const srP = coordSearch({ ...effBase, priorWeight: 3, carry: 0.75 }, { priorWeight: [1, 2, 3, 5, 8], carry: [0.5, 0.75, 0.9, 1] },
-  (p) => fitScore(M.runSeries(settingsSeasons, { valueOf: (g) => eff(g, "successRate"), priorFor: M.carryPrior(p), p })));
+  (p) => fitScore(M.runSeries(settingsSeasons, { valueOf: (g) => eff(g, "successRate"), priorFor: M.carryPrior(p), p }).pre));
 
 // ---- Every rating series, normal and cautious (lag 1) ----
 
@@ -96,7 +96,7 @@ const elo = M.runElo(seasons, eloP);
 const series = {};
 for (const lag of [0, 1]) {
   const run = (valueOf, p, fitted) =>
-    M.runSeries(seasons, { valueOf, p, lag, priorFor: fitted ? M.fittedPrior(contexts, p) : M.carryPrior(p) });
+    M.runSeries(seasons, { valueOf, p, lag, priorFor: fitted ? M.fittedPrior(contexts, p) : M.carryPrior(p) }).pre;
   series[lag] = {
     elo: lag ? elo.preLag : elo.pre,
     margin: run((g) => g.margin, marginP, false),
@@ -235,8 +235,32 @@ const marketRmse = Object.fromEntries(TESTS.map((T) => {
   return [T, { open: r((x) => -x.open), close: r((x) => -x.close) }];
 }));
 
+// ---- The live 2026 model: the same fold rule, applied with every season through 2025 ----
+// build-data.mjs reads this block, so the site uses exactly what the rule picks.
+
+const LIVE_SEASON = 2026;
+const livePast = range(PREDICT_FROM, LIVE_SEASON - 1);
+const liveVariant = variantFor(rmseOf("efficiency", livePast) < rmseOf("v1", livePast), rmseOf("priors", livePast) < rmseOf("v1", livePast));
+const liveOpeners = range(OPENERS_FROM, LIVE_SEASON - 1);
+const liveRows = rowsFor(liveOpeners, liveVariant);
+const liveX = chooseThreshold(liveRows, liveOpeners.length);
+const liveFit = gamesIn(range(2016, LIVE_SEASON - 1));
+const liveInputs = VARIANTS[liveVariant].map((k) => series[0][k]);
+const liveDesign = liveFit.map((g) => M.blendRow(g, liveInputs));
+const liveCoef = M.leastSquares(liveDesign, liveFit.map((g) => g.margin));
+const live = {
+  season: LIVE_SEASON,
+  variant: liveVariant,
+  inputs: VARIANTS[liveVariant],
+  coef: liveCoef,
+  sigma: Math.sqrt(mse(liveFit.map((g, i) => g.margin - M.dot(liveCoef, liveDesign[i])))),
+  threshold: liveX,
+  startWeek: chooseStartWeek(liveRows, liveX),
+};
+
 const out = {
   builtAt: new Date().toISOString(),
+  live,
   settings: { elo: eloP, margin: marginP, ppa: ppaP, successRate: srP },
   folds: folds.map(({ picks, ...f }) => f),
   total, cautious: cautiousTotal, profitableSeasons, breakeven: BREAKEVEN, goLive, marketRmse,
@@ -262,6 +286,7 @@ for (const f of folds) {
 console.log(`\nTotal: picks ${total.picks}  ATS ${pct(total.ats)}  @close ${pct(total.atsClose)}  ROI ${pct(total.roi)}  CLV ${f2(total.clv)}  profitable seasons ${profitableSeasons}/4`);
 console.log(`Cautious: picks ${cautiousTotal.picks}  ATS ${pct(cautiousTotal.ats)}  CLV ${f2(cautiousTotal.clv)}`);
 console.log("Go-live:", JSON.stringify(goLive));
+console.log("Live model:", JSON.stringify(live));
 console.log("\nComparison (each variant with its own fold-chosen threshold):");
 for (const v of Object.keys(VARIANTS)) {
   const c = folds.map((f) => f.compare[v]);

@@ -97,6 +97,13 @@ function runElo(seasons, p = MODEL.elo) {
       r.set(g.homeTeam, h + delta);
       r.set(g.awayTeam, a - delta);
     }
+    // Games not played yet get the current ratings (the live site's upcoming games).
+    for (const g of games.filter((x) => !x.completed)) {
+      const cur = (t, c) => r.get(t) ?? (isFbs(c) ? 1500 : p.fcsStart);
+      const now = { home: cur(g.homeTeam, g.homeClassification), away: cur(g.awayTeam, g.awayClassification) };
+      pre.set(g.id, now);
+      preLag.set(g.id, now);
+    }
     finals[season] = Object.fromEntries(r);
   }
   return { pre, preLag, finals };
@@ -241,6 +248,7 @@ function efficiencyIndex(advancedRows) {
 //   priorFor(season, prevFinal, history)  this season's prior per team; `history` holds every finished
 //               season's { season, prevFinal, final } so a prior model can learn from earlier seasons only
 //   lag         1 = each week ignores the previous week's games too (the cautious backtest)
+// Returns { pre: Map gameId → { home, away } pregame ratings, final: { team: rating } }.
 function runSeries(seasons, { valueOf, priorFor, p, lag = 0 }) {
   const pre = new Map();
   const history = [];
@@ -252,13 +260,16 @@ function runSeries(seasons, { valueOf, priorFor, p, lag = 0 }) {
       return v == null ? [] : [{ ...g, margin: v }];
     });
     const prior = priorFor(season, prevFinal, history);
-    for (const w of new Set(all.map((g) => g.week))) {
+    // Ratings are set for every game on the schedule, played or not, so the live site can rate
+    // upcoming games. Only completed games feed the ratings.
+    const schedule = games.filter((g) => g.completed || g.homePoints == null);
+    for (const w of new Set(schedule.map((g) => g.week))) {
       const ratings = solveRatings(rated.filter((g) => g.week < w - lag), prior, p);
       const get = (g, side) => {
         const t = isFbs(g[side + "Classification"]) ? g[side + "Team"] : "FCS";
         return ratings.get(t) ?? prior[t] ?? p.newTeam;
       };
-      for (const g of all.filter((x) => x.week === w)) pre.set(g.id, { home: get(g, "home"), away: get(g, "away") });
+      for (const g of schedule.filter((x) => x.week === w)) pre.set(g.id, { home: get(g, "home"), away: get(g, "away") });
     }
     // The prior model learns to predict a season-end rating built from that season's games alone
     // (almost no prior), so it isn't just learning to repeat its own prior.
@@ -266,7 +277,8 @@ function runSeries(seasons, { valueOf, priorFor, p, lag = 0 }) {
     history.push({ season, prevFinal, final: evidence });
     prevFinal = Object.fromEntries(solveRatings(rated, prior, p));
   }
-  return pre;
+  // `final` is each team's rating after every completed game: the current rating, mid-season.
+  return { pre, final: prevFinal };
 }
 
 // v1's prior: last season's final rating, pulled toward average.

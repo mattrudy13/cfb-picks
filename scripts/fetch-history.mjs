@@ -1,4 +1,5 @@
-// Fetches past-season CFBD data for the backtest into data/raw/, trimmed to the fields the model uses.
+// Fetches CFBD data that doesn't change during a season into data/raw/: past seasons for the backtest,
+// and this season's preseason inputs and team list, trimmed to the fields the model uses.
 //
 //   CFBD_API_KEY=... node scripts/fetch-history.mjs
 //
@@ -35,17 +36,27 @@ const SOURCES = [
     })),
   },
   {
-    name: "returning", years: range(2016, 2025), url: (y) => `player/returning?year=${y}`,
+    name: "returning", years: range(2016, 2026), url: (y) => `player/returning?year=${y}`,
     trim: (rows) => rows.map((r) => pick(r, ["season", "team", "conference", "totalPPA", "percentPPA", "usage"])),
   },
   {
-    name: "talent", years: range(2015, 2025), url: (y) => `talent?year=${y}`,
+    name: "talent", years: range(2015, 2026), url: (y) => `talent?year=${y}`,
     trim: (rows) => rows.map((r) => pick(r, ["year", "team", "talent"])),
   },
   {
     // The portal's records start with the 2021 season.
-    name: "portal", years: range(2021, 2025), url: (y) => `player/portal?year=${y}`,
+    name: "portal", years: range(2021, 2026), url: (y) => `player/portal?year=${y}`,
     trim: (rows) => rows.map((r) => pick(r, ["season", "origin", "destination", "position", "stars", "rating"])),
+  },
+  {
+    // Names, mascots (to match The Odds API's "School Mascot" names), logos and colors for the site.
+    name: "teams", years: [2026], url: (y) => `teams?year=${y}`,
+    trim: (rows) => rows.filter((t) => ["fbs", "fcs"].includes(t.classification)).map((t) => ({
+      ...pick(t, ["id", "school", "mascot", "abbreviation", "conference", "classification", "color", "alternateColor"]),
+      // The 128px logo and its dark-mode variant, as in h2h.
+      logo: (t.logos ?? []).find((u) => u.includes("/logos/128/")) ?? null,
+      logoDark: (t.logos ?? []).find((u) => u.includes("/logos-dark/128/")) ?? null,
+    })),
   },
 ];
 
