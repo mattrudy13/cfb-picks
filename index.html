@@ -101,7 +101,9 @@
       const everyPick = allPicks(picks);
       const all = everyPick.filter((p) => pickModel(p) === m.version);
       const older = everyPick.filter((p) => pickModel(p) !== m.version);
-      const spreadStatus = all.find((p) => p.cat === "spread")?.status ?? (backtest?.goLive?.pass ? "provisional" : "unofficial");
+      // Each pick keeps the status it was posted with, so the record's status is the newest pick's.
+      const newestSpread = all.filter((p) => p.cat === "spread").sort((a, b) => b.takenAt.localeCompare(a.takenAt))[0];
+      const spreadStatus = newestSpread?.status ?? (backtest?.goLive?.pass ? "provisional" : "unofficial");
       if (backtest && spreadStatus !== "official") {
         const t = backtest.total;
         const b = document.getElementById("banner");
