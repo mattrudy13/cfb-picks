@@ -2,12 +2,17 @@ name: Update data
 
 on:
   schedule:
-    # Times are UTC (ET is UTC−4 until Nov 1, then UTC−5). Every 3 hours from Saturday noon ET to
-    # Sunday 3 AM ET while games finish, then Sunday, Monday and Wednesday mornings (6 AM ET) to catch
-    # late finals and weeknight games. August through December.
-    - cron: "0 16,19,22 * 8-12 6"
-    - cron: "0 1,4,7,10 * 8-12 0"
-    - cron: "0 10 * 8-12 1,3"
+    # Every 3 hours from Saturday noon ET to Sunday 3 AM ET while games finish, then Sunday, Monday and
+    # Wednesday mornings (6 AM ET) to catch late finals and weeknight games. August through December.
+    # Cron is UTC, so the schedule is split by month to keep the ET times fixed: Aug–Oct are UTC−4
+    # (daylight time), Nov–Dec UTC−5. Daylight time ends the first Sunday of November, so in years when
+    # that's after Nov 1 the first few November runs are an hour early.
+    - cron: "0 16,19,22 * 8-10 6"
+    - cron: "0 1,4,7,10 * 8-10 0"
+    - cron: "0 10 * 8-10 1,3"
+    - cron: "0 17,20,23 * 11-12 6"
+    - cron: "0 2,5,8,11 * 11-12 0"
+    - cron: "0 11 * 11-12 1,3"
   workflow_dispatch:
 
 permissions:

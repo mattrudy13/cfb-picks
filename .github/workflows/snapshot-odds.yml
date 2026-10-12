@@ -2,13 +2,17 @@ name: Snapshot odds
 
 on:
   schedule:
-    # Times are UTC (ET is UTC−4 until Nov 1, then UTC−5, so these run an hour earlier in ET after that).
-    # Sunday 9 PM ET (Monday 01:00 UTC): near the opener, when the model's picks are meant to be bet.
-    # Tuesday and Friday 10 AM ET, and Saturday 9 AM ET: the last one is the close for most games.
-    # GitHub can start scheduled runs hours late, so Saturday's isn't right before noon kickoffs.
-    - cron: "0 1 * 8-12 1"
-    - cron: "0 14 * 8-12 2,5"
-    - cron: "0 13 * 8-12 6"
+    # Sunday 9 PM ET (Monday 01:00 UTC in daylight time): near the opener, when the model's picks are
+    # meant to be bet. Tuesday and Friday 10 AM ET, and Saturday 9 AM ET: the last snapshot before most
+    # games. GitHub can start scheduled runs hours late, so Saturday's isn't right before noon kickoffs.
+    # Cron is UTC, so the schedule is split by month to keep the ET times fixed: Aug–Oct are UTC−4
+    # (daylight time), Nov–Dec UTC−5 (see update-data.yml).
+    - cron: "0 1 * 8-10 1"
+    - cron: "0 14 * 8-10 2,5"
+    - cron: "0 13 * 8-10 6"
+    - cron: "0 2 * 11-12 1"
+    - cron: "0 15 * 11-12 2,5"
+    - cron: "0 14 * 11-12 6"
   workflow_dispatch:
 
 permissions:

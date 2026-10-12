@@ -332,7 +332,8 @@ Already-recorded moneyline picks are still graded.
 | `snapshot-odds.yml` | **Sun 9 PM (added 2026-10-10), Tue 10 AM, Fri 10 AM, Sat 9 AM** | build → Odds API → record picks |
 | `check-assets.yml` | on push | asset stamp check, copied from te-tracker |
 
-Times are UTC in cron, so they shift an hour when daylight saving ends. GitHub can start scheduled runs
+Cron is UTC, so each schedule is split by month (decided 2026-10-12): Aug–Oct on daylight-time hours,
+Nov–Dec an hour later, so the ET times stay fixed. GitHub can start scheduled runs
 hours late (te-tracker's TNF run did), so Saturday's snapshot is at 9 AM rather than right before noon
 kickoffs. The update schedule is **(assumed)**.
 
