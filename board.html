@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="style.css?v=d75d190a">
+  <link rel="stylesheet" href="style.css?v=239b7f72">
 </head>
 <body>
   <main class="wrap">
@@ -32,13 +32,14 @@
     <section class="notes">
       <h3>Reading the board</h3>
       <p><strong>Model</strong> is the model's line for the favorite (TEX −16.2 means Texas by 16.2). <strong>Win</strong> is the favorite's chance to win.</p>
-      <p><strong>Market</strong> is the middle line across US sportsbooks at the latest snapshot, with where it opened underneath. <strong>Edge</strong> is the gap between the model and the market, with the side the model likes.</p>
+      <p><strong>Market</strong> is the middle line across US sportsbooks at the latest snapshot, with where it opened underneath. <strong>Edge</strong> is the part of the gap between the model and the market that the model trusts, with the side it likes and the share of the gap it trusts in that kind of game. Past seasons showed most of the gap is the model's own error, so it trusts about 17% in Power 4 games and less in Group of 5 games, after a quarterback change, and early in the season.</p>
+      <p><strong>QB change</strong> marks a team whose passer last game threw under half of its passes this season, so its ratings were mostly built with someone else at quarterback.</p>
       <p>Games with a pick have an amber border. After a game, the final score and which side covered the market's last line are shown.</p>
     </section>
   </main>
   <footer class="wrap">Data via <a href="https://collegefootballdata.com">CollegeFootballData.com</a> and <a href="https://the-odds-api.com">The Odds API</a>. For entertainment; not betting advice.</footer>
 
-  <script src="common.js?v=ec188685"></script>
+  <script src="common.js?v=e134931e"></script>
   <script>
     document.body.insertAdjacentHTML("afterbegin", header("board.html"));
 
@@ -50,6 +51,7 @@
       return `${esc(data.teams[fav]?.abbr ?? fav)} ${lineText(-Math.abs(margin))}`;
     }
 
+    const qbTag = ` <span class="qbflag">QB change</span>`;
     loadSite().then(({ data, odds, picks }) => {
       const weeks = [...new Set(data.games.map((g) => g.week))].sort((a, b) => a - b);
       let week = Number(params().get("week")) || data.week || weeks.at(-1);
@@ -60,7 +62,7 @@
       confSel.value = params().get("conf") ?? "";
 
       const picked = new Map();
-      for (const p of allPicks(picks)) (picked.get(p.gameId) ?? picked.set(p.gameId, []).get(p.gameId)).push(p);
+      for (const p of allPicks(picks).filter((p) => pickModel(p) === data.model.version)) (picked.get(p.gameId) ?? picked.set(p.gameId, []).get(p.gameId)).push(p);
 
       function draw() {
         document.getElementById("kicker").textContent = `Week ${week}`;
@@ -78,7 +80,8 @@
           const o = odds.games[g.id];
           const mkt = o?.spread?.median;                      // home line
           const marketMargin = mkt == null ? null : -mkt;
-          const edge = mkt == null ? null : g.modelMargin + mkt;
+          const trust = g.trust ?? 1;
+          const edge = mkt == null ? null : trust * (g.modelMargin + mkt);
           const gp = picked.get(g.id) ?? [];
           const tags = gp.map((p) => `<span class="tag">${p.cat === "spread" ? "Pick" : "Dog ML"}: ${esc(data.teams[p.team]?.abbr ?? p.team)}</span>`).join(" ");
           const favWin = g.modelMargin >= 0 ? g.homeWinProb : 1 - g.homeWinProb;
@@ -92,14 +95,14 @@
           return `<article class="card game${gp.length ? " edge" : ""}${g.completed ? " final" : ""}">
             <div class="kick">${esc(kickoff(g.start))}</div>
             <div class="match">
-              <div>${teamLink(g.away, data)}</div>
-              <div><span class="muted" style="font-size:13px;margin-right:6px">${g.neutral ? "vs" : "at"}</span>${teamLink(g.home, data, { strong: true })}</div>
+              <div>${teamLink(g.away, data)}${g.awayQb ? qbTag : ""}</div>
+              <div><span class="muted" style="font-size:13px;margin-right:6px">${g.neutral ? "vs" : "at"}</span>${teamLink(g.home, data, { strong: true })}${g.homeQb ? qbTag : ""}</div>
               ${tags ? `<div>${tags}</div>` : ""}
             </div>
             <div class="figs">
               <div class="fig"><div class="flabel">Model</div><div class="value num">${favLine(g.modelMargin, g, data)}</div><small>win ${pct(favWin)}</small></div>
               <div class="fig"><div class="flabel">Market</div><div class="value num">${favLine(marketMargin, g, data)}</div>${opened}</div>
-              <div class="fig"><div class="flabel">Edge</div><div class="value num"${edge != null && Math.abs(edge) >= data.model.threshold ? ' style="color:var(--accent-text)"' : ""}>${edge == null ? "–" : Math.abs(edge).toFixed(1)}</div><small>${edge == null ? "" : esc(data.teams[edge > 0 ? g.home : g.away]?.abbr ?? "")}</small></div>
+              <div class="fig"><div class="flabel">Edge</div><div class="value num"${edge != null && Math.abs(edge) >= data.model.threshold ? ' style="color:var(--accent-text)"' : ""}>${edge == null ? "–" : Math.abs(edge).toFixed(1)}</div><small>${edge == null ? "" : esc(data.teams[edge > 0 ? g.home : g.away]?.abbr ?? "") + (trust < 1 ? ` · ${Math.round(100 * trust)}% trusted` : "")}</small></div>
             </div>
             ${after}
           </article>`;

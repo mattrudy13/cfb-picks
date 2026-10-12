@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="style.css?v=d75d190a">
+  <link rel="stylesheet" href="style.css?v=239b7f72">
 </head>
 <body>
   <main class="wrap">
@@ -27,12 +27,13 @@
       <h3>Reading the ratings</h3>
       <p><strong>Power</strong> blends four ratings, weighted by how well each predicted past margins. Subtract two teams' power ratings and add about <span id="hfa">3</span> points for the home team to get the model's line.</p>
       <p><strong>Elo</strong> moves after every game based on the result and the margin (1500 is average). <strong>Scoring</strong> is opponent-adjusted points margin. <strong>EPA</strong> is opponent-adjusted expected points per play, offense minus defense, scaled to about 70 plays. <strong>Success</strong> is opponent-adjusted success rate (offense minus defense, in percentage points). Each starts the season from a prior built on last season, returning production, recruiting and the transfer portal.</p>
+      <p><strong>QB</strong> shows <em>Change</em> when the team's passer last game threw under half of its passes this season, so its ratings were mostly built with someone else at quarterback. The model takes about half a point off for it.</p>
       <p><strong>3 wk</strong> is the change in power over the last three weeks. <strong>SP+</strong> and <strong>FPI</strong> are well-known public ratings, shown for comparison only; the model doesn't use them.</p>
     </section>
   </main>
   <footer class="wrap">Data via <a href="https://collegefootballdata.com">CollegeFootballData.com</a>.</footer>
 
-  <script src="common.js?v=ec188685"></script>
+  <script src="common.js?v=e134931e"></script>
   <script>
     document.body.insertAdjacentHTML("afterbegin", header("ratings.html"));
     loadSite().then(({ data }) => {
@@ -52,6 +53,7 @@
         { key: "scoring", label: "Scoring", right: true, html: (r) => signed(r.inputs.marginPri ?? r.inputs.margin), sort: (r) => r.inputs.marginPri ?? r.inputs.margin },
         { key: "epa", label: "EPA", right: true, html: (r) => signed(r.inputs.ppaPri ?? r.inputs.ppa), sort: (r) => r.inputs.ppaPri ?? r.inputs.ppa },
         { key: "success", label: "Success", right: true, html: (r) => signed(r.inputs.srPri ?? r.inputs.sr), sort: (r) => r.inputs.srPri ?? r.inputs.sr },
+        { key: "qb", label: "QB", html: (r) => r.inputs.qb ? `<span class="qbflag" style="margin:0">Change</span>` : "", sort: (r) => r.inputs.qb ?? 0 },
         { key: "sp", label: "SP+", right: true, html: (r) => `<span class="muted">${n1(r.sp)}</span>`, sort: (r) => r.sp },
         { key: "fpi", label: "FPI", right: true, html: (r) => `<span class="muted">${n1(r.fpi)}</span>`, sort: (r) => r.fpi },
       ];

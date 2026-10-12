@@ -15,14 +15,17 @@ async function loadJSON(path, { optional = false } = {}) {
 // Everything a page might need. Odds and picks don't exist until the first snapshot.
 async function loadSite() {
   const { current } = await loadJSON("data/seasons.json");
-  const [data, odds, picks, backtest] = await Promise.all([
+  const [data, odds, picks, v2, v3] = await Promise.all([
     loadJSON(`data/${current}.json`),
     loadJSON(`data/odds-${current}.json`, { optional: true }),
     loadJSON(`data/picks-${current}.json`, { optional: true }),
     loadJSON("data/backtest-v2.json", { optional: true }),
+    loadJSON("data/backtest-v3.json", { optional: true }),
   ]);
   setUpdated(data.updated);
-  return { season: current, data, odds: odds ?? { games: {} }, picks: picks ?? { weeks: {} }, backtest };
+  // `backtest` is the live model's own backtest.
+  const backtest = data.model.version === "v3" ? v3 : v2;
+  return { season: current, data, odds: odds ?? { games: {} }, picks: picks ?? { weeks: {} }, backtest, backtestV2: v2, backtestV3: v3 };
 }
 
 function setUpdated(iso) {
@@ -125,6 +128,9 @@ function recordOf(picks) {
 }
 
 const allPicks = (store) => Object.values(store.weeks ?? {}).flatMap((w) => w.picks);
+// Which model made a pick; picks from before v3 have no model field.
+const pickModel = (p) => p.model ?? "v2";
+const pickStatus = (p) => p.status ?? (p.shadow ? "unofficial" : "official");
 
 // ---- URL state ----
 

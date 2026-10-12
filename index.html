@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="style.css?v=d75d190a">
+  <link rel="stylesheet" href="style.css?v=239b7f72">
 </head>
 <body>
   <main class="wrap">
@@ -33,15 +33,16 @@
     </section>
     <section class="notes">
       <h3>Reading this page</h3>
-      <p><strong>Spread picks</strong> come from games where the model's line and the market's middle line (the median across US sportsbooks) are at least <span id="x-note">4</span> points apart. <strong>Edge</strong> is that gap. The pick shows the best line available for that side.</p>
-      <p><strong>Underdog moneylines</strong> are picks where the model gives the underdog a better chance to win than the price implies, by enough to expect at least $10 profit per $100 bet, up to +600. Picks from before October 12 used any positive edge.</p>
+      <p><strong>Spread picks</strong> start from the gap between the model's line and the market's middle line (the median across US sportsbooks). The backtest showed most of that gap is the model's own error, so only part of it is trusted: about 17% in Power 4 games and less in Group of 5 games, after a quarterback change, and early in the season. <strong>Edge</strong> is the trusted part, and a pick needs at least <span id="x-note">0.5</span> points. The pick shows the best line available for that side.</p>
+      <p><strong>Underdog moneylines</strong> are picks where the underdog's chance to win, from the same trusted line, beats what the price implies by enough to expect at least $10 profit per $100 bet, up to +600. They're an unofficial record.</p>
+      <p><strong>Model v2</strong> made the week 7 picks posted before the switch to v3 on October 11. They're kept and graded, but shown separately and not counted in v3's record.</p>
       <p><strong>Line move (CLV)</strong>: how far the market moved toward the pick between when it was posted and the last odds snapshot before kickoff. Beating the closing line is a faster, less noisy sign of a real edge than wins and losses. For moneylines it's the change in the market's implied chance, in percentage points.</p>
       <p>A pick locks the moment it's first posted (usually Sunday night), because that's when it would be bet. Later snapshots only track where the line went.</p>
     </section>
   </main>
   <footer class="wrap">Data via <a href="https://collegefootballdata.com">CollegeFootballData.com</a> and <a href="https://the-odds-api.com">The Odds API</a>. For entertainment; not betting advice.</footer>
 
-  <script src="common.js?v=ec188685"></script>
+  <script src="common.js?v=e134931e"></script>
   <script>
     document.body.insertAdjacentHTML("afterbegin", header("index.html"));
 
@@ -53,7 +54,7 @@
       const clv = pickClv(p);
       if (p.cat === "spread") {
         return `<article class="card pick">${bar}<div class="body">
-          <div class="top"><span class="cat">Spread${p.shadow ? " · unofficial" : ""}</span><span>${esc(kickoff(p.kickoff))}</span></div>
+          <div class="top"><span class="cat">Spread · ${esc(pickStatus(p))}</span><span>${esc(kickoff(p.kickoff))}</span></div>
           <div class="bet">${esc(p.team)} ${lineText(p.line)}</div>
           <div class="where">${opp} · ${priceText(p.price)} at ${esc(bookName(p.book))} ${result}</div>
           <div class="stats3">
@@ -65,7 +66,7 @@
         </div></article>`;
       }
       return `<article class="card pick">${bar}<div class="body">
-        <div class="top"><span class="cat">Underdog moneyline${p.shadow ? " · unofficial" : ""}</span><span>${esc(kickoff(p.kickoff))}</span></div>
+        <div class="top"><span class="cat">Underdog moneyline · unofficial</span><span>${esc(kickoff(p.kickoff))}</span></div>
         <div class="bet">${esc(p.team)} ${priceText(p.price)}</div>
         <div class="where">${opp} · at ${esc(bookName(p.book))} ${result}</div>
         <div class="stats3">
@@ -88,7 +89,7 @@
       </div></div>`;
     }
 
-    loadSite().then(({ data, picks, backtest }) => {
+    loadSite().then(({ data, picks, backtest, backtestV2 }) => {
       const m = data.model;
       const week = data.week;
       document.getElementById("kicker").textContent = week ? `Week ${week}` : "Season over";
@@ -96,18 +97,23 @@
       document.getElementById("lede").textContent =
         "Odds snapshots run Sunday 9 PM, Tuesday and Friday 10 AM, and Saturday 9 AM ET. A pick locks the moment it's posted.";
 
-      const all = allPicks(picks);
-      const live = backtest?.goLive?.pass;
-      if (!live && backtest) {
+      const everyPick = allPicks(picks);
+      const all = everyPick.filter((p) => pickModel(p) === m.version);
+      const older = everyPick.filter((p) => pickModel(p) !== m.version);
+      const spreadStatus = all.find((p) => p.cat === "spread")?.status ?? (backtest?.goLive?.pass ? "provisional" : "unofficial");
+      if (backtest && spreadStatus !== "official") {
         const t = backtest.total;
         const b = document.getElementById("banner");
         b.hidden = false;
-        b.innerHTML = `<h3>No proven edge yet</h3><p>The model missed its backtest bar: ${pct(t.ats, 1)} against the spread for 2022–2025, profitable in ${backtest.profitableSeasons} of ${backtest.folds.length} seasons (it needed 3). These picks are an unofficial record that tests one idea, betting Sunday night before the line moves. <a href="backtest.html">See the backtest</a></p>`;
+        b.innerHTML = backtest.goLive.pass
+          ? `<h3>Provisional</h3><p>Model v3 passed its backtest: ${pct(t.ats, 1)} against the opening line on ${t.picks} picks in 2022–2025, profitable in ${backtest.profitableSeasons} of ${backtest.folds.length} seasons. It's the third model tested on those seasons, though, and against the closing line it went ${pct(t.atsClose, 1)}. Spread picks count as provisional until the live record shows lines moving toward them over 100+ picks. <a href="backtest.html">See the backtest</a></p>`
+          : `<h3>No proven edge yet</h3><p>The model missed its backtest bar: ${pct(t.ats, 1)} against the spread for 2022–2025, profitable in ${backtest.profitableSeasons} of ${backtest.folds.length} seasons (it needed 3). These picks are an unofficial record that tests one idea, betting Sunday night before the line moves. <a href="backtest.html">See the backtest</a></p>`;
       }
 
       // This week's picks.
       const el = document.getElementById("picks");
-      const thisWeek = all.filter((p) => p.week === week).sort((a, b) => a.kickoff.localeCompare(b.kickoff) || b.edge - a.edge);
+      const catOrder = (p) => (p.cat === "spread" ? 0 : 1); // spreads first
+      const thisWeek = all.filter((p) => p.week === week).sort((a, b) => catOrder(a) - catOrder(b) || a.kickoff.localeCompare(b.kickoff) || b.edge - a.edge);
       if (thisWeek.length) el.innerHTML = thisWeek.map((p) => pickCard(p, data)).join("");
       else {
         const msg = week == null ? "The regular season is over."
@@ -118,16 +124,17 @@
 
       // Record, by bet type.
       const spreads = all.filter((p) => p.cat === "spread"), mls = all.filter((p) => p.cat === "ml");
-      document.getElementById("record").innerHTML = recordCard("Spreads", recordOf(spreads), "pts") + recordCard("Underdog moneylines", recordOf(mls), "% pts");
-      document.getElementById("record-note").textContent = `${live ? "Official" : "Unofficial"} record, ${all.filter((p) => p.result).length} graded picks. ROI is profit per dollar bet.`;
+      document.getElementById("record").innerHTML = recordCard(`Spreads · ${esc(spreadStatus)}`, recordOf(spreads), "pts") + recordCard("Underdog moneylines · unofficial", recordOf(mls), "% pts")
+        + (older.length ? recordCard("Model v2 spreads · retired", recordOf(older.filter((p) => p.cat === "spread")), "pts") : "");
+      document.getElementById("record-note").textContent = `Model ${m.version}, ${all.filter((p) => p.result).length} graded picks. ROI is profit per dollar bet.`;
 
       // Every pick.
-      const rows = [...all].sort((a, b) => b.kickoff.localeCompare(a.kickoff)).map((p) => ({ ...p, clv: pickClv(p) }));
+      const rows = [...everyPick].sort((a, b) => b.kickoff.localeCompare(a.kickoff)).map((p) => ({ ...p, clv: pickClv(p) }));
       const hist = document.getElementById("history");
       if (!rows.length) { hist.innerHTML = `<div class="empty">No picks recorded yet.</div>`; return; }
       renderTable(hist, [
         { key: "week", label: "Wk", html: (p) => p.week, sort: (p) => p.kickoff },
-        { key: "pick", label: "Pick", html: (p) => `${teamLink(p.team, data, { strong: true })}<small>${p.cat === "spread" ? "Spread" : "Moneyline"} · ${p.side === "home" ? "vs " + esc(p.away) : "at " + esc(p.home)}</small>` },
+        { key: "pick", label: "Pick", html: (p) => `${teamLink(p.team, data, { strong: true })}<small>${p.cat === "spread" ? "Spread" : "Moneyline"} · ${p.side === "home" ? "vs " + esc(p.away) : "at " + esc(p.home)} · ${esc(pickModel(p))}</small>` },
         { key: "bet", label: "Bet", right: true, html: (p) => `<span class="num">${p.cat === "spread" ? lineText(p.line) : priceText(p.price)}</span><small>${p.cat === "spread" ? priceText(p.price) + " · " : ""}${esc(bookName(p.book))}</small>` },
         { key: "edge", label: "Edge", right: true, html: (p) => p.cat === "spread" ? `<span class="num">${p.edge.toFixed(1)}</span>` : `<span class="num">$${p.ev.toFixed(0)}</span>`, sort: (p) => p.edge ?? p.ev / 10 },
         { key: "clv", label: "Line move", right: true, html: (p) => p.clv == null ? "–" : `<span class="num ${p.clv > 0 ? "pos" : p.clv < 0 ? "neg" : ""}">${signed(p.clv)}</span>`, sort: (p) => p.clv },

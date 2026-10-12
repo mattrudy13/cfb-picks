@@ -2,16 +2,21 @@
 //
 //   node scripts/record-picks.mjs          # NOW=<iso> to pretend it's another time (testing)
 //
-// Rules (SPEC.md, "Picks" and "Model v2"):
-// - Spread: the model margin differs from the median US line by at least the live threshold, from the
-//   live start week on, FBS vs FBS only. Recorded at the best line (then price) for that side.
-// - Underdog moneyline: expected profit of at least $10 per $100 at the best price, no longer than +600.
-//   A bare > 0 took about half the slate in week 7: small model errors read as edges on most dogs.
-// - Every pick is `shadow: true` while the model hasn't passed the go-live bar, so none counts as official.
+// Rules (SPEC.md, "Picks" and "Model v3"):
+// - Spread: the edge is the game's trust factor × (model margin + median US line), and has to reach the
+//   live threshold, from the live start week on, FBS vs FBS only. Recorded at the best line (then price)
+//   for that side. (Before v3 the trust factor was 1.)
+// - Underdog moneyline: expected profit of at least $10 per $100 at the best price, no longer than +600,
+//   with the win chance from the same trust-adjusted margin, so it isn't built on the gap the backtest
+//   showed to be mostly noise.
+// - Status: "unofficial" if the live model failed its backtest; under v3, "provisional" until its live
+//   spread picks show CLV > 0 over at least 100 picks, then "official". `shadow` stays for older pages.
+// - Each pick records which model made it; a model's picks are judged on their own.
 // - A pick locks the moment it's first recorded, at that snapshot's line and price: the goal is to bet
 //   early (Sunday night), so a later snapshot never moves the line a pick is graded at or removes it.
 //   Later snapshots before kickoff only update `closeMarket`, the market median used for CLV.
-// - One spread pick and one moneyline pick per game at most, so a later snapshot can't take the other side.
+// - One spread pick and one moneyline pick per game per model at most, so a later snapshot can't take the
+//   other side.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -28,22 +33,37 @@ const ML_MIN_EV = 10; // per $100; added 2026-10-11
 const { current: season } = JSON.parse(fs.readFileSync(path.join(DATA, "seasons.json"), "utf8"));
 const data = JSON.parse(fs.readFileSync(path.join(DATA, `${season}.json`), "utf8"));
 const odds = JSON.parse(fs.readFileSync(path.join(DATA, `odds-${season}.json`), "utf8"));
-const backtest = JSON.parse(fs.readFileSync(path.join(DATA, "backtest-v2.json"), "utf8"));
 const file = path.join(DATA, `picks-${season}.json`);
 let store = { weeks: {} };
 try { store = JSON.parse(fs.readFileSync(file, "utf8")); } catch {}
 
-const { threshold, startWeek } = data.model;
-const shadow = !backtest.goLive.pass;
+const { threshold, startWeek, version } = data.model;
+const modelOf = (p) => p.model ?? "v2"; // picks from before v3 have no model field
+const existing = Object.values(store.weeks).flatMap((wk) => wk.picks);
+
+// v3 picks are provisional until the live record backs the backtest up (SPEC.md, "Model v3").
+const LIVE_CLV_PICKS = 100;
+function statusNow() {
+  if (version !== "v3") return "unofficial";
+  const clvs = existing.filter((p) => modelOf(p) === version && p.cat === "spread" && p.closeAt !== p.takenAt && Date.parse(p.kickoff) <= now)
+    .map((p) => (p.marketLine - p.closeMarket) * (p.side === "home" ? 1 : -1));
+  return clvs.length >= LIVE_CLV_PICKS && clvs.reduce((a, b) => a + b, 0) > 0 ? "official" : "provisional";
+}
+const status = statusNow();
+const shadow = status === "unofficial";
 const fmt = (x) => (x > 0 ? `+${x}` : `${x}`);
 const lineText = (x) => (x === 0 ? "PK" : fmt(Math.round(x * 2) / 2));
 
 function picksFor(g, o) {
   const out = [];
-  const base = { gameId: g.id, week: g.week, kickoff: o.commence, home: g.home, away: g.away, takenAt: odds.takenAt, shadow };
+  const base = { gameId: g.id, week: g.week, kickoff: o.commence, home: g.home, away: g.away, takenAt: odds.takenAt, model: version, status, shadow };
   const modelLine = -g.modelMargin; // home perspective, like a book's home spread
+  const trust = g.trust ?? 1;
+  // The margin the picks use: the market's, moved toward the model's by the trust factor.
+  const adjusted = o.spread?.median == null ? g.modelMargin : -o.spread.median + trust * (g.modelMargin + o.spread.median);
   if (o.spread?.median != null && g.week >= startWeek) {
-    const edge = g.modelMargin + o.spread.median;
+    const rawEdge = g.modelMargin + o.spread.median;
+    const edge = trust * rawEdge;
     if (Math.abs(edge) >= threshold) {
       const side = edge > 0 ? "home" : "away";
       const best = o.spread[side];
@@ -51,9 +71,11 @@ function picksFor(g, o) {
       const team = g[side];
       out.push({
         ...base, cat: "spread", side, team, line: best.line, price: best.price, book: best.book,
-        modelLine, marketLine: o.spread.median, edge: Math.abs(edge),
-        modelProb: M.normCdf((sign * g.modelMargin + best.line) / data.model.sigma),
-        why: `Model ${g.home} ${lineText(modelLine)} vs market ${lineText(o.spread.median)}: ${team} by ${Math.abs(edge).toFixed(1)} pts`,
+        modelLine, marketLine: o.spread.median, edge: Math.abs(edge), rawEdge: Math.abs(rawEdge), trust,
+        modelProb: M.normCdf((sign * adjusted + best.line) / data.model.sigma),
+        why: trust === 1
+          ? `Model ${g.home} ${lineText(modelLine)} vs market ${lineText(o.spread.median)}: ${team} by ${Math.abs(edge).toFixed(1)} pts`
+          : `Model ${g.home} ${lineText(modelLine)} vs market ${lineText(o.spread.median)}, a ${Math.abs(rawEdge).toFixed(1)}-pt gap; trusting ${Math.round(100 * trust)}% of it in this kind of game leaves ${team} by ${Math.abs(edge).toFixed(1)}`,
       });
     }
   }
@@ -61,7 +83,8 @@ function picksFor(g, o) {
     // The underdog is the side with the longer median price.
     const side = o.ml.medianHome > o.ml.medianAway ? "home" : "away";
     const best = o.ml[side];
-    const p = side === "home" ? g.homeWinProb : 1 - g.homeWinProb;
+    const homeProb = M.homeWinProb(adjusted, data.model.sigma);
+    const p = side === "home" ? homeProb : 1 - homeProb;
     const ev = M.evPer100(p, best.price);
     if (best.price > 0 && best.price <= ML_MAX_PRICE && ev >= ML_MIN_EV) {
       out.push({
@@ -82,7 +105,6 @@ for (const g of data.games) {
 }
 
 // Existing picks stay as recorded. Unstarted ones get this snapshot's market as their close.
-const existing = Object.values(store.weeks).flatMap((wk) => wk.picks);
 let updated = 0;
 for (const p of existing) {
   const o = odds.games[p.gameId];
@@ -92,10 +114,10 @@ for (const p of existing) {
   Object.assign(p, { closeMarket: market, closeAt: odds.takenAt });
   updated++;
 }
-const taken = new Set(existing.map((p) => `${p.cat}|${p.gameId}`));
+const taken = new Set(existing.map((p) => `${modelOf(p)}|${p.cat}|${p.gameId}`));
 let added = 0;
 for (const p of fresh) {
-  if (taken.has(`${p.cat}|${p.gameId}`)) continue;
+  if (taken.has(`${p.model}|${p.cat}|${p.gameId}`)) continue;
   p.closeMarket = p.cat === "spread" ? p.marketLine : p.marketPrice;
   p.closeAt = p.takenAt;
   (store.weeks[p.week] ??= { picks: [] }).picks.push(p);
@@ -104,4 +126,4 @@ for (const p of fresh) {
 
 store.updated = new Date(now).toISOString();
 fs.writeFileSync(file, JSON.stringify(store, null, 1));
-console.log(`${added} new picks, ${updated} earlier picks' closing line updated, at ${odds.takenAt}${shadow ? " (all unofficial)" : ""}`);
+console.log(`${added} new ${version} picks (${status}), ${updated} earlier picks' closing line updated, at ${odds.takenAt}`);

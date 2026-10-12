@@ -147,6 +147,7 @@ tr.final td .tname { color: var(--fg); }
 .game .fig small { display: block; font-size: 12px; color: var(--muted); }
 .game .score { font-family: var(--display); font-weight: 800; font-size: 20px; margin-left: auto; padding-left: 8px; }
 .game.edge { border-color: var(--accent); }
+.qbflag { margin-left: 6px; font-size: 11px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; color: var(--neg); }
 .tag { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; background: var(--accent); color: var(--accent-fg); }
 
 /* ---- Charts ---- */

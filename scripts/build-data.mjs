@@ -4,16 +4,18 @@
 //   CFBD_API_KEY=... node scripts/build-data.mjs   # fetch this season's games and stats, then build
 //   node scripts/build-data.mjs --offline          # rebuild from the files already in data/raw/
 //
-// The live model is the one data/backtest-v2.json's `live` block names (picked by the rule in SPEC.md),
-// run over 2015 to now so the ratings and priors match the backtest exactly.
+// The live model is v3 if it passed its backtest, else v2 (SPEC.md, "Model v3"): the `live` block of
+// that backtest's file, run over 2015 to now so the ratings and priors match the backtest exactly.
 //
-// CFBD calls: 2 per run (games, advanced stats), plus SP+ and FPI (2) when the cached copies are more
-// than 6 days old. The free tier's 1,000 a month is shared with h2h.
+// CFBD calls: 2 per run (games, advanced stats), plus one passing-stats call per newly finished week,
+// plus SP+ and FPI (2) when the cached copies are more than 6 days old. The free tier's 1,000 a month is
+// shared with h2h.
 
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import fs from "node:fs";
 import path from "node:path";
+import { trimPassing } from "./trim.mjs";
 
 const require = createRequire(import.meta.url);
 const M = require("../model.js");
@@ -24,8 +26,12 @@ const offline = process.argv.includes("--offline");
 const KEY = process.env.CFBD_API_KEY;
 if (!offline && !KEY) throw new Error("Set CFBD_API_KEY, or pass --offline");
 
-const backtest = JSON.parse(fs.readFileSync(path.join(DATA, "backtest-v2.json"), "utf8"));
-const { live, settings } = backtest;
+const readData = (f) => JSON.parse(fs.readFileSync(path.join(DATA, f), "utf8"));
+const v2 = readData("backtest-v2.json");
+const v3 = readData("backtest-v3.json");
+const VERSION = v3.goLive.pass ? "v3" : "v2";
+const live = VERSION === "v3" ? v3.live : v2.live;
+const settings = v2.settings; // v3 reuses v2's rating settings
 const SEASON = live.season;
 const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
 const readRaw = (f) => JSON.parse(fs.readFileSync(path.join(RAW, f), "utf8"));
@@ -60,6 +66,18 @@ if (!offline) {
     ...pick(r, ["gameId", "season", "week", "team", "opponent"]),
     offense: pick(r.offense, SIDE_KEYS), defense: pick(r.defense, SIDE_KEYS),
   })));
+  // Passing stats for v3's QB flag: each week once all its games are final (or a postponed one is
+  // 5+ days past kickoff), so a cached week never needs a refetch.
+  const passingFile = `passing-${SEASON}.json`;
+  const have = fs.existsSync(path.join(RAW, passingFile)) ? readRaw(passingFile) : [];
+  const done = new Set(have.map((r) => r.week));
+  const finished = (g) => g.completed || Date.parse(g.startDate) < Date.now() - 5 * 864e5;
+  const fbsGames = games.filter((g) => g.homeClassification === "fbs" || g.awayClassification === "fbs");
+  for (const w of [...new Set(fbsGames.map((g) => g.week))].sort((a, b) => a - b)) {
+    if (done.has(w) || !fbsGames.filter((g) => g.week === w).every(finished)) continue;
+    have.push(...trimPassing(await cfbd(`games/players?year=${SEASON}&week=${w}&seasonType=regular&category=passing`), w));
+  }
+  writeRaw(passingFile, have);
   // SP+ and FPI are shown on the ratings page for context only (they're not in the model), so a
   // weekly refresh is enough.
   if (ageDays(`sp-${SEASON}.json`) > 6) {
@@ -89,7 +107,18 @@ const runner = {
   ppaPri: () => M.runSeries(seasons, { valueOf: (g) => eff(g, "ppa"), p: settings.ppa, priorFor: M.fittedPrior(contexts, settings.ppa) }),
   sr: () => M.runSeries(seasons, { valueOf: (g) => eff(g, "successRate"), p: settings.successRate, priorFor: M.carryPrior(settings.successRate) }),
   srPri: () => M.runSeries(seasons, { valueOf: (g) => eff(g, "successRate"), p: settings.successRate, priorFor: M.fittedPrior(contexts, settings.successRate) }),
+  qb: () => ({ pre: qb, final: qbNow }),
 };
+// v3's QB flag for every scheduled game, and each team's flag for its next game (the "current" value).
+const passing = Object.fromEntries(range(2016, SEASON).map((y) => [y, fs.existsSync(path.join(RAW, `passing-${y}.json`)) ? readRaw(`passing-${y}.json`) : []]));
+const qb = M.qbSeries(seasons, passing);
+// Teams with no game left keep 0 (no flag), so every team still gets a rating.
+const qbNow = Object.fromEntries(seasons.at(-1).games.flatMap((g) => [[g.homeTeam, 0], [g.awayTeam, 0]]));
+for (const g of [...seasons.at(-1).games].sort((a, b) => b.startDate.localeCompare(a.startDate))) {
+  if (g.completed || !qb.has(g.id)) continue;
+  qbNow[g.homeTeam] = qb.get(g.id).home; // the loop runs latest first, so the earliest unplayed game wins
+  qbNow[g.awayTeam] = qb.get(g.id).away;
+}
 const inputs = live.inputs.map((k) => runner[k]());
 const pres = inputs.map((x) => x.pre);
 const homeCoef = live.coef[live.coef.length - 1];
@@ -116,6 +145,9 @@ const games = allGames
       awayPower: power(pres.map((pre) => pre.get(g.id).away)),
       modelMargin: margin,
       homeWinProb: M.homeWinProb(margin, live.sigma),
+      // v3: QB-change flags, and how much of the model's gap from the market to trust in this game.
+      homeQb: qb.get(g.id)?.home ?? 0, awayQb: qb.get(g.id)?.away ?? 0,
+      trust: live.trust ? M.trustFactor(live.trust, M.trustFlags(g, qb.get(g.id))) : 1,
     };
   })
   .sort((a, b) => a.start.localeCompare(b.start));
@@ -155,7 +187,7 @@ const out = {
   updated: new Date().toISOString(),
   season: SEASON,
   week: Number.isFinite(week) ? week : null,
-  model: { variant: live.variant, inputs: live.inputs, threshold: live.threshold, startWeek: live.startWeek, sigma: live.sigma, homeField: homeCoef },
+  model: { version: VERSION, variant: live.variant, inputs: live.inputs, threshold: live.threshold, startWeek: live.startWeek, sigma: live.sigma, homeField: homeCoef, trust: live.trust ?? null },
   teams: Object.fromEntries(teams.map((t) => [t.school, {
     id: t.id, abbr: t.abbreviation, mascot: t.mascot, conference: t.conference, fbs: t.classification === "fbs",
     color: t.color, alt: t.alternateColor, logo: t.logo, logoDark: t.logoDark,
