@@ -7,15 +7,17 @@ an effort (**S** under an hour or two, **M** an evening or two, **L** a project)
 
 ## Do first
 
-These lose data every week they wait, or have to be settled before pick 100.
+Done 2026-10-12:
+- **CFBD's 2026 books checked.** DraftKings on every game, plus Bovada (offshore, not used). DraftKings
+  had a close for all 329 FBS-vs-FBS games in weeks 1–6 and priced all 59 week 7 games in our snapshots,
+  so the move to the close works, as DraftKings at posting vs. DraftKings at the close.
+- **Per-game ledger.** `scripts/build-ledger.mjs` rebuilds it from git history (see Picks & tracking).
+- **Official rule settled.** At least 100 v3 spread picks with a move to the close, and the one-sided 95%
+  lower bound on the average move above 0. Checked at every snapshot, so it can fall back. In SPEC.md.
 
-1. **Check which books CFBD has for 2026, before week 7 is graded (Oct 18–19)** (Pipeline & ops). If CFBD
-   has none of the four books in our snapshots, no pick gets a real-close line move and the official rule
-   can never be met.
-2. **Keep a per-game ledger for every FBS game** (Picks & tracking). It's the only clean test data
-   v4 will have, and part of it is lost week by week.
-3. **Decide how strict the official rule is before reaching 100 picks** (Model & research). Changing it
-   afterward would look like moving the goalposts.
+Next, in date order:
+1. **Review the bad-data threshold after 3–4 graded weeks, before pick 100** (Picks & tracking).
+2. **Pre-register v4 before the 2026 season ends** (Model & research).
 
 ## Gaps found (fixed 2026-10-12)
 
@@ -42,13 +44,6 @@ seasons before the test season.
 live season is the first truly unseen data. Don't refit anything on it mid-season. Write v4's rules
 before the 2026 results are known, then test them on 2026 once the season ends.
 
-**Make the official rule statistical. — S · High**
-The rule is now "sum of `clvClose` > 0 over 100 spread picks" (the move to CFBD's close). It still flips
-on noise: one big move decides it. Something like "mean CLV > 0 with a one-sided 90% or 95% confidence
-interval above 0" says what the rule means. Decide before pick 100 and record it in SPEC.md. It also needs
-to say what happens if the record later falls back (right now status never goes back). Settle the
-bad-data threshold (Picks & tracking) at the same time, since it decides which books count.
-
 **Use the real spread distribution, not a normal curve. — M · Med**
 `homeWinProb` and `modelProb` use a normal CDF with one sigma. College margins bunch at 3, 7 and 10, so
 half a point through a key number is worth more than half a point elsewhere. SPEC.md says neither
@@ -59,8 +54,8 @@ moneylines, if those ever come back.
 **Target the line move directly. — L · Med**
 The v3 results show the edge only exists before the market moves (55% vs. the opener, 49% vs. the close).
 The trust layer already fits on closing lines. A model whose target is the closing line itself
-(close − open, predicted from the model's gap and game type) aims at what's actually being measured. This
-needs the per-game ledger to test on 2026.
+(close − open, predicted from the model's gap and game type) aims at what's actually being measured. The
+per-game ledger (`build-ledger.mjs`) has what's needed to test it on 2026.
 
 **Cheap schedule features: rest, byes, travel. — M · Low–Med**
 Days since each team's last game, coming off a bye, and short weeks can all be computed from the games
@@ -77,24 +72,19 @@ worth it without a cheap feed.
 
 ## Picks & tracking
 
-**Per-game ledger for every FBS game. — M · High**
-Part of this now exists: `build-data` caches CFBD's closing lines for every game
-(`data/raw/lines-2026.json`), and results are in `games-2026.json`. What's still lost every run is what
-the model and market said *before* the game: `data/2026.json` and `odds-2026.json` keep only the latest
-model line and the first and latest market lines. Add a `ledger-2026.json` that records, for every FBS
-game, the model line, trust and raw edge at the Sunday snapshot, plus each book's line at each snapshot.
-Joined with the cached closes, that lets you check how well the trust factor holds up, the threshold and
-any v4 idea on all ~700 games instead of 100 picks.
-
-**Store the line at every snapshot for each pick. — S · Med**
-Picks now save each book's line when posted (`books`) and get CFBD's close (`close`), but the snapshots in
-between still overwrite `closeMarket`. Keep `{ at, market }` per snapshot instead. That shows *when* the
-line moves (for example, whether most of it happens by Tuesday), which matters for "bet early." It's free;
-the snapshots already run. The ledger above would cover this too.
+**Per-game ledger — done 2026-10-12.**
+Every odds snapshot is committed together with the model output from the same run, so nothing was being
+lost. `node scripts/build-ledger.mjs` walks that history and writes `data/ledger-<season>.json`
+(gitignored): for every FBS-vs-FBS game, the model line, trust and edge plus each book's line at each
+snapshot, CFBD's opener and close, the result and any picks. It reproduces every recorded spread pick's
+edge exactly. Weeks before the first snapshot (2026 weeks 1–6) have only CFBD's opener and close. Run it
+locally; Actions checkouts are shallow. This also covers the old "store the line at every snapshot for
+each pick" idea.
 
 **Show the uncertainty on the record. — S · Med**
 Add a 95% interval for win rate and line move, and a progress line toward the official bar (e.g.
-"47 of 100 picks measured to the close, average move +0.6, interval −0.2 to +1.4"). At these sample sizes the interval is the
+"47 of 100 picks measured to the close, average move +0.6, 95% lower bound −0.2"), using the same
+calculation as `statusNow()` in `record-picks.mjs`. At these sample sizes the interval is the
 honest headline.
 
 **Split ROI into model edge and line shopping. — S · Low**
@@ -106,7 +96,8 @@ median, so the record shows how much profit came from shopping and how much from
 from our last snapshot's median, treating it as bad data. The 4 is an assumption based on 2024–2025, where
 about 2% of games had CFBD's books 4+ points apart. Each pick lists its skipped books (`close.skipped`).
 After 3–4 graded weeks, check how often books are skipped and whether those games had real late news. Do it
-before pick 100.
+before pick 100. In 2026 CFBD only carries DraftKings, so a skipped book means the pick gets no move at
+all, not a move from fewer books.
 
 **Shadow thresholds, labeled as diagnostics. — S · Low**
 Log what picks would have been at 1.0 and 1.5 trusted points too, kept out of the record. Useful at season
@@ -130,19 +121,13 @@ Rerunning a backtest silently changes the live model, because `build-data` reads
 file. Store a hash of the `live` block on each pick. Have `record-picks` stop with an error when it
 changes mid-season unless the model version is bumped.
 
-**Check CFBD's 2026 books. — S · High (one command)**
-The move to the close only counts books that are in both CFBD's closing lines and our snapshots
-(DraftKings, FanDuel, BetMGM, BetRivers this week). CFBD's 2025 data had DraftKings and ESPN Bet, and ESPN
-Bet is gone. Before week 7 is graded, run one `lines?year=2026&week=6` call and list its providers. If none
-of the four are there, the rule needs a new plan (e.g. compare medians, or add a late-Saturday Odds API
-snapshot). Any provider `grade-picks` can't map is already printed as a `::warning::` in the Actions log.
-
 **Make Actions failures visible. — S · Med**
 - Odds API team names that don't match CFBD are only logged. The run still succeeds and the game silently
   gets no pick. Print `::warning::` for each one so it shows in the Actions summary, or fail when an
   FBS-vs-FBS game is unmatched.
-- Warn when a week's picks are measured against the close but none (or few) get a `clvClose`. That means
-  no books matched, and the official rule would stall without anyone noticing.
+- Warn when a week's picks are measured against the close but none (or few) get a `clvClose`. With only
+  DraftKings in CFBD's 2026 data, a change on CFBD's side (DraftKings dropped or renamed) would stall the
+  official rule without anyone noticing. Unmapped providers already print a `::warning::`.
 - Save `x-requests-remaining` into `odds-2026.json` and warn under ~50. The 500 credits are shared with
   te-tracker.
 
