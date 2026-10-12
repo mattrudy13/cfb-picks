@@ -5,7 +5,8 @@
 // Rules (SPEC.md, "Picks" and "Model v2"):
 // - Spread: the model margin differs from the median US line by at least the live threshold, from the
 //   live start week on, FBS vs FBS only. Recorded at the best line (then price) for that side.
-// - Underdog moneyline: expected profit > 0 at the best price, no longer than +600.
+// - Underdog moneyline: expected profit of at least $10 per $100 at the best price, no longer than +600.
+//   A bare > 0 took about half the slate in week 7: small model errors read as edges on most dogs.
 // - Every pick is `shadow: true` while the model hasn't passed the go-live bar, so none counts as official.
 // - A pick locks the moment it's first recorded, at that snapshot's line and price: the goal is to bet
 //   early (Sunday night), so a later snapshot never moves the line a pick is graded at or removes it.
@@ -22,6 +23,7 @@ const M = require("../model.js");
 const DATA = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "data");
 const now = process.env.NOW ? Date.parse(process.env.NOW) : Date.now();
 const ML_MAX_PRICE = 600;
+const ML_MIN_EV = 10; // per $100; added 2026-10-11
 
 const { current: season } = JSON.parse(fs.readFileSync(path.join(DATA, "seasons.json"), "utf8"));
 const data = JSON.parse(fs.readFileSync(path.join(DATA, `${season}.json`), "utf8"));
@@ -61,7 +63,7 @@ function picksFor(g, o) {
     const best = o.ml[side];
     const p = side === "home" ? g.homeWinProb : 1 - g.homeWinProb;
     const ev = M.evPer100(p, best.price);
-    if (best.price > 0 && best.price <= ML_MAX_PRICE && ev > 0) {
+    if (best.price > 0 && best.price <= ML_MAX_PRICE && ev >= ML_MIN_EV) {
       out.push({
         ...base, cat: "ml", side, team: g[side], price: best.price, book: best.book,
         modelProb: p, marketPrice: side === "home" ? o.ml.medianHome : o.ml.medianAway, ev,

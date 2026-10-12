@@ -225,7 +225,9 @@ the final check. Adding that snapshot changes the decided schedule, so it waits 
 - **Spreads (decided):** every FBS-vs-FBS game where the model margin differs from the **median** US line
   by at least **X points** (the backtest's rule; live X = 4, from week 7), recorded at the best line for
   that side. Key numbers (3, 7) aren't weighted: neither backtest tested it.
-- **Moneylines (decided):** underdogs only, expected profit > 0 at the best price, no longer than +600.
+- **Moneylines (decided):** underdogs only, expected profit of at least $10 per $100 at the best price, no
+  longer than +600. (Changed 2026-10-11 from > 0, which picked 27 of 59 week 7 games, most at $0–8. The
+  week 7 picks recorded before the change stay as they were, since picks lock when posted.)
 - **(assumed)** If the same game has a spread pick and a dog moneyline pick on the same team, both are
   shown, and the card notes they're the same side.
 - **Locking and CLV (changed 2026-10-10 for the bet-early goal):** a pick locks the moment it's first
