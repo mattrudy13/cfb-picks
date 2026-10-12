@@ -8,8 +8,7 @@
 // that backtest's file, run over 2015 to now so the ratings and priors match the backtest exactly.
 //
 // CFBD calls: 2 per run (games, advanced stats), plus one passing-stats call per newly finished week,
-// plus SP+ and FPI (2) when the cached copies are more than 6 days old. The free tier's 1,000 a month is
-// shared with h2h.
+// plus SP+ and FPI (2) once a week. The free tier's 1,000 a month is shared with h2h.
 
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
@@ -36,9 +35,12 @@ const SEASON = live.season;
 const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
 const readRaw = (f) => JSON.parse(fs.readFileSync(path.join(RAW, f), "utf8"));
 const writeRaw = (f, rows) => fs.writeFileSync(path.join(RAW, f), JSON.stringify(rows));
-const ageDays = (f) => {
-  try { return (Date.now() - fs.statSync(path.join(RAW, f)).mtimeMs) / 864e5; } catch { return Infinity; }
-};
+// The Monday that starts a moment's week, in Eastern time, e.g. "2026-10-12".
+function etWeekStart(when) {
+  const et = new Date(new Date(when).toLocaleString("en-US", { timeZone: "America/New_York" }));
+  et.setDate(et.getDate() - ((et.getDay() + 6) % 7));
+  return `${et.getFullYear()}-${String(et.getMonth() + 1).padStart(2, "0")}-${String(et.getDate()).padStart(2, "0")}`;
+}
 
 let calls = 0;
 async function cfbd(pathAndQuery) {
@@ -78,11 +80,20 @@ if (!offline) {
     have.push(...trimPassing(await cfbd(`games/players?year=${SEASON}&week=${w}&seasonType=regular&category=passing`), w));
   }
   writeRaw(passingFile, have);
-  // SP+ and FPI are shown on the ratings page for context only (they're not in the model), so a
-  // weekly refresh is enough.
-  if (ageDays(`sp-${SEASON}.json`) > 6) {
-    writeRaw(`sp-${SEASON}.json`, (await cfbd(`ratings/sp?year=${SEASON}`)).map((r) => pick(r, ["team", "rating", "ranking"])));
-    writeRaw(`fpi-${SEASON}.json`, (await cfbd(`ratings/fpi?year=${SEASON}`)).map((r) => pick(r, ["team", "fpi"])));
+  // SP+ and FPI: shown on the ratings page for context only (they're not in the model). CFBD only serves
+  // the latest numbers, so each weekly fetch is also kept in a history file: the only point-in-time copy
+  // that will exist for a fair test of them later (SPEC.md, "Look-ahead bias"). Once per ET week, which
+  // starts Monday, so it lands on the Monday 6 AM run, after the weekend and before any weeknight games.
+  const historyFile = `ratings-history-${SEASON}.json`;
+  const history = fs.existsSync(path.join(RAW, historyFile)) ? readRaw(historyFile) : [];
+  const lastTaken = history.at(-1)?.takenAt;
+  if (!lastTaken || etWeekStart(lastTaken) !== etWeekStart(new Date())) {
+    const sp = (await cfbd(`ratings/sp?year=${SEASON}`)).map((r) => pick(r, ["team", "rating", "ranking"]));
+    const fpi = (await cfbd(`ratings/fpi?year=${SEASON}`)).map((r) => pick(r, ["team", "fpi"]));
+    writeRaw(`sp-${SEASON}.json`, sp);
+    writeRaw(`fpi-${SEASON}.json`, fpi);
+    history.push({ takenAt: new Date().toISOString(), sp, fpi });
+    writeRaw(historyFile, history);
   }
 }
 
