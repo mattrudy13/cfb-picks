@@ -12,8 +12,8 @@
 //   kept behind RECORD_MONEYLINES: at least $10 per $100 at the best price, no longer than +600.
 //   Moneyline picks already recorded keep getting closing prices and grades.
 // - Status: "unofficial" if the live model failed its backtest; under v3, "provisional" until its live
-//   spread picks show a line move to CFBD's close (CLV) > 0 over at least 100 picks, then "official".
-//   `shadow` stays for older pages.
+//   spread picks' line move to CFBD's close (CLV) is above 0 with 95% confidence over at least 100 picks,
+//   then "official" (see statusNow). `shadow` stays for older pages.
 // - Each pick records which model made it; a model's picks are judged on their own.
 // - A pick locks the moment it's first recorded, at that snapshot's line and price: the goal is to bet
 //   early (Sunday night), so a later snapshot never moves the line a pick is graded at or removes it.
@@ -46,13 +46,20 @@ const { threshold, startWeek, version } = data.model;
 const modelOf = (p) => p.model ?? "v2"; // picks from before v3 have no model field
 const existing = Object.values(store.weeks).flatMap((wk) => wk.picks);
 
-// v3 picks are provisional until the live record backs the backtest up (SPEC.md, "Model v3"). The line
-// move counted is the one to CFBD's closing line (`clvClose`, set by grade-picks.mjs), as in the backtest.
+// v3 picks are provisional until the live record backs the backtest up (SPEC.md, "Model v3" and "Picks"):
+// at least 100 spread picks with a line move to CFBD's close (`clvClose`, set by grade-picks.mjs), and the
+// one-sided 95% lower bound on their average move above 0, so a lucky run near zero doesn't pass (decided
+// 2026-10-12). Checked at every snapshot, so if the record falls back, new picks are provisional again.
+// The normal cutoff stands in for Student's t: at 100+ picks they differ by under 0.02.
 const LIVE_CLV_PICKS = 100;
+const Z_95_ONE_SIDED = 1.645;
 function statusNow() {
   if (version !== "v3") return "unofficial";
   const clvs = existing.filter((p) => modelOf(p) === version && p.cat === "spread" && p.clvClose != null).map((p) => p.clvClose);
-  return clvs.length >= LIVE_CLV_PICKS && clvs.reduce((a, b) => a + b, 0) > 0 ? "official" : "provisional";
+  if (clvs.length < LIVE_CLV_PICKS) return "provisional";
+  const n = clvs.length, avg = clvs.reduce((a, b) => a + b, 0) / n;
+  const sd = Math.sqrt(clvs.reduce((s, x) => s + (x - avg) ** 2, 0) / (n - 1));
+  return avg - Z_95_ONE_SIDED * sd / Math.sqrt(n) > 0 ? "official" : "provisional";
 }
 const status = statusNow();
 const shadow = status === "unofficial";

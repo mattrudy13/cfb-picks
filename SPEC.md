@@ -321,6 +321,15 @@ Already-recorded moneyline picks are still graded.
     had CFBD's books 4+ points apart.
   - The provisional → official rule (Model v3) counts `clvClose` only. The pages show the move "so far"
     (to the latest snapshot) until the close is in, and the record counts only moves to the close.
+  - **CFBD's 2026 books (checked 2026-10-12):** DraftKings on every game, plus Bovada (offshore, not used).
+    So in 2026 the move to the close is in practice DraftKings at posting vs. DraftKings at the close.
+- **Official rule (decided 2026-10-12, before any pick was graded; replaces "CLV > 0 over ≥ 100" in Model
+  v3):** at least 100 v3 spread picks with a `clvClose`, and the one-sided 95% lower bound on their
+  average `clvClose` above 0 (average − 1.645 × SD / √n). "Sum > 0" let any positive average pass, so about
+  half of no-edge models would pass at 100 picks. For scale: CFBD opener-to-close moves in 2023–2025 had an
+  SD of 2.1–2.5 points a game, so at 100 picks the bar is an average of roughly +0.4, about half the
+  backtest's cautious +0.79. It's checked at every snapshot: if it stops holding, new picks are posted as
+  provisional again (picks already posted keep their status).
 - **Status:** each pick keeps the status it was posted with. v2 picks are unofficial (`shadow: true`), since
   v2 missed its bar. v3 picks are provisional until the official rule in "Model v3" is met, then official.
 - **Grading:** spreads win, lose or push against the recorded line. Moneylines win or lose. Profit is

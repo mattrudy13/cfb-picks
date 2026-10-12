@@ -109,7 +109,7 @@
         const b = document.getElementById("banner");
         b.hidden = false;
         b.innerHTML = backtest.goLive.pass
-          ? `<h3>Provisional</h3><p>Model v3 passed its backtest: ${pct(t.ats, 1)} against the opening line on ${t.picks} picks in 2022–2025, profitable in ${backtest.profitableSeasons} of ${backtest.folds.length} seasons. It's the third model tested on those seasons, though, and against the closing line it went ${pct(t.atsClose, 1)}. Spread picks count as provisional until the live record shows lines moving toward them over 100+ picks. <a href="backtest.html">See the backtest</a></p>`
+          ? `<h3>Provisional</h3><p>Model v3 passed its backtest: ${pct(t.ats, 1)} against the opening line on ${t.picks} picks in 2022–2025, profitable in ${backtest.profitableSeasons} of ${backtest.folds.length} seasons. It's the third model tested on those seasons, though, and against the closing line it went ${pct(t.atsClose, 1)}. Spread picks count as provisional until, over 100+ picks, lines move toward them by the close by more than luck would explain (95% confidence). <a href="backtest.html">See the backtest</a></p>`
           : `<h3>No proven edge yet</h3><p>The model missed its backtest bar: ${pct(t.ats, 1)} against the spread for 2022–2025, profitable in ${backtest.profitableSeasons} of ${backtest.folds.length} seasons (it needed 3). These picks are an unofficial record that tests one idea, betting Sunday night before the line moves. <a href="backtest.html">See the backtest</a></p>`;
       }
 

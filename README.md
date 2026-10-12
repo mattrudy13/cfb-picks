@@ -4,8 +4,8 @@ College football spread picks from a team-rating model, with an honest track rec
 
 **Status:** model v3 passed its pre-registered backtest bar narrowly (55.3% at the opener on 172
 picks, 2022–2025, but 49.1% at the close; see `SPEC.md` and the Backtest page), so its spread picks are
-**provisional**. They become official only if the live 2026 record shows lines moving toward them over
-100+ picks. Earlier models (v1, v2) missed the bar; v2's week 7 picks are kept as a separate record.
+**provisional**. They become official only if, over 100+ live picks, lines move toward them by the close
+by more than luck would explain (95% confidence). Earlier models (v1, v2) missed the bar; v2's week 7 picks are kept as a separate record.
 Underdog moneylines were tracked through October 11, 2026, then stopped.
 
 - **Best Bets** (`index.html`): this week's picks and the record (win rate, ROI, line move).

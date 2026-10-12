@@ -55,7 +55,7 @@
     Promise.all([loadSite(), loadJSON("data/backtest.json", { optional: true })]).then(([{ backtestV2: v2, backtestV3: b }, v1]) => {
       const g = b.goLive;
       document.getElementById("verdict").innerHTML = g.pass
-        ? `<h3>Passed, provisionally</h3><p>Model v3 cleared all 5 checks. It's the third model tested on these seasons, which makes a lucky pass more likely, and it still went ${pct(b.total.atsClose, 1)} against the closing line. So its spread picks on <a href="./">Best Bets</a> are provisional until the live 2026 record shows lines moving toward them over 100+ picks.</p>`
+        ? `<h3>Passed, provisionally</h3><p>Model v3 cleared all 5 checks. It's the third model tested on these seasons, which makes a lucky pass more likely, and it still went ${pct(b.total.atsClose, 1)} against the closing line. So its spread picks on <a href="./">Best Bets</a> are provisional until, over 100+ live picks, lines move toward them by the close by more than luck would explain (95% confidence).</p>`
         : `<h3>Didn't pass</h3><p>Model v3 cleared ${Object.entries(g).filter(([k, v]) => k !== "pass" && v).length} of 5 checks. Picks are still tracked on <a href="./">Best Bets</a> as an unofficial record.</p>`;
       const t = b.total, c = b.cautious;
       const check = (ok, text) => `<li><span class="mark ${ok ? "pos" : "neg"}">${ok ? "PASS" : "MISS"}</span><span>${text}</span></li>`;
