@@ -42,8 +42,10 @@ into each week. A backtest using them would already know how the season ended. S
   (below), both rebuilt from games already played.
 - SP+ and FPI appear on the Team ratings page for context, but stay out of the picks unless a fair test
   shows they help.
-- **(assumed)** From now on, `build-data` stores a weekly SP+/FPI snapshot so a fair test of them exists
-  next season.
+- **(decided 2026-10-12)** `build-data` keeps a weekly SP+/FPI snapshot in
+  `data/raw/ratings-history-<season>.json` (once per ET week, on the Monday run) so a fair test of them
+  exists next season. This was assumed from the start but wasn't built until 2026-10-12, so 2026's history
+  starts with the Oct 11 copy, before week 7; weeks 1–6 are lost.
 ### Data check results (2026-10-10)
 
 - **SP+ and FPI are end-of-season only.** `ratings/sp` and `ratings/fpi` accept `week=` but return
@@ -319,7 +321,8 @@ Already-recorded moneyline picks are still graded.
     had CFBD's books 4+ points apart.
   - The provisional → official rule (Model v3) counts `clvClose` only. The pages show the move "so far"
     (to the latest snapshot) until the close is in, and the record counts only moves to the close.
-- **All picks are unofficial** (`shadow: true`) while `data/backtest-v2.json` says the go-live bar failed.
+- **Status:** each pick keeps the status it was posted with. v2 picks are unofficial (`shadow: true`), since
+  v2 missed its bar. v3 picks are provisional until the official rule in "Model v3" is met, then official.
 - **Grading:** spreads win, lose or push against the recorded line. Moneylines win or lose. Profit is
   per $100 at the recorded price. Canceled games are void.
 - Each pick shows a one-line reason, e.g. "Model −10.5 vs book −6.5; Elo and our rating agree."

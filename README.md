@@ -29,10 +29,10 @@ check-assets.yml   on push                                           stamp-asset
 |---|---|
 | `model.js` | Ratings (Elo, opponent-adjusted margin, EPA and success rate), fitted preseason priors, blend. Shared by the scripts |
 | `common.js`, `style.css` | Browser helpers and styles for every page |
-| `scripts/backtest.mjs`, `scripts/backtest-v2.mjs` | The v1 and v2 backtests; v2 also writes the live model's settings (`data/backtest-v2.json` → `live`) |
-| `scripts/build-data.mjs` | Fetches this season from CFBD and writes `data/<season>.json` |
+| `scripts/backtest.mjs`, `scripts/backtest-v2.mjs`, `scripts/backtest-v3.mjs` | The v1, v2 and v3 backtests. v2 and v3 also write their model's settings (`data/backtest-v*.json` → `live`); `build-data` runs v3's if it passed its bar, else v2's |
+| `scripts/build-data.mjs` | Fetches this season from CFBD and writes `data/<season>.json`; also caches closing lines and weekly SP+/FPI snapshots in `data/raw/` |
 | `scripts/fetch-odds.mjs` | The Odds API snapshot (US-licensed books only) → `data/odds-<season>.json` |
-| `scripts/record-picks.mjs`, `scripts/grade-picks.mjs` | Maintain `data/picks-<season>.json` |
+| `scripts/record-picks.mjs`, `scripts/grade-picks.mjs` | Maintain `data/picks-<season>.json`; grading also measures each pick's line move to CFBD's closing line |
 | `scripts/fetch-history.mjs` | One-time CFBD history into `data/raw/` (skips cached files) |
 
 Secrets: `CFBD_API_KEY` (CollegeFootballData, free tier shared with h2h) and `ODDS_API_KEY` (shared with
@@ -43,7 +43,7 @@ te-tracker). Set with `gh secret set <NAME> -R mattrudy13/cfb-picks`.
 ```sh
 node scripts/build-data.mjs --offline   # rebuild from data/raw/ (no API calls)
 python3 -m http.server 8000             # then open http://localhost:8000
-node scripts/backtest-v2.mjs            # rerun the backtest (~12 s)
+node scripts/backtest-v3.mjs            # rerun the live model's backtest (changes the live model's settings)
 ```
 
 After editing `common.js` or `style.css`, run `node scripts/stamp-assets.mjs` before committing.

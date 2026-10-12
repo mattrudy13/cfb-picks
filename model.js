@@ -1,5 +1,5 @@
-// Data and model code shared by the site (browser globals) and the Node scripts (via createRequire).
-// No DOM access in here. Any change here changes recorded picks, so the page and the Action agree.
+// Data and model code for the Node scripts (loaded via createRequire). The pages don't load it: they read
+// what build-data.mjs computed. No DOM access in here. Any change here changes recorded picks.
 //
 // Sign convention everywhere: a game's `margin` is home points − away points, and a `spread` is the
 // home team's line (−7 = home favored by 7), the same as CFBD's `spread`. The home side covers when

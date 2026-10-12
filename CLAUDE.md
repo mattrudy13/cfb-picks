@@ -54,8 +54,8 @@ the backtest matching `data.model.version`.
 
 **`model.js`** holds all rating/model math (Elo, ridge opponent-adjusted margin, EPA/success rate,
 fitted priors, blend, QB-change flag, v3 trust factor). It's CommonJS loaded into the ES-module scripts
-via `createRequire`. The HTML pages don't currently load it (they read precomputed fields from
-`data/<season>.json`), despite its header comment. Any change here changes recorded picks.
+via `createRequire`. The HTML pages don't load it; they read precomputed fields from
+`data/<season>.json`. Any change here changes recorded picks.
 
 **Sign conventions (from `model.js`):** `margin` = home − away points; `spread` is the home team's line
 (−7 = home favored by 7, same as CFBD). Home covers when `margin + spread > 0`. Model margin M implies
@@ -63,11 +63,13 @@ model spread −M.
 
 **Picks (`data/picks-<season>.json`, `weeks.N.picks[]`):**
 - A pick **locks when first recorded**, at that snapshot's line and price. Later snapshots only update
-  `closeMarket` (used for CLV); they never move or remove a pick. At most one spread and one moneyline pick
+  `closeMarket` (the "so far" line move); they never move or remove a pick. At most one spread and one moneyline pick
   per game per model. Graded picks are never regraded. Don't rewrite past picks; fixes to old picks
   have been done as explicit, separately committed changes.
 - Each pick records its `model`; picks without one are v2. Records are kept separate per model.
-- Status: v3 picks are "provisional" until the live record shows CLV > 0 over ≥ 100 spread picks.
+- CLV that counts is `clvClose`, set by `grade-picks` from CFBD's closing lines (`data/raw/lines-<season>.json`),
+  compared book by book against the `books` saved on the pick at posting. See SPEC.md, "Picks".
+- Status: v3 picks are "provisional" until the live record shows `clvClose` > 0 over ≥ 100 spread picks.
 - Moneyline recording is off (`RECORD_MONEYLINES = false` in `record-picks.mjs`, since 2026-10-11);
   already-recorded moneylines are still graded.
 - Only US-licensed books count; FBS-vs-FBS regular-season games only.
