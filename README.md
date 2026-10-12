@@ -34,6 +34,7 @@ check-assets.yml   on push                                           stamp-asset
 | `scripts/fetch-odds.mjs` | The Odds API snapshot (US-licensed books only) → `data/odds-<season>.json` |
 | `scripts/record-picks.mjs`, `scripts/grade-picks.mjs` | Maintain `data/picks-<season>.json`; grading also measures each pick's line move to CFBD's closing line |
 | `scripts/fetch-history.mjs` | One-time CFBD history into `data/raw/` (skips cached files) |
+| `scripts/build-ledger.mjs` | Research: every FBS game's model and book lines at each snapshot (from git history), CFBD open/close and result → `data/ledger-<season>.json` (gitignored) |
 
 Secrets: `CFBD_API_KEY` (CollegeFootballData, free tier shared with h2h) and `ODDS_API_KEY` (shared with
 te-tracker). Set with `gh secret set <NAME> -R mattrudy13/cfb-picks`.

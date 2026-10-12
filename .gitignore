@@ -1,0 +1,2 @@
+# Rebuilt from git history by scripts/build-ledger.mjs
+data/ledger-*.json

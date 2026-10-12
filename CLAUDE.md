@@ -23,6 +23,7 @@ node scripts/backtest-v2.mjs            # v2 backtest (~12 s) → data/backtest-
 node scripts/stamp-assets.mjs           # required after editing common.js or style.css
 node scripts/stamp-assets.mjs --check   # what CI runs on push
 NOW=<iso> node scripts/record-picks.mjs # pretend it's another time (also works for grade-picks)
+node scripts/build-ledger.mjs           # per-game research ledger from git history (local only, gitignored)
 ```
 
 There is no test suite or linter. Verify changes by running the scripts and checking the JSON diff,
