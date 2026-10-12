@@ -6,9 +6,11 @@
 // - Spread: the edge is the game's trust factor × (model margin + median US line), and has to reach the
 //   live threshold, from the live start week on, FBS vs FBS only. Recorded at the best line (then price)
 //   for that side. (Before v3 the trust factor was 1.)
-// - Underdog moneyline: expected profit of at least $10 per $100 at the best price, no longer than +600,
-//   with the win chance from the same trust-adjusted margin, so it isn't built on the gap the backtest
-//   showed to be mostly noise.
+// - Underdog moneyline: no longer recorded (stopped 2026-10-11). With trust-adjusted margins the win
+//   chance is close to the market's, so the picks that cleared $10 of expected profit came from the normal
+//   curve giving long underdogs more chance than moneyline prices do, not from the model. The rule is
+//   kept behind RECORD_MONEYLINES: at least $10 per $100 at the best price, no longer than +600.
+//   Moneyline picks already recorded keep getting closing prices and grades.
 // - Status: "unofficial" if the live model failed its backtest; under v3, "provisional" until its live
 //   spread picks show CLV > 0 over at least 100 picks, then "official". `shadow` stays for older pages.
 // - Each pick records which model made it; a model's picks are judged on their own.
@@ -29,6 +31,7 @@ const DATA = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "data
 const now = process.env.NOW ? Date.parse(process.env.NOW) : Date.now();
 const ML_MAX_PRICE = 600;
 const ML_MIN_EV = 10; // per $100; added 2026-10-11
+const RECORD_MONEYLINES = false; // stopped 2026-10-11, see above
 
 const { current: season } = JSON.parse(fs.readFileSync(path.join(DATA, "seasons.json"), "utf8"));
 const data = JSON.parse(fs.readFileSync(path.join(DATA, `${season}.json`), "utf8"));
@@ -79,7 +82,7 @@ function picksFor(g, o) {
       });
     }
   }
-  if (o.ml) {
+  if (RECORD_MONEYLINES && o.ml) {
     // The underdog is the side with the longer median price.
     const side = o.ml.medianHome > o.ml.medianAway ? "home" : "away";
     const best = o.ml[side];

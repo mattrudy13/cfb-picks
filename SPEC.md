@@ -284,7 +284,9 @@ picks, 54.4%, 2 of 4; v2 + trust alone 176 picks, 55.7%, 3 of 4 (passes).
 
 **Live model:** `bothQb`, trust k = [0.170, −0.060, −0.088, −0.104, −0.177] (Power 4 17%, G5 vs G5 11%,
 Power 4 vs G5 8%, QB change 7%, week ≤ 6 0%, terms add), threshold 0.5 trusted points, from week 0.
-Underdog moneylines use the same trusted margin for their win chance.
+Underdog moneylines are **no longer recorded** (decided 2026-10-11): with trusted margins, the ones that still
+cleared $10 of expected profit came from the normal curve's fat tails on long underdogs, not the model.
+Already-recorded moneyline picks are still graded.
 
 ## Picks
 
