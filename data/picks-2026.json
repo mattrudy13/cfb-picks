@@ -20,7 +20,33 @@
      "ev": 17.918527867458266,
      "why": "Model gives Old Dominion 46% to win; +154 pays like 39%",
      "closeMarket": 148,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": -182,
+       "homeMl": 150,
+       "awayLine": -3.5,
+       "homeLine": 3.5
+      },
+      "betrivers": {
+       "awayMl": -167,
+       "homeMl": 135,
+       "awayLine": -3.5,
+       "homeLine": 3.5
+      },
+      "draftkings": {
+       "awayMl": -185,
+       "homeMl": 154,
+       "awayLine": -4,
+       "homeLine": 4
+      },
+      "betmgm": {
+       "awayMl": -185,
+       "homeMl": 150,
+       "awayLine": -4,
+       "homeLine": 4
+      }
+     }
     },
     {
      "gameId": 401860923,
@@ -40,7 +66,33 @@
      "ev": 5.262306570487018,
      "why": "Model gives Colorado State 19% to win; +460 pays like 18%",
      "closeMarket": 380,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 360,
+       "homeMl": -480,
+       "awayLine": 13.5,
+       "homeLine": -13.5
+      },
+      "draftkings": {
+       "awayMl": 380,
+       "homeMl": -500,
+       "awayLine": 13.5,
+       "homeLine": -13.5
+      },
+      "betrivers": {
+       "awayMl": 460,
+       "homeMl": -715,
+       "awayLine": 11.5,
+       "homeLine": -11.5
+      },
+      "betmgm": {
+       "awayMl": 380,
+       "homeMl": -500,
+       "awayLine": 13,
+       "homeLine": -13
+      }
+     }
     },
     {
      "gameId": 401862801,
@@ -60,7 +112,33 @@
      "ev": 23.396808042938787,
      "why": "Model gives Tulane 40% to win; +205 pays like 33%",
      "closeMarket": 205,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": -255,
+       "homeMl": 205,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      },
+      "betrivers": {
+       "awayMl": -265,
+       "homeMl": 205,
+       "awayLine": -7,
+       "homeLine": 7
+      },
+      "draftkings": {
+       "awayMl": -250,
+       "homeMl": 205,
+       "awayLine": -7,
+       "homeLine": 7
+      },
+      "betmgm": {
+       "awayMl": -250,
+       "homeMl": 200,
+       "awayLine": -7,
+       "homeLine": 7
+      }
+     }
     },
     {
      "gameId": 401858493,
@@ -80,7 +158,33 @@
      "ev": 6.0785900840492175,
      "why": "Model gives Washington 45% to win; +138 pays like 42%",
      "closeMarket": 135.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": -166,
+       "awayMl": 138,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      },
+      "betrivers": {
+       "homeMl": -157,
+       "awayMl": 125,
+       "homeLine": -3,
+       "awayLine": 3
+      },
+      "draftkings": {
+       "homeMl": -162,
+       "awayMl": 136,
+       "homeLine": -3,
+       "awayLine": 3
+      },
+      "betmgm": {
+       "homeMl": -165,
+       "awayMl": 135,
+       "homeLine": -3,
+       "awayLine": 3
+      }
+     }
     },
     {
      "gameId": 401858494,
@@ -102,7 +206,33 @@
      "modelProb": 0.6759630689339511,
      "why": "Model UCLA -10.5 vs market -3.5: UCLA by 6.9 pts",
      "closeMarket": -3,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "homeMl": -162,
+       "awayMl": 136,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      },
+      "betrivers": {
+       "homeMl": -165,
+       "awayMl": 130,
+       "homeLine": -3,
+       "awayLine": 3
+      },
+      "fanduel": {
+       "homeMl": -160,
+       "awayMl": 132,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      },
+      "betmgm": {
+       "homeMl": -165,
+       "awayMl": 138,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      }
+     }
     },
     {
      "gameId": 401858491,
@@ -122,7 +252,33 @@
      "ev": 67.2131108252072,
      "why": "Model gives Michigan State 40% to win; +320 pays like 24%",
      "closeMarket": 260,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": 260,
+       "awayMl": -330,
+       "homeLine": 8.5,
+       "awayLine": -8.5
+      },
+      "betrivers": {
+       "homeMl": 320,
+       "awayMl": -435,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      },
+      "draftkings": {
+       "homeMl": 270,
+       "awayMl": -340,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      },
+      "betmgm": {
+       "homeMl": 260,
+       "awayMl": -325,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      }
+     }
     },
     {
      "gameId": 401856829,
@@ -142,7 +298,33 @@
      "ev": 13.879365521963027,
      "why": "Model gives Cincinnati 55% to win; +107 pays like 48%",
      "closeMarket": 105,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 102,
+       "homeMl": -122,
+       "awayLine": 1.5,
+       "homeLine": -1.5
+      },
+      "betrivers": {
+       "awayMl": 107,
+       "homeMl": -132,
+       "awayLine": 2,
+       "homeLine": -2
+      },
+      "draftkings": {
+       "awayMl": 100,
+       "homeMl": -120,
+       "awayLine": 1.5,
+       "homeLine": -1.5
+      },
+      "betmgm": {
+       "awayMl": 100,
+       "homeMl": -120,
+       "awayLine": 2,
+       "homeLine": -2
+      }
+     }
     },
     {
      "gameId": 401858488,
@@ -162,7 +344,33 @@
      "ev": 7.902320923211114,
      "why": "Model gives Indiana 42% to win; +155 pays like 39%",
      "closeMarket": 145,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": 150,
+       "awayMl": -182,
+       "homeLine": 3.5,
+       "awayLine": -3.5
+      },
+      "betmgm": {
+       "homeMl": 155,
+       "awayMl": -190,
+       "homeLine": 3.5,
+       "awayLine": -3.5
+      },
+      "draftkings": {
+       "homeMl": 154,
+       "awayMl": -185,
+       "homeLine": 3.5,
+       "awayLine": -3.5
+      },
+      "betrivers": {
+       "homeMl": 145,
+       "awayMl": -182,
+       "homeLine": 3.5,
+       "awayLine": -3.5
+      }
+     }
     },
     {
      "gameId": 401858268,
@@ -182,7 +390,33 @@
      "ev": 11.963354305001738,
      "why": "Model gives Virginia 31% to win; +260 pays like 28%",
      "closeMarket": 257.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": -310,
+       "awayMl": 245,
+       "homeLine": -7.5,
+       "awayLine": 7.5
+      },
+      "betrivers": {
+       "homeMl": -345,
+       "awayMl": 255,
+       "homeLine": -8.5,
+       "awayLine": 8.5
+      },
+      "draftkings": {
+       "homeMl": -325,
+       "awayMl": 260,
+       "homeLine": -8.5,
+       "awayLine": 8.5
+      },
+      "betmgm": {
+       "homeMl": -325,
+       "awayMl": 260,
+       "homeLine": -8.5,
+       "awayLine": 8.5
+      }
+     }
     },
     {
      "gameId": 401866441,
@@ -202,7 +436,33 @@
      "ev": 19.498911062764478,
      "why": "Model gives Ball State 35% to win; +245 pays like 29%",
      "closeMarket": 230,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": 230,
+       "homeMl": -285,
+       "awayLine": 7.5,
+       "homeLine": -7.5
+      },
+      "fanduel": {
+       "awayMl": 245,
+       "homeMl": -310,
+       "awayLine": 7.5,
+       "homeLine": -7.5
+      },
+      "betmgm": {
+       "awayMl": 230,
+       "homeMl": -285,
+       "awayLine": 7.5,
+       "homeLine": -7.5
+      },
+      "betrivers": {
+       "awayMl": 230,
+       "homeMl": -305,
+       "awayLine": 7.5,
+       "homeLine": -7.5
+      }
+     }
     },
     {
      "gameId": 401856830,
@@ -222,7 +482,33 @@
      "ev": 0.9722651220255396,
      "why": "Model gives Kansas 34% to win; +195 pays like 34%",
      "closeMarket": 185,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": 195,
+       "homeMl": -238,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      },
+      "betrivers": {
+       "awayMl": 190,
+       "homeMl": -245,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      },
+      "fanduel": {
+       "awayMl": 172,
+       "homeMl": -210,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      },
+      "betmgm": {
+       "awayMl": 185,
+       "homeMl": -225,
+       "awayLine": 6,
+       "homeLine": -6
+      }
+     }
     },
     {
      "gameId": 401858267,
@@ -244,7 +530,33 @@
      "modelProb": 0.6909700652061425,
      "why": "Model Boston College +14 vs market +6.5: Pittsburgh by 7.8 pts",
      "closeMarket": 6.25,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": 180,
+       "awayMl": -220,
+       "homeLine": 6.5,
+       "awayLine": -6.5
+      },
+      "betrivers": {
+       "homeMl": 188,
+       "awayMl": -240,
+       "homeLine": 6,
+       "awayLine": -6
+      },
+      "draftkings": {
+       "homeMl": 185,
+       "awayMl": -225,
+       "homeLine": 6.5,
+       "awayLine": -6.5
+      },
+      "betmgm": {
+       "homeMl": 185,
+       "awayMl": -225,
+       "homeLine": 6,
+       "awayLine": -6
+      }
+     }
     },
     {
      "gameId": 401856720,
@@ -264,7 +576,33 @@
      "ev": 2.7733541726224997,
      "why": "Model gives Mississippi State 23% to win; +340 pays like 23%",
      "closeMarket": 336.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": -400,
+       "awayMl": 310,
+       "homeLine": -11.5,
+       "awayLine": 11.5
+      },
+      "draftkings": {
+       "homeMl": -425,
+       "awayMl": 330,
+       "homeLine": -11.5,
+       "awayLine": 11.5
+      },
+      "betrivers": {
+       "homeMl": -480,
+       "awayMl": 340,
+       "homeLine": -11.5,
+       "awayLine": 11.5
+      },
+      "betmgm": {
+       "homeMl": -400,
+       "awayMl": 320,
+       "homeLine": -11,
+       "awayLine": 11
+      }
+     }
     },
     {
      "gameId": 401856724,
@@ -286,7 +624,33 @@
      "modelProb": 0.6601142324530768,
      "why": "Model Texas -16 vs market -9.5: Texas by 6.7 pts",
      "closeMarket": -10,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 290,
+       "homeMl": -375,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      },
+      "draftkings": {
+       "awayMl": 295,
+       "homeMl": -375,
+       "awayLine": 10,
+       "homeLine": -10
+      },
+      "betrivers": {
+       "awayMl": 280,
+       "homeMl": -375,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      },
+      "betmgm": {
+       "awayMl": 290,
+       "homeMl": -375,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      }
+     }
     },
     {
      "gameId": 401866443,
@@ -306,7 +670,33 @@
      "ev": 7.883301145549149,
      "why": "Model gives Central Michigan 32% to win; +240 pays like 29%",
      "closeMarket": 222.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": 215,
+       "awayMl": -265,
+       "homeLine": 6.5,
+       "awayLine": -6.5
+      },
+      "betrivers": {
+       "homeMl": 225,
+       "awayMl": -295,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      },
+      "draftkings": {
+       "homeMl": 240,
+       "awayMl": -298,
+       "homeLine": 7,
+       "awayLine": -7
+      },
+      "betmgm": {
+       "homeMl": 220,
+       "awayMl": -275,
+       "homeLine": 7,
+       "awayLine": -7
+      }
+     }
     },
     {
      "gameId": 401864522,
@@ -326,7 +716,33 @@
      "ev": 2.1423828497963093,
      "why": "Model gives Northern Illinois 29% to win; +250 pays like 29%",
      "closeMarket": 245,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": 245,
+       "homeMl": -305,
+       "awayLine": 7.5,
+       "homeLine": -7.5
+      },
+      "fanduel": {
+       "awayMl": 245,
+       "homeMl": -310,
+       "awayLine": 7.5,
+       "homeLine": -7.5
+      },
+      "betmgm": {
+       "awayMl": 250,
+       "homeMl": -300,
+       "awayLine": 8,
+       "homeLine": -8
+      },
+      "betrivers": {
+       "awayMl": 235,
+       "homeMl": -305,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      }
+     }
     },
     {
      "gameId": 401858264,
@@ -346,7 +762,33 @@
      "ev": 3.7332648346545927,
      "why": "Model gives Georgia Tech 27% to win; +290 pays like 26%",
      "closeMarket": 282.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 265,
+       "homeMl": -335,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      },
+      "betrivers": {
+       "awayMl": 290,
+       "homeMl": -385,
+       "awayLine": 10,
+       "homeLine": -10
+      },
+      "draftkings": {
+       "awayMl": 285,
+       "homeMl": -360,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      },
+      "betmgm": {
+       "awayMl": 280,
+       "homeMl": -350,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      }
+     }
     },
     {
      "gameId": 401856721,
@@ -366,7 +808,33 @@
      "ev": 13.002772156470932,
      "why": "Model gives Missouri 40% to win; +185 pays like 35%",
      "closeMarket": 180,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 164,
+       "homeMl": -200,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      },
+      "draftkings": {
+       "awayMl": 185,
+       "homeMl": -225,
+       "awayLine": 6,
+       "homeLine": -6
+      },
+      "betrivers": {
+       "awayMl": 180,
+       "homeMl": -230,
+       "awayLine": 6,
+       "homeLine": -6
+      },
+      "betmgm": {
+       "awayMl": 180,
+       "homeMl": -220,
+       "awayLine": 6,
+       "homeLine": -6
+      }
+     }
     },
     {
      "gameId": 401856719,
@@ -388,7 +856,33 @@
      "modelProb": 0.6273076685336128,
      "why": "Model Georgia -24.5 vs market -19: Georgia by 5.0 pts",
      "closeMarket": -19.25,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": 750,
+       "homeMl": -1200,
+       "awayLine": 19.5,
+       "homeLine": -19.5
+      },
+      "fanduel": {
+       "awayMl": 860,
+       "homeMl": -1600,
+       "awayLine": 19.5,
+       "homeLine": -19.5
+      },
+      "betrivers": {
+       "awayMl": 850,
+       "homeMl": -1667,
+       "awayLine": 19,
+       "homeLine": -19
+      },
+      "betmgm": {
+       "awayMl": 825,
+       "homeMl": -1200,
+       "awayLine": 19,
+       "homeLine": -19
+      }
+     }
     },
     {
      "gameId": 401866478,
@@ -408,7 +902,33 @@
      "ev": 20.060012411350236,
      "why": "Model gives Akron 29% to win; +310 pays like 24%",
      "closeMarket": 310,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": 310,
+       "homeMl": -395,
+       "awayLine": 10,
+       "homeLine": -10
+      },
+      "fanduel": {
+       "awayMl": 310,
+       "homeMl": -400,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      },
+      "betmgm": {
+       "awayMl": 300,
+       "homeMl": -375,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      },
+      "betrivers": {
+       "awayMl": 310,
+       "homeMl": -435,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      }
+     }
     },
     {
      "gameId": 401862805,
@@ -430,7 +950,33 @@
      "modelProb": 0.6438765742255927,
      "why": "Model Rice -1.5 vs market +4.5: Rice by 6.0 pts",
      "closeMarket": 4.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "homeMl": 150,
+       "awayMl": -180,
+       "homeLine": 4.5,
+       "awayLine": -4.5
+      },
+      "fanduel": {
+       "homeMl": 146,
+       "awayMl": -178,
+       "homeLine": 4.5,
+       "awayLine": -4.5
+      },
+      "betmgm": {
+       "homeMl": 150,
+       "awayMl": -185,
+       "homeLine": 4.5,
+       "awayLine": -4.5
+      },
+      "betrivers": {
+       "homeMl": 160,
+       "awayMl": -200,
+       "homeLine": 4,
+       "awayLine": -4
+      }
+     }
     },
     {
      "gameId": 401862805,
@@ -450,7 +996,33 @@
      "ev": 39.40925545707024,
      "why": "Model gives Rice 54% to win; +160 pays like 38%",
      "closeMarket": 150,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "homeMl": 150,
+       "awayMl": -180,
+       "homeLine": 4.5,
+       "awayLine": -4.5
+      },
+      "fanduel": {
+       "homeMl": 146,
+       "awayMl": -178,
+       "homeLine": 4.5,
+       "awayLine": -4.5
+      },
+      "betmgm": {
+       "homeMl": 150,
+       "awayMl": -185,
+       "homeLine": 4.5,
+       "awayLine": -4.5
+      },
+      "betrivers": {
+       "homeMl": 160,
+       "awayMl": -200,
+       "homeLine": 4,
+       "awayLine": -4
+      }
+     }
     },
     {
      "gameId": 401869934,
@@ -472,7 +1044,33 @@
      "modelProb": 0.6472718779442566,
      "why": "Model Southern Miss +1 vs market +7: Southern Miss by 5.9 pts",
      "closeMarket": 6.75,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": -278,
+       "homeMl": 225,
+       "awayLine": -7,
+       "homeLine": 7
+      },
+      "fanduel": {
+       "awayMl": -265,
+       "homeMl": 215,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      },
+      "betrivers": {
+       "awayMl": -265,
+       "homeMl": 205,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      },
+      "betmgm": {
+       "awayMl": -275,
+       "homeMl": 220,
+       "awayLine": -7,
+       "homeLine": 7
+      }
+     }
     },
     {
      "gameId": 401869934,
@@ -492,7 +1090,33 @@
      "ev": 55.4394991717746,
      "why": "Model gives Southern Miss 48% to win; +225 pays like 31%",
      "closeMarket": 217.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": -278,
+       "homeMl": 225,
+       "awayLine": -7,
+       "homeLine": 7
+      },
+      "fanduel": {
+       "awayMl": -265,
+       "homeMl": 215,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      },
+      "betrivers": {
+       "awayMl": -265,
+       "homeMl": 205,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      },
+      "betmgm": {
+       "awayMl": -275,
+       "homeMl": 220,
+       "awayLine": -7,
+       "homeLine": 7
+      }
+     }
     },
     {
      "gameId": 401856832,
@@ -512,7 +1136,33 @@
      "ev": 0.22481138193574113,
      "why": "Model gives TCU 34% to win; +195 pays like 34%",
      "closeMarket": 170,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": -225,
+       "awayMl": 184,
+       "homeLine": -6.5,
+       "awayLine": 6.5
+      },
+      "betrivers": {
+       "homeMl": -245,
+       "awayMl": 195,
+       "homeLine": -6.5,
+       "awayLine": 6.5
+      },
+      "draftkings": {
+       "homeMl": -225,
+       "awayMl": 185,
+       "homeLine": -6,
+       "awayLine": 6
+      },
+      "betmgm": {
+       "homeMl": -225,
+       "awayMl": 188,
+       "homeLine": -6,
+       "awayLine": 6
+      }
+     }
     },
     {
      "gameId": 401864520,
@@ -534,7 +1184,33 @@
      "modelProb": 0.6433102539184672,
      "why": "Model North Dakota State -9.5 vs market -15.5: Nevada by 5.9 pts",
      "closeMarket": -15.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 570,
+       "homeMl": -850,
+       "awayLine": 15.5,
+       "homeLine": -15.5
+      },
+      "draftkings": {
+       "awayMl": 525,
+       "homeMl": -750,
+       "awayLine": 15.5,
+       "homeLine": -15.5
+      },
+      "betmgm": {
+       "awayMl": 550,
+       "homeMl": -750,
+       "awayLine": 15.5,
+       "homeLine": -15.5
+      },
+      "betrivers": {
+       "awayMl": 500,
+       "homeMl": -770,
+       "awayLine": 14.5,
+       "homeLine": -14.5
+      }
+     }
     },
     {
      "gameId": 401864520,
@@ -554,7 +1230,33 @@
      "ev": 85.9344914709711,
      "why": "Model gives Nevada 28% to win; +570 pays like 15%",
      "closeMarket": 537.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 570,
+       "homeMl": -850,
+       "awayLine": 15.5,
+       "homeLine": -15.5
+      },
+      "draftkings": {
+       "awayMl": 525,
+       "homeMl": -750,
+       "awayLine": 15.5,
+       "homeLine": -15.5
+      },
+      "betmgm": {
+       "awayMl": 550,
+       "homeMl": -750,
+       "awayLine": 15.5,
+       "homeLine": -15.5
+      },
+      "betrivers": {
+       "awayMl": 500,
+       "homeMl": -770,
+       "awayLine": 14.5,
+       "homeLine": -14.5
+      }
+     }
     },
     {
      "gameId": 401856809,
@@ -574,7 +1276,33 @@
      "ev": 27.210944154883464,
      "why": "Model gives BYU 29% to win; +340 pays like 23%",
      "closeMarket": 320,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "homeMl": 310,
+       "awayMl": -395,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      },
+      "fanduel": {
+       "homeMl": 310,
+       "awayMl": -400,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      },
+      "betrivers": {
+       "homeMl": 340,
+       "awayMl": -480,
+       "homeLine": 11,
+       "awayLine": -11
+      },
+      "betmgm": {
+       "homeMl": 310,
+       "awayMl": -400,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      }
+     }
     },
     {
      "gameId": 401858265,
@@ -594,7 +1322,33 @@
      "ev": 36.59092288607408,
      "why": "Model gives Syracuse 25% to win; +440 pays like 19%",
      "closeMarket": 427.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": -610,
+       "homeMl": 440,
+       "awayLine": -13.5,
+       "homeLine": 13.5
+      },
+      "betrivers": {
+       "awayMl": -670,
+       "homeMl": 430,
+       "awayLine": -13.5,
+       "homeLine": 13.5
+      },
+      "draftkings": {
+       "awayMl": -535,
+       "homeMl": 400,
+       "awayLine": -13.5,
+       "homeLine": 13.5
+      },
+      "betmgm": {
+       "awayMl": -550,
+       "homeMl": 425,
+       "awayLine": -13,
+       "homeLine": 13
+      }
+     }
     },
     {
      "gameId": 401856831,
@@ -616,7 +1370,33 @@
      "modelProb": 0.7353227851025421,
      "why": "Model Houston -14 vs market -4: Houston by 9.9 pts",
      "closeMarket": -4,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": -178,
+       "awayMl": 146,
+       "homeLine": -4.5,
+       "awayLine": 4.5
+      },
+      "draftkings": {
+       "homeMl": -185,
+       "awayMl": 154,
+       "homeLine": -4.5,
+       "awayLine": 4.5
+      },
+      "betrivers": {
+       "homeMl": -190,
+       "awayMl": 150,
+       "homeLine": -4,
+       "awayLine": 4
+      },
+      "betmgm": {
+       "homeMl": -185,
+       "awayMl": 155,
+       "homeLine": -4,
+       "awayLine": 4
+      }
+     }
     },
     {
      "gameId": 401871091,
@@ -638,7 +1418,33 @@
      "modelProb": 0.6051384597405478,
      "why": "Model UL Monroe +19 vs market +14.5: Louisiana Tech by 4.3 pts",
      "closeMarket": 14.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": -675,
+       "homeMl": 490,
+       "awayLine": -14.5,
+       "homeLine": 14.5
+      },
+      "fanduel": {
+       "awayMl": -710,
+       "homeMl": 490,
+       "awayLine": -14.5,
+       "homeLine": 14.5
+      },
+      "betmgm": {
+       "awayMl": -650,
+       "homeMl": 500,
+       "awayLine": -14.5,
+       "homeLine": 14.5
+      },
+      "betrivers": {
+       "awayMl": -715,
+       "homeMl": 480,
+       "awayLine": -14.5,
+       "homeLine": 14.5
+      }
+     }
     },
     {
      "gameId": 401862804,
@@ -660,7 +1466,33 @@
      "modelProb": 0.7019603461848707,
      "why": "Model UTSA -15 vs market -6.5: UTSA by 8.6 pts",
      "closeMarket": -6.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 220,
+       "homeMl": -275,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      },
+      "draftkings": {
+       "awayMl": 205,
+       "homeMl": -250,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      },
+      "betmgm": {
+       "awayMl": 210,
+       "homeMl": -250,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      },
+      "betrivers": {
+       "awayMl": 210,
+       "homeMl": -275,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      }
+     }
     },
     {
      "gameId": 401864523,
@@ -680,7 +1512,27 @@
      "ev": 36.639671765609826,
      "why": "Model gives UTEP 37% to win; +270 pays like 27%",
      "closeMarket": 270,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": -340,
+       "homeMl": 270,
+       "awayLine": -8.5,
+       "homeLine": 8.5
+      },
+      "fanduel": {
+       "awayMl": -345,
+       "homeMl": 270,
+       "awayLine": -8.5,
+       "homeLine": 8.5
+      },
+      "betmgm": {
+       "awayMl": -325,
+       "homeMl": 270,
+       "awayLine": -8,
+       "homeLine": 8
+      }
+     }
     },
     {
      "gameId": 401866445,
@@ -700,7 +1552,33 @@
      "ev": 25.51492479088342,
      "why": "Model gives Sacramento State 20% to win; +520 pays like 16%",
      "closeMarket": 487.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": -625,
+       "homeMl": 455,
+       "awayLine": -14.5,
+       "homeLine": 14.5
+      },
+      "fanduel": {
+       "awayMl": -780,
+       "homeMl": 520,
+       "awayLine": -15.5,
+       "homeLine": 15.5
+      },
+      "betmgm": {
+       "awayMl": -625,
+       "homeMl": 475,
+       "awayLine": -14.5,
+       "homeLine": 14.5
+      },
+      "betrivers": {
+       "awayMl": -835,
+       "homeMl": 510,
+       "awayLine": -14.5,
+       "homeLine": 14.5
+      }
+     }
     },
     {
      "gameId": 401856833,
@@ -722,7 +1600,33 @@
      "modelProb": 0.6153449217740089,
      "why": "Model Colorado +20 vs market +15.5: Utah by 4.7 pts",
      "closeMarket": 15.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": 530,
+       "awayMl": -780,
+       "homeLine": 15.5,
+       "awayLine": -15.5
+      },
+      "betrivers": {
+       "homeMl": 600,
+       "awayMl": -1115,
+       "homeLine": 16.5,
+       "awayLine": -16.5
+      },
+      "draftkings": {
+       "homeMl": 525,
+       "awayMl": -750,
+       "homeLine": 15.5,
+       "awayLine": -15.5
+      },
+      "betmgm": {
+       "homeMl": 525,
+       "awayMl": -700,
+       "homeLine": 15.5,
+       "awayLine": -15.5
+      }
+     }
     },
     {
      "gameId": 401860904,
@@ -742,7 +1646,33 @@
      "ev": 20.06493573429188,
      "why": "Model gives San Diego State 32% to win; +280 pays like 26%",
      "closeMarket": 270,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": -345,
+       "homeMl": 270,
+       "awayLine": -8.5,
+       "homeLine": 8.5
+      },
+      "betrivers": {
+       "awayMl": -375,
+       "homeMl": 280,
+       "awayLine": -8.5,
+       "homeLine": 8.5
+      },
+      "draftkings": {
+       "awayMl": -340,
+       "homeMl": 270,
+       "awayLine": -8.5,
+       "homeLine": 8.5
+      },
+      "betmgm": {
+       "awayMl": -325,
+       "homeMl": 270,
+       "awayLine": -8,
+       "homeLine": 8
+      }
+     }
     },
     {
      "gameId": 401858269,
@@ -762,7 +1692,33 @@
      "ev": 24.10611655778425,
      "why": "Model gives California 32% to win; +290 pays like 26%",
      "closeMarket": 285,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": 280,
+       "awayMl": -360,
+       "homeLine": 9.5,
+       "awayLine": -9.5
+      },
+      "betrivers": {
+       "homeMl": 285,
+       "awayMl": -385,
+       "homeLine": 9.5,
+       "awayLine": -9.5
+      },
+      "draftkings": {
+       "homeMl": 285,
+       "awayMl": -360,
+       "homeLine": 9.5,
+       "awayLine": -9.5
+      },
+      "betmgm": {
+       "homeMl": 290,
+       "awayMl": -350,
+       "homeLine": 9.5,
+       "awayLine": -9.5
+      }
+     }
     },
     {
      "gameId": 401871068,
@@ -782,7 +1738,33 @@
      "ev": 2.6148115691483453,
      "why": "Model gives Sam Houston 50% to win; +104 pays like 49%",
      "closeMarket": -103.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": 104,
+       "awayMl": -125,
+       "homeLine": 1.5,
+       "awayLine": -1.5
+      },
+      "draftkings": {
+       "homeMl": -105,
+       "awayMl": -115,
+       "homeLine": 1.5,
+       "awayLine": -1.5
+      },
+      "betrivers": {
+       "homeMl": -105,
+       "awayMl": -118,
+       "homeLine": 1.5,
+       "awayLine": -1.5
+      },
+      "betmgm": {
+       "homeMl": -102,
+       "awayMl": -118,
+       "homeLine": 1.5,
+       "awayLine": -1.5
+      }
+     }
     },
     {
      "gameId": 401858494,
@@ -808,7 +1790,33 @@
      "modelProb": 0.5410468605735537,
      "why": "Model UCLA -10.5 vs market -3.5, a 6.9-pt gap; trusting 17% of it in this kind of game leaves UCLA by 1.2",
      "closeMarket": -3,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "homeMl": -162,
+       "awayMl": 136,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      },
+      "betrivers": {
+       "homeMl": -165,
+       "awayMl": 130,
+       "homeLine": -3,
+       "awayLine": 3
+      },
+      "fanduel": {
+       "homeMl": -160,
+       "awayMl": 132,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      },
+      "betmgm": {
+       "homeMl": -165,
+       "awayMl": 138,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      }
+     }
     },
     {
      "gameId": 401858491,
@@ -834,7 +1842,33 @@
      "modelProb": 0.5774755680822856,
      "why": "Model Michigan State +4 vs market +8, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Michigan State by 0.7",
      "closeMarket": 8,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": 260,
+       "awayMl": -330,
+       "homeLine": 8.5,
+       "awayLine": -8.5
+      },
+      "betrivers": {
+       "homeMl": 320,
+       "awayMl": -435,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      },
+      "draftkings": {
+       "homeMl": 260,
+       "awayMl": -325,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      },
+      "betmgm": {
+       "homeMl": 260,
+       "awayMl": -325,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      }
+     }
     },
     {
      "gameId": 401856724,
@@ -860,7 +1894,33 @@
      "modelProb": 0.5277775602290898,
      "why": "Model Texas -16 vs market -9.5, a 6.6-pt gap; trusting 17% of it in this kind of game leaves Texas by 1.1",
      "closeMarket": -10,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 290,
+       "homeMl": -375,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      },
+      "draftkings": {
+       "awayMl": 295,
+       "homeMl": -375,
+       "awayLine": 10,
+       "homeLine": -10
+      },
+      "betrivers": {
+       "awayMl": 280,
+       "homeMl": -375,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      },
+      "betmgm": {
+       "awayMl": 290,
+       "homeMl": -375,
+       "awayLine": 9.5,
+       "homeLine": -9.5
+      }
+     }
     },
     {
      "gameId": 401856829,
@@ -886,7 +1946,33 @@
      "modelProb": 0.5218828876798978,
      "why": "Model West Virginia +2 vs market -1.5, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Cincinnati by 0.6",
      "closeMarket": -2,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 102,
+       "homeMl": -122,
+       "awayLine": 1.5,
+       "homeLine": -1.5
+      },
+      "betrivers": {
+       "awayMl": 107,
+       "homeMl": -132,
+       "awayLine": 2,
+       "homeLine": -2
+      },
+      "draftkings": {
+       "awayMl": 100,
+       "homeMl": -120,
+       "awayLine": 1.5,
+       "homeLine": -1.5
+      },
+      "betmgm": {
+       "awayMl": 100,
+       "homeMl": -120,
+       "awayLine": 2,
+       "homeLine": -2
+      }
+     }
     },
     {
      "gameId": 401856828,
@@ -912,7 +1998,33 @@
      "modelProb": 0.5266278065917174,
      "why": "Model Texas Tech -17.5 vs market -14, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Texas Tech by 0.6",
      "closeMarket": -14.25,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 470,
+       "homeMl": -670,
+       "awayLine": 13.5,
+       "homeLine": -13.5
+      },
+      "betrivers": {
+       "awayMl": 480,
+       "homeMl": -770,
+       "awayLine": 14,
+       "homeLine": -14
+      },
+      "draftkings": {
+       "awayMl": 440,
+       "homeMl": -600,
+       "awayLine": 14,
+       "homeLine": -14
+      },
+      "betmgm": {
+       "awayMl": 475,
+       "homeMl": -625,
+       "awayLine": 14,
+       "homeLine": -14
+      }
+     }
     },
     {
      "gameId": 401858490,
@@ -938,7 +2050,33 @@
      "modelProb": 0.5255093444331195,
      "why": "Model Michigan -9 vs market -6, a 3.1-pt gap; trusting 17% of it in this kind of game leaves Michigan by 0.5",
      "closeMarket": -6,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "homeMl": -225,
+       "awayMl": 185,
+       "homeLine": -6,
+       "awayLine": 6
+      },
+      "betrivers": {
+       "homeMl": -230,
+       "awayMl": 180,
+       "homeLine": -6,
+       "awayLine": 6
+      },
+      "fanduel": {
+       "homeMl": -225,
+       "awayMl": 184,
+       "homeLine": -5.5,
+       "awayLine": 5.5
+      },
+      "betmgm": {
+       "homeMl": -225,
+       "awayMl": 185,
+       "homeLine": -6,
+       "awayLine": 6
+      }
+     }
     },
     {
      "gameId": 401856719,
@@ -964,7 +2102,33 @@
      "modelProb": 0.5267482666136329,
      "why": "Model Georgia -24 vs market -19, a 4.9-pt gap; trusting 17% of it in this kind of game leaves Georgia by 0.8",
      "closeMarket": -19.25,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": 750,
+       "homeMl": -1200,
+       "awayLine": 19.5,
+       "homeLine": -19.5
+      },
+      "fanduel": {
+       "awayMl": 860,
+       "homeMl": -1600,
+       "awayLine": 19.5,
+       "homeLine": -19.5
+      },
+      "betrivers": {
+       "awayMl": 850,
+       "homeMl": -1667,
+       "awayLine": 19,
+       "homeLine": -19
+      },
+      "betmgm": {
+       "awayMl": 825,
+       "homeMl": -1200,
+       "awayLine": 19,
+       "homeLine": -19
+      }
+     }
     },
     {
      "gameId": 401862805,
@@ -990,7 +2154,33 @@
      "modelProb": 0.5162603948794151,
      "why": "Model Rice -1.5 vs market +4.5, a 6.0-pt gap; trusting 11% of it in this kind of game leaves Rice by 0.7",
      "closeMarket": 4.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "homeMl": 150,
+       "awayMl": -180,
+       "homeLine": 4.5,
+       "awayLine": -4.5
+      },
+      "fanduel": {
+       "homeMl": 146,
+       "awayMl": -178,
+       "homeLine": 4.5,
+       "awayLine": -4.5
+      },
+      "betmgm": {
+       "homeMl": 150,
+       "awayMl": -185,
+       "homeLine": 4.5,
+       "awayLine": -4.5
+      },
+      "betrivers": {
+       "homeMl": 160,
+       "awayMl": -200,
+       "homeLine": 4,
+       "awayLine": -4
+      }
+     }
     },
     {
      "gameId": 401869934,
@@ -1016,7 +2206,33 @@
      "modelProb": 0.5221395355363461,
      "why": "Model Southern Miss +1 vs market +7, a 5.9-pt gap; trusting 11% of it in this kind of game leaves Southern Miss by 0.6",
      "closeMarket": 6.75,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": -278,
+       "homeMl": 225,
+       "awayLine": -7,
+       "homeLine": 7
+      },
+      "fanduel": {
+       "awayMl": -265,
+       "homeMl": 215,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      },
+      "betrivers": {
+       "awayMl": -265,
+       "homeMl": 205,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      },
+      "betmgm": {
+       "awayMl": -275,
+       "homeMl": 220,
+       "awayLine": -7,
+       "homeLine": 7
+      }
+     }
     },
     {
      "gameId": 401864520,
@@ -1042,7 +2258,33 @@
      "modelProb": 0.5163193726041942,
      "why": "Model North Dakota State -9.5 vs market -15.5, a 6.0-pt gap; trusting 11% of it in this kind of game leaves Nevada by 0.7",
      "closeMarket": -15.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 570,
+       "homeMl": -850,
+       "awayLine": 15.5,
+       "homeLine": -15.5
+      },
+      "draftkings": {
+       "awayMl": 525,
+       "homeMl": -750,
+       "awayLine": 15.5,
+       "homeLine": -15.5
+      },
+      "betmgm": {
+       "awayMl": 550,
+       "homeMl": -750,
+       "awayLine": 15.5,
+       "homeLine": -15.5
+      },
+      "betrivers": {
+       "awayMl": 500,
+       "homeMl": -770,
+       "awayLine": 14.5,
+       "homeLine": -14.5
+      }
+     }
     },
     {
      "gameId": 401856722,
@@ -1068,7 +2310,33 @@
      "modelProb": 0.5278194780696287,
      "why": "Model Oklahoma -10.5 vs market -7, a 3.7-pt gap; trusting 17% of it in this kind of game leaves Oklahoma by 0.6",
      "closeMarket": -7,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "draftkings": {
+       "awayMl": 215,
+       "homeMl": -265,
+       "awayLine": 7,
+       "homeLine": -7
+      },
+      "betrivers": {
+       "awayMl": 235,
+       "homeMl": -305,
+       "awayLine": 7,
+       "homeLine": -7
+      },
+      "fanduel": {
+       "awayMl": 220,
+       "homeMl": -275,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      },
+      "betmgm": {
+       "awayMl": 220,
+       "homeMl": -275,
+       "awayLine": 7,
+       "homeLine": -7
+      }
+     }
     },
     {
      "gameId": 401856831,
@@ -1094,7 +2362,33 @@
      "modelProb": 0.5546642952783305,
      "why": "Model Houston -14 vs market -4, a 10.1-pt gap; trusting 17% of it in this kind of game leaves Houston by 1.7",
      "closeMarket": -4,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "homeMl": -176,
+       "awayMl": 146,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      },
+      "draftkings": {
+       "homeMl": -185,
+       "awayMl": 154,
+       "homeLine": -4.5,
+       "awayLine": 4.5
+      },
+      "betrivers": {
+       "homeMl": -190,
+       "awayMl": 150,
+       "homeLine": -4,
+       "awayLine": 4
+      },
+      "betmgm": {
+       "homeMl": -185,
+       "awayMl": 155,
+       "homeLine": -4,
+       "awayLine": 4
+      }
+     }
     },
     {
      "gameId": 401862804,
@@ -1120,7 +2414,33 @@
      "modelProb": 0.5231089494727926,
      "why": "Model UTSA -15 vs market -6.5, a 8.5-pt gap; trusting 11% of it in this kind of game leaves UTSA by 0.9",
      "closeMarket": -6.5,
-     "closeAt": "2026-10-12T06:58:00.006Z"
+     "closeAt": "2026-10-12T06:58:00.006Z",
+     "books": {
+      "fanduel": {
+       "awayMl": 220,
+       "homeMl": -275,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      },
+      "draftkings": {
+       "awayMl": 205,
+       "homeMl": -250,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      },
+      "betmgm": {
+       "awayMl": 210,
+       "homeMl": -250,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      },
+      "betrivers": {
+       "awayMl": 210,
+       "homeMl": -275,
+       "awayLine": 6.5,
+       "homeLine": -6.5
+      }
+     }
     }
    ]
   }
