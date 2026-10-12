@@ -1,5 +1,5 @@
 // Browser helpers shared by every page: data loading, formatting, team chips, the pick record and a
-// small sortable table. Plain globals, no build step (te-tracker's convention). Pages load model.js first.
+// small sortable table. Plain globals, no build step (te-tracker's convention).
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -103,20 +103,25 @@ function teamLink(name, data, { strong = false } = {}) {
 
 // ---- Picks ----
 
-// Line move toward the pick, between when it was posted and the last snapshot before kickoff.
-// Spreads: points. Moneylines: the change in the market's implied chance, in percentage points.
-// Picks seen at only one snapshot have no move to measure.
-function pickClv(p) {
-  if (p.closeMarket == null || p.closeAt === p.takenAt) return null;
-  if (p.cat === "spread") return (p.marketLine - p.closeMarket) * (p.side === "home" ? 1 : -1);
-  return 100 * (implied(p.closeMarket) - implied(p.marketPrice));
+// Line move toward the pick. Spreads: points. Moneylines: the change in the market's implied chance, in
+// percentage points. Once grade-picks has CFBD's closing line (`p.close`), it's the move to the close,
+// book by book (`clvClose`, null if no book could be compared). Before that it's the move "so far", from
+// posting to the latest odds snapshot; picks seen at only one snapshot have no move yet.
+function pickMove(p) {
+  if (p.close) return { move: p.clvClose ?? null, toClose: true };
+  if (p.closeMarket == null || p.closeAt === p.takenAt) return { move: null, toClose: false };
+  const move = p.cat === "spread"
+    ? (p.marketLine - p.closeMarket) * (p.side === "home" ? 1 : -1)
+    : 100 * (implied(p.closeMarket) - implied(p.marketPrice));
+  return { move, toClose: false };
 }
 
+// The record's line move counts only moves to the close, the number the provisional → official rule uses.
 function recordOf(picks) {
   const count = (r) => picks.filter((p) => p.result === r).length;
   const w = count("W"), l = count("L"), push = count("P"), graded = w + l;
   const profit = picks.reduce((s, p) => s + (p.profit ?? 0), 0);
-  const clvs = picks.map(pickClv).filter((x) => x != null);
+  const clvs = picks.map((p) => p.clvClose).filter((x) => x != null);
   return {
     w, l, push, graded,
     winPct: graded ? w / graded : null,

@@ -12,11 +12,13 @@
 //   kept behind RECORD_MONEYLINES: at least $10 per $100 at the best price, no longer than +600.
 //   Moneyline picks already recorded keep getting closing prices and grades.
 // - Status: "unofficial" if the live model failed its backtest; under v3, "provisional" until its live
-//   spread picks show CLV > 0 over at least 100 picks, then "official". `shadow` stays for older pages.
+//   spread picks show a line move to CFBD's close (CLV) > 0 over at least 100 picks, then "official".
+//   `shadow` stays for older pages.
 // - Each pick records which model made it; a model's picks are judged on their own.
 // - A pick locks the moment it's first recorded, at that snapshot's line and price: the goal is to bet
 //   early (Sunday night), so a later snapshot never moves the line a pick is graded at or removes it.
-//   Later snapshots before kickoff only update `closeMarket`, the market median used for CLV.
+//   Later snapshots before kickoff only update `closeMarket`, the last pregame market median: the page's
+//   "so far" line move, and grade-picks' check for bad CFBD closing lines.
 // - One spread pick and one moneyline pick per game per model at most, so a later snapshot can't take the
 //   other side.
 
@@ -44,12 +46,12 @@ const { threshold, startWeek, version } = data.model;
 const modelOf = (p) => p.model ?? "v2"; // picks from before v3 have no model field
 const existing = Object.values(store.weeks).flatMap((wk) => wk.picks);
 
-// v3 picks are provisional until the live record backs the backtest up (SPEC.md, "Model v3").
+// v3 picks are provisional until the live record backs the backtest up (SPEC.md, "Model v3"). The line
+// move counted is the one to CFBD's closing line (`clvClose`, set by grade-picks.mjs), as in the backtest.
 const LIVE_CLV_PICKS = 100;
 function statusNow() {
   if (version !== "v3") return "unofficial";
-  const clvs = existing.filter((p) => modelOf(p) === version && p.cat === "spread" && p.closeAt !== p.takenAt && Date.parse(p.kickoff) <= now)
-    .map((p) => (p.marketLine - p.closeMarket) * (p.side === "home" ? 1 : -1));
+  const clvs = existing.filter((p) => modelOf(p) === version && p.cat === "spread" && p.clvClose != null).map((p) => p.clvClose);
   return clvs.length >= LIVE_CLV_PICKS && clvs.reduce((a, b) => a + b, 0) > 0 ? "official" : "provisional";
 }
 const status = statusNow();

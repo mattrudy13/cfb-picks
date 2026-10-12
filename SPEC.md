@@ -301,9 +301,24 @@ Already-recorded moneyline picks are still graded.
   shown, and the card notes they're the same side.
 - **Locking and CLV (changed 2026-10-10 for the bet-early goal):** a pick locks the moment it's first
   recorded, at that snapshot's line and price, because that's when it would be bet. Later snapshots never
-  move its line or remove it; they only update `closeMarket` (the market median), and the last one before
-  kickoff is the close. One spread and one moneyline pick per game at most, so a later snapshot can't take
-  the other side. This replaces te-tracker's rule (replace unstarted picks, grade at the newest price).
+  move its line or remove it; they only update `closeMarket` (the market median). One spread and one
+  moneyline pick per game at most, so a later snapshot can't take the other side. This replaces
+  te-tracker's rule (replace unstarted picks, grade at the newest price).
+- **CLV is measured to the real close (decided 2026-10-12, before any pick was graded):** the last snapshot
+  isn't the close. A Thursday game's last snapshot is Tuesday morning, and a Saturday night game's is
+  Saturday 9 AM, while the backtest's CLV used CFBD's closing line. So:
+  - When a pick posts, every US book's line is saved on it (`books`). The week 7 picks got theirs from the
+    snapshot commits in git history.
+  - `build-data` fetches CFBD's lines for each finished week (`data/raw/lines-<season>.json`), refetching
+    until a fetch lands a day after the week's last kickoff. That's about 3 calls a week.
+  - `grade-picks` sets `clvClose` from the books CFBD reports that also priced the game at posting: the
+    median line at posting minus the median at the close, over those books only, so a different set of
+    books can't pass for a line move. A pick with no book in common gets no `clvClose` and doesn't count.
+  - **(assumed)** A book whose CFBD close is more than 4 points (moneylines: 10 points of implied chance)
+    from the last snapshot's median is treated as bad data and skipped. In 2024–2025, about 2% of games
+    had CFBD's books 4+ points apart.
+  - The provisional → official rule (Model v3) counts `clvClose` only. The pages show the move "so far"
+    (to the latest snapshot) until the close is in, and the record counts only moves to the close.
 - **All picks are unofficial** (`shadow: true`) while `data/backtest-v2.json` says the go-live bar failed.
 - **Grading:** spreads win, lose or push against the recorded line. Moneylines win or lose. Profit is
   per $100 at the recorded price. Canceled games are void.
@@ -321,7 +336,8 @@ Times are UTC in cron, so they shift an hour when daylight saving ends. GitHub c
 hours late (te-tracker's TNF run did), so Saturday's snapshot is at 9 AM rather than right before noon
 kickoffs. The update schedule is **(assumed)**.
 
-**Budgets:** CFBD ~2 calls per run, ~16 runs a week → ~70 a month (plus h2h's traffic, same pool).
+**Budgets:** CFBD ~2 calls per run, ~16 runs a week → ~70 a month, plus ~13 for closing lines, ~9 for
+SP+/FPI and ~4 for passing stats → ~95 a month (plus h2h's traffic, same pool).
 The Odds API: 4 snapshots × 2 credits → ~35 a month, on top of te-tracker's ~375 (500 free).
 
 ## Pages

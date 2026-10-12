@@ -8,7 +8,7 @@
 // that backtest's file, run over 2015 to now so the ratings and priors match the backtest exactly.
 //
 // CFBD calls: 2 per run (games, advanced stats), plus one passing-stats call per newly finished week,
-// plus SP+ and FPI (2) once a week. The free tier's 1,000 a month is shared with h2h.
+// about 3 closing-lines calls per finished week, plus SP+ and FPI (2) once a week. The free tier's 1,000 a month is shared with h2h.
 
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
@@ -80,6 +80,26 @@ if (!offline) {
     have.push(...trimPassing(await cfbd(`games/players?year=${SEASON}&week=${w}&seasonType=regular&category=passing`), w));
   }
   writeRaw(passingFile, have);
+  // Closing lines, for each pick's line move to the real close (grade-picks.mjs). Fetched once a week's
+  // games are all final, then again until a fetch lands a day after its last kickoff, so a provider that
+  // posts late is caught. About 3 calls a week. `lines-fetched-<season>.json` records when each week was
+  // last fetched, so a week that's done is never fetched again.
+  const linesFile = `lines-${SEASON}.json`, fetchedFile = `lines-fetched-${SEASON}.json`;
+  let lines = fs.existsSync(path.join(RAW, linesFile)) ? readRaw(linesFile) : [];
+  const fetched = fs.existsSync(path.join(RAW, fetchedFile)) ? readRaw(fetchedFile) : {};
+  for (const w of [...new Set(fbsGames.map((g) => g.week))].sort((a, b) => a - b)) {
+    const wk = fbsGames.filter((g) => g.week === w);
+    const lastKick = Math.max(...wk.map((g) => Date.parse(g.startDate)));
+    if (!wk.every(finished) || Date.parse(fetched[w] ?? 0) > lastKick + 864e5) continue;
+    const rows = await cfbd(`lines?year=${SEASON}&week=${w}&seasonType=regular`);
+    lines = lines.filter((r) => r.week !== w).concat(rows.map((r) => ({
+      id: r.id, week: w,
+      lines: (r.lines ?? []).map((l) => pick(l, ["provider", "spread", "spreadOpen", "homeMoneyline", "awayMoneyline"])),
+    })));
+    fetched[w] = new Date().toISOString();
+  }
+  writeRaw(linesFile, lines);
+  writeRaw(fetchedFile, fetched);
   // SP+ and FPI: shown on the ratings page for context only (they're not in the model). CFBD only serves
   // the latest numbers, so each weekly fetch is also kept in a history file: the only point-in-time copy
   // that will exist for a fair test of them later (SPEC.md, "Look-ahead bias"). Once per ET week, which
