@@ -33,6 +33,7 @@ const ALIASES = {
   "UConn Huskies": "UConn",
   "App State Mountaineers": "App State",
   "Appalachian State Mountaineers": "App State",
+  "Sam Houston State Bearkats": "Sam Houston",
 };
 
 const fixtureArg = process.argv.indexOf("--fixture");
