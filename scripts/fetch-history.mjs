@@ -9,6 +9,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { trimPassing } from "./trim.mjs";
 
 const RAW = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "data", "raw");
 const KEY = process.env.CFBD_API_KEY;
@@ -49,6 +50,22 @@ const SOURCES = [
     trim: (rows) => rows.map((r) => pick(r, ["season", "origin", "destination", "position", "stars", "rating"])),
   },
   {
+    // Betting lines. Openers exist only from 2021; earlier seasons have closing lines, which v3 uses to fit
+    // how much to trust the model in each kind of game.
+    name: "lines", years: range(2016, 2025), url: (y) => `lines?year=${y}&seasonType=regular`,
+    trim: (rows) => rows.map((r) => ({
+      id: r.id,
+      lines: (r.lines ?? []).map((l) => pick(l, ["provider", "spread", "spreadOpen", "homeMoneyline", "awayMoneyline"])),
+    })),
+  },
+  {
+    // Each passer's attempts per game, for v3's quarterback-change flag. CFBD serves this one week at a
+    // time, so a season is one call per regular-season week (about 15).
+    name: "passing", years: range(2016, 2025), weeks: true,
+    url: (y, w) => `games/players?year=${y}&week=${w}&seasonType=regular&category=passing`,
+    trim: trimPassing,
+  },
+  {
     // Names, mascots (to match The Odds API's "School Mascot" names), logos and colors for the site.
     name: "teams", years: [2026], url: (y) => `teams?year=${y}`,
     trim: (rows) => rows.filter((t) => ["fbs", "fcs"].includes(t.classification)).map((t) => ({
@@ -61,16 +78,29 @@ const SOURCES = [
 ];
 
 let calls = 0;
+async function get(url, label) {
+  const res = await fetch(`https://api.collegefootballdata.com/${url}`, {
+    headers: { Authorization: `Bearer ${KEY}`, Accept: "application/json" },
+  });
+  calls++;
+  if (!res.ok) throw new Error(`${label}: HTTP ${res.status}`);
+  return res.json();
+}
 for (const src of SOURCES) {
   for (const y of src.years) {
     const file = path.join(RAW, `${src.name}-${y}.json`);
     if (fs.existsSync(file)) continue;
-    const res = await fetch(`https://api.collegefootballdata.com/${src.url(y)}`, {
-      headers: { Authorization: `Bearer ${KEY}`, Accept: "application/json" },
-    });
-    calls++;
-    if (!res.ok) throw new Error(`${src.name} ${y}: HTTP ${res.status}`);
-    const rows = src.trim(await res.json());
+    let rows;
+    if (src.weeks) {
+      // Past seasons only; build-data.mjs keeps the live season's file up to date week by week.
+      const games = JSON.parse(fs.readFileSync(path.join(RAW, `games-${y}.json`), "utf8"));
+      rows = [];
+      for (const w of [...new Set(games.map((g) => g.week))].sort((a, b) => a - b)) {
+        rows.push(...src.trim(await get(src.url(y, w), `${src.name} ${y} wk ${w}`), w));
+      }
+    } else {
+      rows = src.trim(await get(src.url(y), `${src.name} ${y}`));
+    }
     fs.writeFileSync(file, JSON.stringify(rows));
     console.log(`${src.name}-${y}: ${rows.length} rows`);
   }
