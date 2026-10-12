@@ -343,10 +343,59 @@ const fittedPrior = (contexts, p) => (season, prevFinal, history) => {
 // with weights fit on earlier seasons.
 const blendRow = (g, inputs) => [...inputs.map((pre) => pre.get(g.id).home - pre.get(g.id).away), g.neutralSite ? 0 : 1];
 
+// ---- Model v3: quarterback changes and trust by game type (SPEC.md, "Model v3") ----
+
+// A team is flagged before a game when the passer with the most attempts in its latest game threw
+// under half of its attempts so far this season: a backup has taken over, so its ratings were mostly
+// built with someone else at QB. Needs two earlier games. Returned in runSeries' { home, away } shape
+// so blendRow turns it into home flag − away flag. `passing` maps season → rows from fetch-history.
+function qbSeries(seasons, passing, lag = 0) {
+  const pre = new Map();
+  for (const { season, games } of seasons) {
+    const rows = new Map((passing[season] ?? []).map((r) => [`${r.gameId}|${r.team}`,
+      r.passers.filter((a) => !String(a.id).startsWith("-"))])); // negative ids are team rows
+    const played = completedGames(games);
+    const flag = (g, side) => {
+      const team = g[side + "Team"];
+      const before = played.filter((x) => x.week < g.week - lag && (x.homeTeam === team || x.awayTeam === team)
+        && rows.get(`${x.id}|${team}`)?.length);
+      if (before.length < 2) return 0;
+      const last = rows.get(`${before.at(-1).id}|${team}`);
+      const lead = last.reduce((a, b) => (b.att > a.att ? b : a));
+      let total = 0, mine = 0;
+      for (const x of before) for (const a of rows.get(`${x.id}|${team}`)) {
+        total += a.att;
+        if (a.id === lead.id) mine += a.att;
+      }
+      return mine < 0.5 * total ? 1 : 0;
+    };
+    for (const g of games.filter((x) => x.completed || x.homePoints == null)) {
+      pre.set(g.id, { home: flag(g, "home"), away: flag(g, "away") });
+    }
+  }
+  return pre;
+}
+
+// Power 4 as of each season: the Pac-12 counts through 2023, before it shrank to two teams.
+const POWER4 = new Set(["SEC", "Big Ten", "Big 12", "ACC"]);
+const isPower4 = (conference, team, season) =>
+  POWER4.has(conference) || team === "Notre Dame" || (conference === "Pac-12" && season <= 2023);
+
+// The game types v3 trusts the model differently in: [G5 vs G5, Power 4 vs G5, QB-flagged, week ≤ 6].
+function trustFlags(g, qb) {
+  const h = isPower4(g.homeConference, g.homeTeam, g.season), a = isPower4(g.awayConference, g.awayTeam, g.season);
+  return [!h && !a ? 1 : 0, h !== a ? 1 : 0, qb && (qb.home || qb.away) ? 1 : 0, g.week <= 6 ? 1 : 0];
+}
+// Regression row for fitting k: the gap (model − market) and its product with each flag.
+const trustRow = (gap, flags) => [gap, ...flags.map((f) => gap * f)];
+// How much of the model's gap from the market to keep, clamped to [0, 1].
+const trustFactor = (k, flags) => Math.min(1, Math.max(0, dot(k, [1, ...flags])));
+
 if (typeof module !== "undefined") {
   module.exports = {
     MODEL, median, normCdf, homeWinProb, payout, evPer100, completedGames, runElo, solveRatings, runRatings,
     eloMargin, ratingMargin, modelMargin, US_BOOKS, lineValue,
     leastSquares, dot, mean, efficiencyIndex, runSeries, carryPrior, priorContext, priorFeatures, fittedPrior, blendRow,
+    qbSeries, isPower4, trustFlags, trustRow, trustFactor,
   };
 }

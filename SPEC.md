@@ -256,10 +256,41 @@ shows CLV > 0 over ≥ 100 spread picks. If v3 fails, the site stays on v2 and t
 **Data:** passing stats 2016–2026 (≈ 160 CFBD calls, once) and closing lines 2016–2020 (5 calls).
 Live: one passing call per completed week.
 
+### Model v3 results (2026-10-11)
+
+`node scripts/backtest-v3.mjs` → `data/backtest-v3.json`. **Go-live bar: met, so picks are provisional.**
+
+| Test season | QB flag | Trust in a Power 4 game | Threshold, start week | Picks | ATS at opener | ATS at close | ROI | CLV | Cautious CLV |
+|---|---|---|---|---|---|---|---|---|---|
+| 2022 | kept | 0% | 0.5 pts, wk 4 | 50 | 53.1% | 51.0% | +1.3% | +0.10 | −0.20 |
+| 2023 | kept | 4% | 0.5 pts, wk 4 | 29 | 53.6% | 46.4% | +2.3% | +1.93 | +1.24 |
+| 2024 | dropped | 12% | 1.5 pts, wk 0 | 0 | – | – | – | – | – |
+| 2025 | kept | 19% | 0.5 pts, wk 0 | 93 | 57.0% | 48.9% | +8.8% | +1.94 | +1.34 |
+| **Total** | | | | **172** | **55.3%** | **49.1%** | **+5.6%** | **+1.40** | **+0.79** |
+
+For comparison (not the decision): v2 rerun 863 picks, 52.8%, 2 of 4 seasons; v2 + QB flag alone 606
+picks, 54.4%, 2 of 4; v2 + trust alone 176 picks, 55.7%, 3 of 4 (passes).
+
+**Why the pass is weak:**
+- **Still nothing beyond the closing line:** 49.1% at the close. Any edge is still getting ahead of line moves.
+- **The trust layer did the work, and its fitted values swing a lot.** Trust in a Power 4 game went 0%, 4%,
+  12%, 19% across the folds. Fit against closing lines, the model's gap from the market is worth close to
+  nothing, so picks are the few games where a small share of a big gap clears the threshold.
+- **The QB flag barely matters:** it changes walk-forward RMSE by 0.00–0.01 and is worth about half a point
+  in the blend. It flags about 28% of games, so it's a broad signal, not a targeted one.
+- **"3 of 4 profitable" includes a season with no picks** (2024 counts as not profitable) and a 2022 profit
+  of +1.3% on 50 picks, about one game.
+- **Small sample:** 172 picks at 55.3% has a 95% interval of roughly 48–63%.
+
+**Live model:** `bothQb`, trust k = [0.170, −0.060, −0.088, −0.104, −0.177] (Power 4 17%, G5 vs G5 11%,
+Power 4 vs G5 8%, QB change 7%, week ≤ 6 0%, terms add), threshold 0.5 trusted points, from week 0.
+Underdog moneylines use the same trusted margin for their win chance.
+
 ## Picks
 
-- **Spreads (decided):** every FBS-vs-FBS game where the model margin differs from the **median** US line
-  by at least **X points** (the backtest's rule; live X = 4, from week 7), recorded at the best line for
+- **Spreads (decided):** every FBS-vs-FBS game where the **trusted edge** (the game's trust factor × the model
+  margin's gap from the **median** US line; trust = 1 before v3) is at least **X points** (live v3: X = 0.5,
+  from week 0; v2 was X = 4 from week 7), recorded at the best line for
   that side. Key numbers (3, 7) aren't weighted: neither backtest tested it.
 - **Moneylines (decided):** underdogs only, expected profit of at least $10 per $100 at the best price, no
   longer than +600. (Changed 2026-10-11 from > 0, which picked 27 of 59 week 7 games, most at $0–8. The
