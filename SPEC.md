@@ -220,6 +220,42 @@ Passes: ATS ≥ 52.4%, CLV > 0, ≥ 150 picks, cautious CLV > 0. **Fails: profit
 **After the backtest:** the rest of the 2026 season is tracked unofficially from a Sunday-night snapshot as
 the final check. Adding that snapshot changes the decided schedule, so it waits for Rudy's go-ahead.
 
+## Model v3 (decided 2026-10-11, written before running it)
+
+v2 failed (profitable in 2 of 4 seasons). A breakdown of its 863 backtest picks showed why: its picks
+expected to beat the opener by 4.2 points and beat it by 1.3, so most of each edge was the model's own
+error. The misses clustered in G5-vs-G5 games (50.9%), in teams it stayed wrong about for weeks (Purdue
+1–8, New Mexico 2–9, Syracuse 2–9), and in blowouts that look like starter changes it couldn't see.
+v3 targets those two causes. These rules are set before any v3 results are seen.
+
+**Changes (decided):**
+1. **Quarterback changes.** CFBD's per-game passing stats (`games/players?category=passing`) give each
+   passer's attempts. Before each game, a team is flagged when the passer who threw the most in its last
+   game threw **under half of the team's pass attempts so far this season** (needs ≥ 2 earlier games).
+   That catches a backup taking over, so the team's ratings were mostly built with someone else at QB. The
+   blend gets one more column, home flag − away flag, with its weight fit like the others. It's kept in a
+   fold only if it lowers walk-forward RMSE from 2018, the same rule v2 used for its changes.
+2. **Trust that varies by game type.** The model's line is pulled toward the market by a factor fit on
+   past seasons: adjusted margin = market + k × (model − market), where
+   k = k0 + k1·(G5 vs G5) + k2·(Power 4 vs G5) + k3·(either team QB-flagged) + k4·(week ≤ 6),
+   clamped to [0, 1]. The k's are an OLS fit of (margin − market) on (model − market) and its products
+   with those flags, using **closing lines** from 2018 to the season before the test season. Power 4 is
+   SEC, Big Ten, Big 12, ACC, Notre Dame, and the Pac-12 through 2023. Picks use the adjusted edge
+   k × (model + opener). The same factor on every game would only act like a higher threshold, which v2
+   already tested, so only the game-type terms can change which games get picked. This layer is always on.
+
+**Test (decided):** the v2 rolling test unchanged: test seasons 2022–2025, rating settings from v2,
+threshold and start week chosen on 2021…T−1 openers. The threshold grid gains 0.5 (adjusted edges are
+smaller). The cautious version ignores the latest week for the QB flag too. v2 is rerun alongside for
+comparison.
+
+**Go-live (decided):** the same five checks. Because this is the third model tested on the same seasons,
+a pass makes picks **provisional**, not official. They become official only after the live 2026 record
+shows CLV > 0 over ≥ 100 spread picks. If v3 fails, the site stays on v2 and the result is reported.
+
+**Data:** passing stats 2016–2026 (≈ 160 CFBD calls, once) and closing lines 2016–2020 (5 calls).
+Live: one passing call per completed week.
+
 ## Picks
 
 - **Spreads (decided):** every FBS-vs-FBS game where the model margin differs from the **median** US line
