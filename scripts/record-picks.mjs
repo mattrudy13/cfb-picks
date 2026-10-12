@@ -59,7 +59,9 @@ const lineText = (x) => (x === 0 ? "PK" : fmt(Math.round(x * 2) / 2));
 
 function picksFor(g, o) {
   const out = [];
-  const base = { gameId: g.id, week: g.week, kickoff: o.commence, home: g.home, away: g.away, takenAt: odds.takenAt, model: version, status, shadow };
+  // `books`: every US book's lines when the pick is posted, so grade-picks can measure the move to the
+  // close book by book against CFBD's closing lines.
+  const base = { gameId: g.id, week: g.week, kickoff: o.commence, home: g.home, away: g.away, takenAt: odds.takenAt, model: version, status, shadow, books: o.byBook };
   const modelLine = -g.modelMargin; // home perspective, like a book's home spread
   const trust = g.trust ?? 1;
   // The margin the picks use: the market's, moved toward the model's by the trust factor.
