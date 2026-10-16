@@ -24,11 +24,12 @@ myself is marked **(assumed)** and listed again under "Assumptions to confirm" a
 | Source | Used for | Key | Cost |
 |---|---|---|---|
 | CollegeFootballData (CFBD) | games, scores, past lines (open and close), SP+/FPI (display only), team logos and colors | `CFBD_API_KEY` repo secret (the same key h2h's Worker uses) | Free tier: 1,000 calls a month, shared with h2h |
-| The Odds API | live spreads and moneylines (`americanfootball_ncaaf`, markets `spreads,h2h`, region `us`) | `ODDS_API_KEY` repo secret, shared with te-tracker | ~2 credits per snapshot for all games (featured markets are billed per market, not per game) |
+| The Odds API | live spreads and moneylines (`americanfootball_ncaaf`, markets `spreads,h2h`, region `us`) | `ODDS_API_KEY` repo secret (this project's own key) | ~2 credits per snapshot for all games (featured markets are billed per market, not per game) |
 
-**Odds API budget:** te-tracker uses ~375 of the 500 monthly credits. Three snapshots a week here add
-~26 a month, which leaves ~100 for manual runs across both projects. te-tracker's README should be
-updated to say the quota is shared.
+**Odds API budget:** 500 free credits a month on this project's own key. Four snapshots a week use
+~35 a month, which leaves plenty for manual runs. (This used to say the key was shared with te-tracker. It
+isn't: on 2026-10-16 this key had 488 credits left while te-tracker's had 297, and te-tracker's 42-credit
+Oct 15 snapshot didn't show up here.)
 
 **The key never reaches the browser.** Unlike h2h, the pages don't call CFBD. Actions fetch the data
 and commit JSON, so no Worker is needed.
@@ -351,7 +352,7 @@ kickoffs. The update schedule is **(assumed)**.
 
 **Budgets:** CFBD ~2 calls per run, ~16 runs a week → ~70 a month, plus ~13 for closing lines, ~9 for
 SP+/FPI and ~4 for passing stats → ~95 a month (plus h2h's traffic, same pool).
-The Odds API: 4 snapshots × 2 credits → ~35 a month, on top of te-tracker's ~375 (500 free).
+The Odds API: 4 snapshots × 2 credits → ~35 a month of this key's 500 free credits.
 
 ## Pages
 

@@ -36,8 +36,8 @@ check-assets.yml   on push                                           stamp-asset
 | `scripts/fetch-history.mjs` | One-time CFBD history into `data/raw/` (skips cached files) |
 | `scripts/build-ledger.mjs` | Research: every FBS game's model and book lines at each snapshot (from git history), CFBD open/close and result → `data/ledger-<season>.json` (gitignored) |
 
-Secrets: `CFBD_API_KEY` (CollegeFootballData, free tier shared with h2h) and `ODDS_API_KEY` (shared with
-te-tracker). Set with `gh secret set <NAME> -R mattrudy13/cfb-picks`.
+Secrets: `CFBD_API_KEY` (CollegeFootballData, free tier shared with h2h) and `ODDS_API_KEY` (this project's own key;
+te-tracker has a separate one). Set with `gh secret set <NAME> -R mattrudy13/cfb-picks`.
 
 ## Running locally
 

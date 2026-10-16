@@ -29,8 +29,9 @@ node scripts/build-ledger.mjs           # per-game research ledger from git hist
 There is no test suite or linter. Verify changes by running the scripts and checking the JSON diff,
 then the pages in a browser.
 
-- Live runs need `CFBD_API_KEY` / `ODDS_API_KEY`. Both free-tier quotas are **shared with other projects**
-  (CFBD with h2h, Odds API with te-tracker), so avoid unnecessary live calls; prefer `--offline`.
+- Live runs need `CFBD_API_KEY` / `ODDS_API_KEY`. Both are free tiers and CFBD's quota is **shared with h2h**, so
+  avoid unnecessary live calls; prefer `--offline`. The Odds API key is this project's own (te-tracker has
+  a separate key and quota, checked 2026-10-16).
 - Test odds offline with `node scripts/fetch-odds.mjs --fixture <file>` in a scratch copy of the repo,
   never against the real `data/`.
 - `scripts/fetch-history.mjs` is a one-time cache fill into `data/raw/`; it skips files already present.

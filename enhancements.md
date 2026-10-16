@@ -128,8 +128,8 @@ changes mid-season unless the model version is bumped.
 - Warn when a week's picks are measured against the close but none (or few) get a `clvClose`. With only
   DraftKings in CFBD's 2026 data, a change on CFBD's side (DraftKings dropped or renamed) would stall the
   official rule without anyone noticing. Unmapped providers already print a `::warning::`.
-- Save `x-requests-remaining` into `odds-2026.json` and warn under ~50. The 500 credits are shared with
-  te-tracker.
+- Save `x-requests-remaining` into `odds-2026.json` and warn under ~50. The 500 monthly credits are this project's
+  own (488 left on 2026-10-16).
 
 **Season rollover runbook. — M · Med**
 For 2027, `build-data` takes the season from `backtest-v3.json` → `live.season`, then writes
