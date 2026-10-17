@@ -784,7 +784,10 @@
        "awayLine": 6.5,
        "homeLine": -6.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Northern Illinois 23, Wyoming 41"
     },
     {
      "gameId": 401858264,
@@ -830,7 +833,10 @@
        "awayLine": 9.5,
        "homeLine": -9.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Georgia Tech 24, Virginia Tech 34"
     },
     {
      "gameId": 401856721,
@@ -876,7 +882,10 @@
        "awayLine": 6,
        "homeLine": -6
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Missouri 3, Ole Miss 31"
     },
     {
      "gameId": 401856719,
@@ -924,7 +933,10 @@
        "awayLine": 19,
        "homeLine": -19
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Auburn 27, Georgia 24"
     },
     {
      "gameId": 401866478,
@@ -970,7 +982,10 @@
        "awayLine": 9.5,
        "homeLine": -9.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Akron 14, Miami (OH) 34"
     },
     {
      "gameId": 401862805,
@@ -1018,7 +1033,10 @@
        "homeLine": 4,
        "awayLine": -4
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Tulsa 38, Rice 17"
     },
     {
      "gameId": 401862805,
@@ -1064,7 +1082,10 @@
        "homeLine": 4,
        "awayLine": -4
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Tulsa 38, Rice 17"
     },
     {
      "gameId": 401869934,
@@ -2078,7 +2099,10 @@
        "awayLine": 14,
        "homeLine": -14
       }
-     }
+     },
+     "result": "W",
+     "profit": 81.9672131147541,
+     "score": "Arizona State 25, Texas Tech 53"
     },
     {
      "gameId": 401858490,
@@ -2130,7 +2154,10 @@
        "homeLine": -6,
        "awayLine": 6
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Penn State 18, Michigan 21"
     },
     {
      "gameId": 401856719,
@@ -2182,7 +2209,10 @@
        "awayLine": 19,
        "homeLine": -19
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Auburn 27, Georgia 24"
     },
     {
      "gameId": 401862805,
@@ -2234,7 +2264,10 @@
        "homeLine": 4,
        "awayLine": -4
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Tulsa 38, Rice 17"
     },
     {
      "gameId": 401869934,
