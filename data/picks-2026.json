@@ -290,7 +290,10 @@
        "homeLine": 7.5,
        "awayLine": -7.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Northwestern 24, Michigan State 21"
     },
     {
      "gameId": 401856829,
@@ -336,7 +339,10 @@
        "awayLine": 2,
        "homeLine": -2
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Cincinnati 42, West Virginia 45"
     },
     {
      "gameId": 401858488,
@@ -382,7 +388,10 @@
        "homeLine": 3.5,
        "awayLine": -3.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Ohio State 19, Indiana 15"
     },
     {
      "gameId": 401858268,
@@ -428,7 +437,10 @@
        "homeLine": -8.5,
        "awayLine": 8.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Virginia 13, SMU 23"
     },
     {
      "gameId": 401866441,
@@ -474,7 +486,10 @@
        "awayLine": 7.5,
        "homeLine": -7.5
       }
-     }
+     },
+     "result": "W",
+     "profit": 245.00000000000003,
+     "score": "Ball State 32, Bowling Green 31"
     },
     {
      "gameId": 401856830,
@@ -520,7 +535,10 @@
        "awayLine": 6,
        "homeLine": -6
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Kansas 24, Kansas State 35"
     },
     {
      "gameId": 401858267,
@@ -568,7 +586,10 @@
        "homeLine": 6,
        "awayLine": -6
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Pittsburgh 21, Boston College 27"
     },
     {
      "gameId": 401856720,
@@ -614,7 +635,10 @@
        "homeLine": -11,
        "awayLine": 11
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Mississippi State 0, LSU 31"
     },
     {
      "gameId": 401856724,
@@ -662,7 +686,10 @@
        "awayLine": 9.5,
        "homeLine": -9.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Florida 27, Texas 24"
     },
     {
      "gameId": 401866443,
@@ -708,7 +735,10 @@
        "homeLine": 7,
        "awayLine": -7
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Western Michigan 21, Central Michigan 14"
     },
     {
      "gameId": 401864522,
@@ -1883,7 +1913,10 @@
        "homeLine": 7.5,
        "awayLine": -7.5
       }
-     }
+     },
+     "result": "W",
+     "profit": 78.74015748031496,
+     "score": "Northwestern 24, Michigan State 21"
     },
     {
      "gameId": 401856724,
@@ -1935,7 +1968,10 @@
        "awayLine": 9.5,
        "homeLine": -9.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Florida 27, Texas 24"
     },
     {
      "gameId": 401856829,
@@ -1987,7 +2023,10 @@
        "awayLine": 2,
        "homeLine": -2
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Cincinnati 42, West Virginia 45"
     },
     {
      "gameId": 401856828,
@@ -2507,7 +2546,10 @@
      "modelProb": 0.5247586745647193,
      "why": "Model James Madison -15 vs market -10.5, a 4.6-pt gap; trusting 11% of it in this kind of game leaves James Madison by 0.5",
      "closeMarket": -10.5,
-     "closeAt": "2026-10-16T17:45:24.183Z"
+     "closeAt": "2026-10-16T17:45:24.183Z",
+     "result": "W",
+     "profit": 88.49557522123894,
+     "score": "Georgia State 22, James Madison 49"
     },
     {
      "gameId": 401856720,
@@ -2559,7 +2601,10 @@
      "modelProb": 0.5157551737001583,
      "why": "Model LSU -11.5 vs market -15.5, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Mississippi State by 0.6",
      "closeMarket": -15.5,
-     "closeAt": "2026-10-16T17:45:24.183Z"
+     "closeAt": "2026-10-16T17:45:24.183Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Mississippi State 0, LSU 31"
     },
     {
      "gameId": 401856830,
@@ -2605,7 +2650,10 @@
      "modelProb": 0.5272813022782092,
      "why": "Model Kansas State -6.5 vs market -3, a 3.6-pt gap; trusting 17% of it in this kind of game leaves Kansas State by 0.6",
      "closeMarket": -3,
-     "closeAt": "2026-10-17T16:03:27.922Z"
+     "closeAt": "2026-10-17T16:03:27.922Z",
+     "result": "W",
+     "profit": 80.64516129032258,
+     "score": "Kansas 24, Kansas State 35"
     }
    ]
   },
