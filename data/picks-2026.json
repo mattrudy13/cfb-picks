@@ -205,8 +205,8 @@
      "edge": 6.888352835950986,
      "modelProb": 0.6759630689339511,
      "why": "Model UCLA -10.5 vs market -3.5: UCLA by 6.9 pts",
-     "closeMarket": -2.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": -1.5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "homeMl": -162,
@@ -669,8 +669,8 @@
      "marketPrice": 222.5,
      "ev": 7.883301145549149,
      "why": "Model gives Central Michigan 32% to win; +240 pays like 29%",
-     "closeMarket": 210,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 237.5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "homeMl": 215,
@@ -715,8 +715,8 @@
      "marketPrice": 245,
      "ev": 2.1423828497963093,
      "why": "Model gives Northern Illinois 29% to win; +250 pays like 29%",
-     "closeMarket": 260,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 257.5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "awayMl": 245,
@@ -761,8 +761,8 @@
      "marketPrice": 282.5,
      "ev": 3.7332648346545927,
      "why": "Model gives Georgia Tech 27% to win; +290 pays like 26%",
-     "closeMarket": 282.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 270,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "awayMl": 265,
@@ -807,8 +807,8 @@
      "marketPrice": 180,
      "ev": 13.002772156470932,
      "why": "Model gives Missouri 40% to win; +185 pays like 35%",
-     "closeMarket": 182,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 157.5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "awayMl": 164,
@@ -856,7 +856,7 @@
      "modelProb": 0.6273076685336128,
      "why": "Model Georgia -24.5 vs market -19: Georgia by 5.0 pts",
      "closeMarket": -19.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "awayMl": 750,
@@ -901,8 +901,8 @@
      "marketPrice": 310,
      "ev": 20.060012411350236,
      "why": "Model gives Akron 29% to win; +310 pays like 24%",
-     "closeMarket": 290,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 287.5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "awayMl": 310,
@@ -949,8 +949,8 @@
      "edge": 5.970389006903057,
      "modelProb": 0.6438765742255927,
      "why": "Model Rice -1.5 vs market +4.5: Rice by 6.0 pts",
-     "closeMarket": 4.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "homeMl": 150,
@@ -995,8 +995,8 @@
      "marketPrice": 150,
      "ev": 39.40925545707024,
      "why": "Model gives Rice 54% to win; +160 pays like 38%",
-     "closeMarket": 160,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 167,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "homeMl": 150,
@@ -1044,7 +1044,7 @@
      "modelProb": 0.6472718779442566,
      "why": "Model Southern Miss +1 vs market +7: Southern Miss by 5.9 pts",
      "closeMarket": 6.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "awayMl": -278,
@@ -1089,8 +1089,8 @@
      "marketPrice": 217.5,
      "ev": 55.4394991717746,
      "why": "Model gives Southern Miss 48% to win; +225 pays like 31%",
-     "closeMarket": 201,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 190,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "awayMl": -278,
@@ -1135,8 +1135,8 @@
      "marketPrice": 186.5,
      "ev": 0.22481138193574113,
      "why": "Model gives TCU 34% to win; +195 pays like 34%",
-     "closeMarket": 186.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 177.5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "homeMl": -225,
@@ -1183,8 +1183,8 @@
      "edge": 5.945800291503673,
      "modelProb": 0.6433102539184672,
      "why": "Model North Dakota State -9.5 vs market -15.5: Nevada by 5.9 pts",
-     "closeMarket": -14.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": -14.25,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "awayMl": 570,
@@ -1229,8 +1229,8 @@
      "marketPrice": 537.5,
      "ev": 85.9344914709711,
      "why": "Model gives Nevada 28% to win; +570 pays like 15%",
-     "closeMarket": 525,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 495,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "awayMl": 570,
@@ -1275,8 +1275,8 @@
      "marketPrice": 310,
      "ev": 27.210944154883464,
      "why": "Model gives BYU 29% to win; +340 pays like 23%",
-     "closeMarket": 320,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 330,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "homeMl": 310,
@@ -1321,8 +1321,8 @@
      "marketPrice": 427.5,
      "ev": 36.59092288607408,
      "why": "Model gives Syracuse 25% to win; +440 pays like 19%",
-     "closeMarket": 500,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 490,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "awayMl": -610,
@@ -1370,7 +1370,7 @@
      "modelProb": 0.7353227851025421,
      "why": "Model Houston -14 vs market -4: Houston by 9.9 pts",
      "closeMarket": -4.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "homeMl": -178,
@@ -1418,7 +1418,7 @@
      "modelProb": 0.6051384597405478,
      "why": "Model UL Monroe +19 vs market +14.5: Louisiana Tech by 4.3 pts",
      "closeMarket": 15.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "awayMl": -675,
@@ -1465,8 +1465,8 @@
      "edge": 8.579828226471271,
      "modelProb": 0.7019603461848707,
      "why": "Model UTSA -15 vs market -6.5: UTSA by 8.6 pts",
-     "closeMarket": -6.75,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": -6.5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "awayMl": 220,
@@ -1511,8 +1511,8 @@
      "marketPrice": 270,
      "ev": 36.639671765609826,
      "why": "Model gives UTEP 37% to win; +270 pays like 27%",
-     "closeMarket": 215,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 222.5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "awayMl": -340,
@@ -1551,8 +1551,8 @@
      "marketPrice": 492.5,
      "ev": 25.51492479088342,
      "why": "Model gives Sacramento State 20% to win; +520 pays like 16%",
-     "closeMarket": 495,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 500,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "awayMl": -625,
@@ -1600,7 +1600,7 @@
      "modelProb": 0.6153449217740089,
      "why": "Model Colorado +20 vs market +15.5: Utah by 4.7 pts",
      "closeMarket": 14.75,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "homeMl": 530,
@@ -1646,7 +1646,7 @@
      "ev": 20.06493573429188,
      "why": "Model gives San Diego State 32% to win; +280 pays like 26%",
      "closeMarket": 242.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "awayMl": -345,
@@ -1691,8 +1691,8 @@
      "marketPrice": 285,
      "ev": 24.10611655778425,
      "why": "Model gives California 32% to win; +290 pays like 26%",
-     "closeMarket": 305,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 322.5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "homeMl": 280,
@@ -1789,8 +1789,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5410468605735537,
      "why": "Model UCLA -10.5 vs market -3.5, a 6.9-pt gap; trusting 17% of it in this kind of game leaves UCLA by 1.2",
-     "closeMarket": -2.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": -1.5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "homeMl": -162,
@@ -1998,7 +1998,7 @@
      "modelProb": 0.5266278065917174,
      "why": "Model Texas Tech -17.5 vs market -14, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Texas Tech by 0.6",
      "closeMarket": -15.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "awayMl": 470,
@@ -2049,8 +2049,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5255093444331195,
      "why": "Model Michigan -9 vs market -6, a 3.1-pt gap; trusting 17% of it in this kind of game leaves Michigan by 0.5",
-     "closeMarket": -6.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": -6,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "homeMl": -225,
@@ -2102,7 +2102,7 @@
      "modelProb": 0.5267482666136329,
      "why": "Model Georgia -24 vs market -19, a 4.9-pt gap; trusting 17% of it in this kind of game leaves Georgia by 0.8",
      "closeMarket": -19.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "awayMl": 750,
@@ -2153,8 +2153,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5162603948794151,
      "why": "Model Rice -1.5 vs market +4.5, a 6.0-pt gap; trusting 11% of it in this kind of game leaves Rice by 0.7",
-     "closeMarket": 4.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": 5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "homeMl": 150,
@@ -2206,7 +2206,7 @@
      "modelProb": 0.5221395355363461,
      "why": "Model Southern Miss +1 vs market +7, a 5.9-pt gap; trusting 11% of it in this kind of game leaves Southern Miss by 0.6",
      "closeMarket": 6.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "awayMl": -278,
@@ -2257,8 +2257,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5163193726041942,
      "why": "Model North Dakota State -9.5 vs market -15.5, a 6.0-pt gap; trusting 11% of it in this kind of game leaves Nevada by 0.7",
-     "closeMarket": -14.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": -14.25,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "awayMl": 570,
@@ -2310,7 +2310,7 @@
      "modelProb": 0.5278194780696287,
      "why": "Model Oklahoma -10.5 vs market -7, a 3.7-pt gap; trusting 17% of it in this kind of game leaves Oklahoma by 0.6",
      "closeMarket": -6.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "draftkings": {
        "awayMl": 215,
@@ -2362,7 +2362,7 @@
      "modelProb": 0.5546642952783305,
      "why": "Model Houston -14 vs market -4, a 10.1-pt gap; trusting 17% of it in this kind of game leaves Houston by 1.7",
      "closeMarket": -4.5,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "homeMl": -176,
@@ -2413,8 +2413,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5231089494727926,
      "why": "Model UTSA -15 vs market -6.5, a 8.5-pt gap; trusting 11% of it in this kind of game leaves UTSA by 0.9",
-     "closeMarket": -6.75,
-     "closeAt": "2026-10-16T17:45:24.183Z",
+     "closeMarket": -6.5,
+     "closeAt": "2026-10-17T16:03:27.922Z",
      "books": {
       "fanduel": {
        "awayMl": 220,
@@ -2545,6 +2545,52 @@
      "why": "Model LSU -11.5 vs market -15.5, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Mississippi State by 0.6",
      "closeMarket": -15.5,
      "closeAt": "2026-10-16T17:45:24.183Z"
+    },
+    {
+     "gameId": 401856830,
+     "week": 7,
+     "kickoff": "2026-10-17T16:05:00Z",
+     "home": "Kansas State",
+     "away": "Kansas",
+     "takenAt": "2026-10-17T16:03:27.922Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "awayMl": 130,
+       "homeMl": -155,
+       "awayLine": 3,
+       "homeLine": -3
+      },
+      "fanduel": {
+       "awayMl": 120,
+       "homeMl": -144,
+       "awayLine": 2.5,
+       "homeLine": -2.5
+      },
+      "betmgm": {
+       "awayMl": 125,
+       "homeMl": -150,
+       "awayLine": 3,
+       "homeLine": -3
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Kansas State",
+     "line": -2.5,
+     "price": -124,
+     "book": "fanduel",
+     "modelLine": -6.5716176590392,
+     "marketLine": -3,
+     "edge": 0.6076546366687523,
+     "rawEdge": 3.5716176590392,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5272813022782092,
+     "why": "Model Kansas State -6.5 vs market -3, a 3.6-pt gap; trusting 17% of it in this kind of game leaves Kansas State by 0.6",
+     "closeMarket": -3,
+     "closeAt": "2026-10-17T16:03:27.922Z"
     }
    ]
   },
@@ -2615,8 +2661,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5142006075427141,
      "why": "Model Auburn +10 vs market +6.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves LSU by 0.6",
-     "closeMarket": 6.5,
-     "closeAt": "2026-10-16T17:45:24.183Z"
+     "closeMarket": 5.5,
+     "closeAt": "2026-10-17T16:03:27.922Z"
     },
     {
      "gameId": 401856732,
@@ -2684,7 +2730,7 @@
      "modelProb": 0.5165794579292482,
      "why": "Model Wisconsin +5.5 vs market +1.5, a 4.0-pt gap; trusting 17% of it in this kind of game leaves USC by 0.7",
      "closeMarket": 1.5,
-     "closeAt": "2026-10-16T17:45:24.183Z"
+     "closeAt": "2026-10-17T16:03:27.922Z"
     },
     {
      "gameId": 401864527,
@@ -2717,11 +2763,45 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5290101525118437,
      "why": "Model New Mexico -15 vs market -4.5, a 10.7-pt gap; trusting 11% of it in this kind of game leaves New Mexico by 1.2",
-     "closeMarket": -4.5,
-     "closeAt": "2026-10-16T17:45:24.183Z"
+     "closeMarket": -3.5,
+     "closeAt": "2026-10-17T16:03:27.922Z"
+    },
+    {
+     "gameId": 401858496,
+     "week": 8,
+     "kickoff": "2026-10-24T16:00:00Z",
+     "home": "Michigan",
+     "away": "Indiana",
+     "takenAt": "2026-10-17T16:03:27.922Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "awayMl": -385,
+       "homeMl": 300,
+       "awayLine": -9.5,
+       "homeLine": 9.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Michigan",
+     "line": 9.5,
+     "price": -110,
+     "book": "fanduel",
+     "modelLine": 6.546658258209737,
+     "marketLine": 9.5,
+     "edge": 0.5024647021005576,
+     "rawEdge": 2.953341741790263,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5123832954807387,
+     "why": "Model Michigan +6.5 vs market +9.5, a 3.0-pt gap; trusting 17% of it in this kind of game leaves Michigan by 0.5",
+     "closeMarket": 9.5,
+     "closeAt": "2026-10-17T16:03:27.922Z"
     }
    ]
   }
  },
- "updated": "2026-10-16T17:45:24.239Z"
+ "updated": "2026-10-17T16:03:27.981Z"
 }
