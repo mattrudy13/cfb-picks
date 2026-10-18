@@ -244,7 +244,10 @@
        "homeLine": -3.5,
        "awayLine": 3.5
       }
-     }
+     },
+     "result": "W",
+     "profit": 85.47008547008546,
+     "score": "Wisconsin 7, UCLA 17"
     },
     {
      "gameId": 401858491,
@@ -1133,7 +1136,10 @@
        "awayLine": -7,
        "homeLine": 7
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Arkansas State 23, Southern Miss 13"
     },
     {
      "gameId": 401869934,
@@ -1179,7 +1185,10 @@
        "awayLine": -7,
        "homeLine": 7
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Arkansas State 23, Southern Miss 13"
     },
     {
      "gameId": 401856832,
@@ -1225,7 +1234,10 @@
        "homeLine": -6,
        "awayLine": 6
       }
-     }
+     },
+     "result": "W",
+     "profit": 195,
+     "score": "TCU 17, Baylor 6"
     },
     {
      "gameId": 401864520,
@@ -1273,7 +1285,10 @@
        "awayLine": 14.5,
        "homeLine": -14.5
       }
-     }
+     },
+     "result": "W",
+     "profit": 92.5925925925926,
+     "score": "Nevada 17, North Dakota State 31"
     },
     {
      "gameId": 401864520,
@@ -1319,7 +1334,10 @@
        "awayLine": 14.5,
        "homeLine": -14.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Nevada 17, North Dakota State 31"
     },
     {
      "gameId": 401856809,
@@ -1365,7 +1383,10 @@
        "homeLine": 10.5,
        "awayLine": -10.5
       }
-     }
+     },
+     "result": "W",
+     "profit": 340,
+     "score": "Notre Dame 24, BYU 28"
     },
     {
      "gameId": 401858265,
@@ -1411,7 +1432,10 @@
        "awayLine": -13,
        "homeLine": 13
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Louisville 34, Syracuse 26"
     },
     {
      "gameId": 401856831,
@@ -1459,7 +1483,10 @@
        "homeLine": -4,
        "awayLine": 4
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Oklahoma State 32, Houston 35"
     },
     {
      "gameId": 401871091,
@@ -1507,7 +1534,10 @@
        "awayLine": -14.5,
        "homeLine": 14.5
       }
-     }
+     },
+     "result": "W",
+     "profit": 91.74311926605505,
+     "score": "Louisiana Tech 24, UL Monroe 0"
     },
     {
      "gameId": 401862804,
@@ -1555,7 +1585,10 @@
        "awayLine": 6.5,
        "homeLine": -6.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Navy 34, UTSA 38"
     },
     {
      "gameId": 401864523,
@@ -1595,7 +1628,10 @@
        "awayLine": -8,
        "homeLine": 8
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "San José State 24, UTEP 11"
     },
     {
      "gameId": 401866445,
@@ -1641,7 +1677,10 @@
        "awayLine": -14.5,
        "homeLine": 14.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Ohio 48, Sacramento State 7"
     },
     {
      "gameId": 401856833,
@@ -1882,7 +1921,10 @@
        "homeLine": -3.5,
        "awayLine": 3.5
       }
-     }
+     },
+     "result": "W",
+     "profit": 85.47008547008546,
+     "score": "Wisconsin 7, UCLA 17"
     },
     {
      "gameId": 401858491,
@@ -2319,7 +2361,10 @@
        "awayLine": -7,
        "homeLine": 7
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Arkansas State 23, Southern Miss 13"
     },
     {
      "gameId": 401864520,
@@ -2371,7 +2416,10 @@
        "awayLine": 14.5,
        "homeLine": -14.5
       }
-     }
+     },
+     "result": "W",
+     "profit": 92.5925925925926,
+     "score": "Nevada 17, North Dakota State 31"
     },
     {
      "gameId": 401856722,
@@ -2423,7 +2471,10 @@
        "awayLine": 7,
        "homeLine": -7
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Kentucky 21, Oklahoma 13"
     },
     {
      "gameId": 401856831,
@@ -2475,7 +2526,10 @@
        "homeLine": -4,
        "awayLine": 4
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Oklahoma State 32, Houston 35"
     },
     {
      "gameId": 401862804,
@@ -2527,7 +2581,10 @@
        "awayLine": 6.5,
        "homeLine": -6.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Navy 34, UTSA 38"
     },
     {
      "gameId": 401869957,
