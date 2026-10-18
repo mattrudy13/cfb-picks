@@ -49,7 +49,17 @@
      },
      "result": "L",
      "profit": -100,
-     "score": "Georgia Southern 23, Old Dominion 15"
+     "score": "Georgia Southern 23, Old Dominion 15",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 154,
+      "closed": 130
+     },
+     "clvClose": 4.108182129407734
     },
     {
      "gameId": 401860923,
@@ -98,7 +108,17 @@
      },
      "result": "L",
      "profit": -100,
-     "score": "Colorado State 27, Texas State 66"
+     "score": "Colorado State 27, Texas State 66",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 380,
+      "closed": 490
+     },
+     "clvClose": -3.8841807909604538
     },
     {
      "gameId": 401862801,
@@ -147,7 +167,17 @@
      },
      "result": "W",
      "profit": 204.99999999999997,
-     "score": "Memphis 17, Tulane 31"
+     "score": "Memphis 17, Tulane 31",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 205,
+      "closed": 210
+     },
+     "clvClose": -0.5288207297726055
     },
     {
      "gameId": 401858493,
@@ -196,7 +226,17 @@
      },
      "result": "W",
      "profit": 138,
-     "score": "Washington 38, Purdue 26"
+     "score": "Washington 38, Purdue 26",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 136,
+      "closed": 130
+     },
+     "clvClose": 1.1053795136330147
     },
     {
      "gameId": 401858494,
@@ -1728,7 +1768,10 @@
        "homeLine": 15.5,
        "awayLine": -15.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Utah 27, Colorado 24"
     },
     {
      "gameId": 401860904,
@@ -1774,7 +1817,10 @@
        "awayLine": -8,
        "homeLine": 8
       }
-     }
+     },
+     "result": "W",
+     "profit": 280,
+     "score": "Fresno State 23, San Diego State 26"
     },
     {
      "gameId": 401858269,
@@ -1820,7 +1866,10 @@
        "homeLine": 9.5,
        "awayLine": -9.5
       }
-     }
+     },
+     "result": "L",
+     "profit": -100,
+     "score": "Wake Forest 41, California 7"
     },
     {
      "gameId": 401871068,
@@ -1869,7 +1918,17 @@
      },
      "result": "L",
      "profit": -100,
-     "score": "Western Kentucky 16, Sam Houston 3"
+     "score": "Western Kentucky 16, Sam Houston 3",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -105,
+      "closed": -108
+     },
+     "clvClose": 0.703564727954975
     },
     {
      "gameId": 401858494,
