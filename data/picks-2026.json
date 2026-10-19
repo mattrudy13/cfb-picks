@@ -2873,8 +2873,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5142006075427141,
      "why": "Model Auburn +10 vs market +6.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves LSU by 0.6",
-     "closeMarket": 5.5,
-     "closeAt": "2026-10-17T16:03:27.922Z"
+     "closeMarket": 8.25,
+     "closeAt": "2026-10-19T05:56:14.559Z"
     },
     {
      "gameId": 401856732,
@@ -2941,8 +2941,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5165794579292482,
      "why": "Model Wisconsin +5.5 vs market +1.5, a 4.0-pt gap; trusting 17% of it in this kind of game leaves USC by 0.7",
-     "closeMarket": 1.5,
-     "closeAt": "2026-10-17T16:03:27.922Z"
+     "closeMarket": 3,
+     "closeAt": "2026-10-19T05:56:14.559Z"
     },
     {
      "gameId": 401864527,
@@ -2975,8 +2975,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5290101525118437,
      "why": "Model New Mexico -15 vs market -4.5, a 10.7-pt gap; trusting 11% of it in this kind of game leaves New Mexico by 1.2",
-     "closeMarket": -3.5,
-     "closeAt": "2026-10-17T16:03:27.922Z"
+     "closeMarket": -4.5,
+     "closeAt": "2026-10-19T05:56:14.559Z"
     },
     {
      "gameId": 401858496,
@@ -3009,11 +3009,369 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5123832954807387,
      "why": "Model Michigan +6.5 vs market +9.5, a 3.0-pt gap; trusting 17% of it in this kind of game leaves Michigan by 0.5",
-     "closeMarket": 9.5,
-     "closeAt": "2026-10-17T16:03:27.922Z"
+     "closeMarket": 7,
+     "closeAt": "2026-10-19T05:56:14.559Z"
+    },
+    {
+     "gameId": 401869845,
+     "week": 8,
+     "kickoff": "2026-10-22T23:00:00Z",
+     "home": "App State",
+     "away": "James Madison",
+     "takenAt": "2026-10-19T05:56:14.559Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": 340,
+       "awayMl": -450,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      },
+      "draftkings": {
+       "homeMl": 330,
+       "awayMl": -425,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      },
+      "betrivers": {
+       "homeMl": 330,
+       "awayMl": -455,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      },
+      "betmgm": {
+       "homeMl": 340,
+       "awayMl": -450,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "James Madison",
+     "line": -10.5,
+     "price": -108,
+     "book": "betrivers",
+     "modelLine": 16.585230300818253,
+     "marketLine": 10.5,
+     "edge": 0.6704679235310488,
+     "rawEdge": 6.085230300818253,
+     "trust": 0.11017954791963978,
+     "modelProb": 0.5165216718323548,
+     "why": "Model App State +16.5 vs market +10.5, a 6.1-pt gap; trusting 11% of it in this kind of game leaves James Madison by 0.7",
+     "closeMarket": 10.5,
+     "closeAt": "2026-10-19T05:56:14.559Z"
+    },
+    {
+     "gameId": 401856840,
+     "week": 8,
+     "kickoff": "2026-10-24T16:00:00Z",
+     "home": "Cincinnati",
+     "away": "Texas Tech",
+     "takenAt": "2026-10-19T05:56:14.559Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": 315,
+       "awayMl": -410,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      },
+      "draftkings": {
+       "homeMl": 340,
+       "awayMl": -440,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      },
+      "betrivers": {
+       "homeMl": 290,
+       "awayMl": -385,
+       "homeLine": 10,
+       "awayLine": -10
+      },
+      "betmgm": {
+       "homeMl": 333,
+       "awayMl": -425,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Texas Tech",
+     "line": -10,
+     "price": -114,
+     "book": "betrivers",
+     "modelLine": 13.839132264455039,
+     "marketLine": 10.5,
+     "edge": 0.5681008989893297,
+     "rawEdge": 3.3391322644550385,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5263085442648834,
+     "why": "Model Cincinnati +14 vs market +10.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Texas Tech by 0.6",
+     "closeMarket": 10.5,
+     "closeAt": "2026-10-19T05:56:14.559Z"
+    },
+    {
+     "gameId": 401856835,
+     "week": 8,
+     "kickoff": "2026-10-24T19:30:00Z",
+     "home": "UCF",
+     "away": "BYU",
+     "takenAt": "2026-10-19T05:56:14.559Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "awayMl": -265,
+       "homeMl": 215,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      },
+      "fanduel": {
+       "awayMl": -260,
+       "homeMl": 210,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      },
+      "betrivers": {
+       "awayMl": -275,
+       "homeMl": 210,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      },
+      "betmgm": {
+       "awayMl": -275,
+       "homeMl": 210,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "BYU",
+     "line": -6.5,
+     "price": -110,
+     "book": "fanduel",
+     "modelLine": 12.567053190696303,
+     "marketLine": 6.5,
+     "edge": 1.032213790552908,
+     "rawEdge": 6.067053190696303,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5254258248362891,
+     "why": "Model UCF +12.5 vs market +6.5, a 6.1-pt gap; trusting 17% of it in this kind of game leaves BYU by 1.0",
+     "closeMarket": 6.5,
+     "closeAt": "2026-10-19T05:56:14.559Z"
+    },
+    {
+     "gameId": 401856841,
+     "week": 8,
+     "kickoff": "2026-10-24T16:00:00Z",
+     "home": "TCU",
+     "away": "West Virginia",
+     "takenAt": "2026-10-19T05:56:14.559Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": -320,
+       "awayMl": 255,
+       "homeLine": -8.5,
+       "awayLine": 8.5
+      },
+      "betrivers": {
+       "homeMl": -345,
+       "awayMl": 260,
+       "homeLine": -8.5,
+       "awayLine": 8.5
+      },
+      "draftkings": {
+       "homeMl": -310,
+       "awayMl": 250,
+       "homeLine": -8.5,
+       "awayLine": 8.5
+      },
+      "betmgm": {
+       "homeMl": -300,
+       "awayMl": 250,
+       "homeLine": -8.5,
+       "awayLine": 8.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "TCU",
+     "line": -8.5,
+     "price": -108,
+     "book": "draftkings",
+     "modelLine": -13.582456529539627,
+     "marketLine": -8.5,
+     "edge": 0.8647001360926561,
+     "rawEdge": 5.082456529539627,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5213038887552426,
+     "why": "Model TCU -13.5 vs market -8.5, a 5.1-pt gap; trusting 17% of it in this kind of game leaves TCU by 0.9",
+     "closeMarket": -8.5,
+     "closeAt": "2026-10-19T05:56:14.559Z"
+    },
+    {
+     "gameId": 401862810,
+     "week": 8,
+     "kickoff": "2026-10-24T19:30:00Z",
+     "home": "Navy",
+     "away": "North Texas",
+     "takenAt": "2026-10-19T05:56:14.559Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "homeMl": 105,
+       "awayMl": -125,
+       "homeLine": 1.5,
+       "awayLine": -1.5
+      },
+      "betmgm": {
+       "homeMl": 105,
+       "awayMl": -125,
+       "homeLine": 2,
+       "awayLine": -2
+      },
+      "fanduel": {
+       "homeMl": 104,
+       "awayMl": -125,
+       "homeLine": 1.5,
+       "awayLine": -1.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "North Texas",
+     "line": -1.5,
+     "price": -114,
+     "book": "fanduel",
+     "modelLine": 7.900358160404824,
+     "marketLine": 1.5,
+     "edge": 0.7051885686371808,
+     "rawEdge": 6.400358160404824,
+     "trust": 0.11017954791963978,
+     "modelProb": 0.5173767281312056,
+     "why": "Model Navy +8 vs market +1.5, a 6.4-pt gap; trusting 11% of it in this kind of game leaves North Texas by 0.7",
+     "closeMarket": 1.5,
+     "closeAt": "2026-10-19T05:56:14.559Z"
+    },
+    {
+     "gameId": 401866447,
+     "week": 8,
+     "kickoff": "2026-10-24T19:30:00Z",
+     "home": "Ball State",
+     "away": "Sacramento State",
+     "takenAt": "2026-10-19T05:56:14.559Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "homeMl": -455,
+       "awayMl": 350,
+       "homeLine": -11.5,
+       "awayLine": 11.5
+      },
+      "betmgm": {
+       "homeMl": -475,
+       "awayMl": 360,
+       "homeLine": -11.5,
+       "awayLine": 11.5
+      },
+      "fanduel": {
+       "homeMl": -500,
+       "awayMl": 375,
+       "homeLine": -11.5,
+       "awayLine": 11.5
+      },
+      "betrivers": {
+       "homeMl": -530,
+       "awayMl": 370,
+       "homeLine": -10.5,
+       "awayLine": 10.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Sacramento State",
+     "line": 11.5,
+     "price": -108,
+     "book": "betmgm",
+     "modelLine": -6.457383972084871,
+     "marketLine": -11.5,
+     "edge": 0.5555931542880186,
+     "rawEdge": 5.042616027915129,
+     "trust": 0.11017954791963978,
+     "modelProb": 0.5136921595496833,
+     "why": "Model Ball State -6.5 vs market -11.5, a 5.0-pt gap; trusting 11% of it in this kind of game leaves Sacramento State by 0.6",
+     "closeMarket": -11.5,
+     "closeAt": "2026-10-19T05:56:14.559Z"
+    },
+    {
+     "gameId": 401856729,
+     "week": 8,
+     "kickoff": "2026-10-24T23:30:00Z",
+     "home": "Kentucky",
+     "away": "Vanderbilt",
+     "takenAt": "2026-10-19T05:56:14.559Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "homeMl": -440,
+       "awayMl": 340,
+       "homeLine": -10.5,
+       "awayLine": 10.5
+      },
+      "fanduel": {
+       "homeMl": -420,
+       "awayMl": 320,
+       "homeLine": -10.5,
+       "awayLine": 10.5
+      },
+      "betrivers": {
+       "homeMl": -420,
+       "awayMl": 285,
+       "homeLine": -10.5,
+       "awayLine": 10.5
+      },
+      "betmgm": {
+       "homeMl": -450,
+       "awayMl": 333,
+       "homeLine": -10.5,
+       "awayLine": 10.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Kentucky",
+     "line": -10.5,
+     "price": -108,
+     "book": "fanduel",
+     "modelLine": -13.885163872726011,
+     "marketLine": -10.5,
+     "edge": 0.5759324540070917,
+     "rawEdge": 3.385163872726011,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5141931969127452,
+     "why": "Model Kentucky -14 vs market -10.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Kentucky by 0.6",
+     "closeMarket": -10.5,
+     "closeAt": "2026-10-19T05:56:14.559Z"
     }
    ]
   }
  },
- "updated": "2026-10-17T16:03:27.981Z"
+ "updated": "2026-10-19T05:56:14.615Z"
 }
