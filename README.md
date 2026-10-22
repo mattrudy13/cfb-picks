@@ -1,6 +1,28 @@
-# cfb-picks
+# College football forecasting model
 
-College football spread picks from a team-rating model, with an honest track record. A static site on GitHub Pages: https://mattrudy13.github.io/cfb-picks/
+A model that predicts college football point spreads and tests them against sportsbook lines, with an
+honest track record.
+
+**Site:** https://mattrudy13.github.io/cfb-picks/
+
+## At a glance
+
+- **What it does:** rates every FBS team from game results and play-by-play efficiency (Elo, an
+  opponent-adjusted margin, EPA and success rate), turns the ratings into a predicted spread for each
+  game, and compares it with the betting market. Picks are saved before kickoff and graded automatically.
+- **How it was tested:** each version's pass/fail bar was written down before its backtest ran
+  ([SPEC.md](SPEC.md)), and each backtest season was predicted only from earlier seasons.
+  - v1: 52.1% against the opening line on 266 picks (the bar is 52.4%). Missed.
+  - v2: 52.8% on 863 picks, but profitable in only 2 of 4 seasons (the bar is 3). Missed.
+  - v3: 55.3% on 172 picks over 2022–2025, profitable in 3 of 4 seasons. Passed, narrowly. Against the
+    closing line it was 49.1%, so its live picks start as provisional.
+- **Live record (as of Oct 21, 2026):** v3 is 6–10 on its first 16 picks (week 7), with 15 week 8 picks
+  still to play. Picks become official only if, over 100+ live picks, lines move toward them by the
+  close by more than luck would explain.
+- **Built with:** JavaScript (Node 22), GitHub Actions on a schedule, GitHub Pages, and the
+  CollegeFootballData and The Odds API data services. No server and no dependencies.
+
+## Details
 
 **Status:** model v3 passed its pre-registered backtest bar narrowly (55.3% at the opener on 172
 picks, 2022–2025, but 49.1% at the close; see `SPEC.md` and the Backtest page), so its spread picks are
