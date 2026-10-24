@@ -3364,7 +3364,10 @@
      "modelProb": 0.5142006075427141,
      "why": "Model Auburn +10 vs market +6.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves LSU by 0.6",
      "closeMarket": 7,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeAt": "2026-10-23T18:02:16.538Z",
+     "result": "W",
+     "profit": 86.95652173913044,
+     "score": "LSU 38, Auburn 17"
     },
     {
      "gameId": 401856732,
@@ -3500,7 +3503,10 @@
      "modelProb": 0.5123832954807387,
      "why": "Model Michigan +6.5 vs market +9.5, a 3.0-pt gap; trusting 17% of it in this kind of game leaves Michigan by 0.5",
      "closeMarket": 7.5,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeAt": "2026-10-23T18:02:16.538Z",
+     "result": "W",
+     "profit": 90.9090909090909,
+     "score": "Indiana 13, Michigan 6"
     },
     {
      "gameId": 401869845,
@@ -3607,7 +3613,10 @@
      "modelProb": 0.5263085442648834,
      "why": "Model Cincinnati +14 vs market +10.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Texas Tech by 0.6",
      "closeMarket": 11.25,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeAt": "2026-10-23T18:02:16.538Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Texas Tech 24, Cincinnati 37"
     },
     {
      "gameId": 401856835,
@@ -3711,7 +3720,10 @@
      "modelProb": 0.5213038887552426,
      "why": "Model TCU -13.5 vs market -8.5, a 5.1-pt gap; trusting 17% of it in this kind of game leaves TCU by 0.9",
      "closeMarket": -10.5,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeAt": "2026-10-23T18:02:16.538Z",
+     "result": "L",
+     "profit": -100,
+     "score": "West Virginia 24, TCU 20"
     },
     {
      "gameId": 401862810,
