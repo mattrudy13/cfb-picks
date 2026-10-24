@@ -3431,8 +3431,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5165794579292482,
      "why": "Model Wisconsin +5.5 vs market +1.5, a 4.0-pt gap; trusting 17% of it in this kind of game leaves USC by 0.7",
-     "closeMarket": 3,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeMarket": 2.75,
+     "closeAt": "2026-10-24T16:23:39.509Z"
     },
     {
      "gameId": 401864527,
@@ -3466,7 +3466,7 @@
      "modelProb": 0.5290101525118437,
      "why": "Model New Mexico -15 vs market -4.5, a 10.7-pt gap; trusting 11% of it in this kind of game leaves New Mexico by 1.2",
      "closeMarket": -4.5,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeAt": "2026-10-24T16:23:39.509Z"
     },
     {
      "gameId": 401858496,
@@ -3655,8 +3655,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5254258248362891,
      "why": "Model UCF +12.5 vs market +6.5, a 6.1-pt gap; trusting 17% of it in this kind of game leaves BYU by 1.0",
-     "closeMarket": 7.5,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeMarket": 7.25,
+     "closeAt": "2026-10-24T16:23:39.509Z"
     },
     {
      "gameId": 401856841,
@@ -3753,8 +3753,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5173767281312056,
      "why": "Model Navy +8 vs market +1.5, a 6.4-pt gap; trusting 11% of it in this kind of game leaves North Texas by 0.7",
-     "closeMarket": 3,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeMarket": 3.25,
+     "closeAt": "2026-10-24T16:23:39.509Z"
     },
     {
      "gameId": 401866447,
@@ -3806,7 +3806,7 @@
      "modelProb": 0.5136921595496833,
      "why": "Model Ball State -6.5 vs market -11.5, a 5.0-pt gap; trusting 11% of it in this kind of game leaves Sacramento State by 0.6",
      "closeMarket": -14.5,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeAt": "2026-10-24T16:23:39.509Z"
     },
     {
      "gameId": 401856729,
@@ -3858,7 +3858,7 @@
      "modelProb": 0.5141931969127452,
      "why": "Model Kentucky -14 vs market -10.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Kentucky by 0.6",
      "closeMarket": -10.5,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeAt": "2026-10-24T16:23:39.509Z"
     },
     {
      "gameId": 401862808,
@@ -3961,8 +3961,60 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5123327116726935,
      "why": "Model Buffalo -8 vs market -3.5, a 4.5-pt gap; trusting 11% of it in this kind of game leaves Buffalo by 0.5",
-     "closeMarket": -3.25,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeMarket": -3,
+     "closeAt": "2026-10-24T16:23:39.509Z"
+    },
+    {
+     "gameId": 401871094,
+     "week": 8,
+     "kickoff": "2026-10-24T20:00:00Z",
+     "home": "Troy",
+     "away": "UL Monroe",
+     "takenAt": "2026-10-24T16:23:39.509Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "homeMl": -625,
+       "awayMl": 455,
+       "homeLine": -12.5,
+       "awayLine": 12.5
+      },
+      "betmgm": {
+       "homeMl": -625,
+       "awayMl": 450,
+       "homeLine": -13,
+       "awayLine": 13
+      },
+      "fanduel": {
+       "homeMl": -650,
+       "awayMl": 460,
+       "homeLine": -12.5,
+       "awayLine": 12.5
+      },
+      "betrivers": {
+       "homeMl": -530,
+       "awayMl": 375,
+       "homeLine": -13,
+       "awayLine": 13
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Troy",
+     "line": -12.5,
+     "price": -112,
+     "book": "draftkings",
+     "modelLine": -17.83484949746603,
+     "marketLine": -12.75,
+     "edge": 0.5602464188702149,
+     "rawEdge": 5.084849497466031,
+     "trust": 0.11017954791963978,
+     "modelProb": 0.5199634566879698,
+     "why": "Model Troy -18 vs market -12.5, a 5.1-pt gap; trusting 11% of it in this kind of game leaves Troy by 0.6",
+     "closeMarket": -12.75,
+     "closeAt": "2026-10-24T16:23:39.509Z"
     }
    ]
   },
@@ -4039,5 +4091,5 @@
    ]
   }
  },
- "updated": "2026-10-23T18:02:16.600Z"
+ "updated": "2026-10-24T16:23:39.568Z"
 }
