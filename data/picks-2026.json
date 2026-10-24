@@ -3552,7 +3552,10 @@
      "modelProb": 0.5165216718323548,
      "why": "Model App State +16.5 vs market +10.5, a 6.1-pt gap; trusting 11% of it in this kind of game leaves James Madison by 0.7",
      "closeMarket": 10.5,
-     "closeAt": "2026-10-20T18:12:38.588Z"
+     "closeAt": "2026-10-20T18:12:38.588Z",
+     "result": "L",
+     "profit": -100,
+     "score": "James Madison 31, App State 34"
     },
     {
      "gameId": 401856840,
@@ -3910,7 +3913,10 @@
      "modelProb": 0.5252088401406658,
      "why": "Model Tulsa +3.5 vs market -1.5, a 4.8-pt gap; trusting 11% of it in this kind of game leaves Army by 0.5",
      "closeMarket": -1.5,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeAt": "2026-10-23T18:02:16.538Z",
+     "result": "W",
+     "profit": 89.28571428571429,
+     "score": "Army 38, Tulsa 35"
     },
     {
      "gameId": 401866448,
