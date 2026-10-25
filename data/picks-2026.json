@@ -3330,7 +3330,10 @@
      "modelProb": 0.5185200420089336,
      "why": "Model Clemson -3 vs market +1.5, a 4.4-pt gap; trusting 17% of it in this kind of game leaves Clemson by 0.8",
      "closeMarket": 1.5,
-     "closeAt": "2026-10-16T17:45:24.183Z"
+     "closeAt": "2026-10-16T17:45:24.183Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Virginia Tech 20, Clemson 16"
     },
     {
      "gameId": 401856728,
@@ -3401,7 +3404,10 @@
      "modelProb": 0.5133505285092117,
      "why": "Model Texas -9.5 vs market -6.5, a 3.2-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.5",
      "closeMarket": -6.5,
-     "closeAt": "2026-10-16T17:45:24.183Z"
+     "closeAt": "2026-10-16T17:45:24.183Z",
+     "result": "W",
+     "profit": 90.9090909090909,
+     "score": "Ole Miss 27, Texas 34"
     },
     {
      "gameId": 401858500,
@@ -3435,7 +3441,10 @@
      "modelProb": 0.5165794579292482,
      "why": "Model Wisconsin +5.5 vs market +1.5, a 4.0-pt gap; trusting 17% of it in this kind of game leaves USC by 0.7",
      "closeMarket": 2.75,
-     "closeAt": "2026-10-24T16:23:39.509Z"
+     "closeAt": "2026-10-24T16:23:39.509Z",
+     "result": "L",
+     "profit": -100,
+     "score": "USC 7, Wisconsin 24"
     },
     {
      "gameId": 401864527,
@@ -3469,7 +3478,10 @@
      "modelProb": 0.5290101525118437,
      "why": "Model New Mexico -15 vs market -4.5, a 10.7-pt gap; trusting 11% of it in this kind of game leaves New Mexico by 1.2",
      "closeMarket": -4.5,
-     "closeAt": "2026-10-24T16:23:39.509Z"
+     "closeAt": "2026-10-24T16:23:39.509Z",
+     "result": "W",
+     "profit": 90.9090909090909,
+     "score": "North Dakota State 16, New Mexico 21"
     },
     {
      "gameId": 401858496,
@@ -3561,7 +3573,17 @@
      "closeAt": "2026-10-20T18:12:38.588Z",
      "result": "L",
      "profit": -100,
-     "score": "James Madison 31, App State 34"
+     "score": "James Madison 31, App State 34",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 10.5,
+      "closed": 12.5
+     },
+     "clvClose": 2
     },
     {
      "gameId": 401856840,
@@ -3882,7 +3904,10 @@
      "modelProb": 0.5141931969127452,
      "why": "Model Kentucky -14 vs market -10.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Kentucky by 0.6",
      "closeMarket": -10.5,
-     "closeAt": "2026-10-24T16:23:39.509Z"
+     "closeAt": "2026-10-24T16:23:39.509Z",
+     "result": "W",
+     "profit": 92.5925925925926,
+     "score": "Vanderbilt 17, Kentucky 34"
     },
     {
      "gameId": 401862808,
@@ -3937,7 +3962,17 @@
      "closeAt": "2026-10-23T18:02:16.538Z",
      "result": "W",
      "profit": 89.28571428571429,
-     "score": "Army 38, Tulsa 35"
+     "score": "Army 38, Tulsa 35",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -1.5,
+      "closed": 1.5
+     },
+     "clvClose": 3
     },
     {
      "gameId": 401866448,
