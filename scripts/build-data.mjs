@@ -43,13 +43,27 @@ function etWeekStart(when) {
 }
 
 let calls = 0;
-async function cfbd(pathAndQuery) {
-  const res = await fetch(`https://api.collegefootballdata.com/${pathAndQuery}`, {
-    headers: { Authorization: `Bearer ${KEY}`, Accept: "application/json" },
-  });
-  calls++;
-  if (!res.ok) throw new Error(`${pathAndQuery}: HTTP ${res.status}`);
-  return res.json();
+// Retries only errors that can clear up on their own (5xx, 429, network), so a bad key or path
+// fails right away instead of spending more of the shared monthly calls.
+async function cfbd(pathAndQuery, tries = 4) {
+  for (let i = 1; ; i++) {
+    let problem;
+    try {
+      const res = await fetch(`https://api.collegefootballdata.com/${pathAndQuery}`, {
+        headers: { Authorization: `Bearer ${KEY}`, Accept: "application/json" },
+      });
+      calls++;
+      if (res.ok) return await res.json();
+      problem = `HTTP ${res.status}`;
+      if (res.status < 500 && res.status !== 429) throw new Error(`${pathAndQuery}: ${problem}`);
+    } catch (err) {
+      if (!problem) problem = err.message; // network failure, or a 200 with a broken body
+      else throw err;
+    }
+    if (i >= tries) throw new Error(`${pathAndQuery}: ${problem}`);
+    console.warn(`${pathAndQuery}: ${problem}; retry ${i} of ${tries - 1}`);
+    await new Promise((r) => setTimeout(r, 1000 * 2 ** i)); // 2 s, 4 s, 8 s
+  }
 }
 
 // ---- Fetch this season (same trimming as fetch-history.mjs) ----
