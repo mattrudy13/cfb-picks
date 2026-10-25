@@ -3668,7 +3668,10 @@
      "modelProb": 0.5254258248362891,
      "why": "Model UCF +12.5 vs market +6.5, a 6.1-pt gap; trusting 17% of it in this kind of game leaves BYU by 1.0",
      "closeMarket": 7.25,
-     "closeAt": "2026-10-24T16:23:39.509Z"
+     "closeAt": "2026-10-24T16:23:39.509Z",
+     "result": "L",
+     "profit": -100,
+     "score": "BYU 31, UCF 39"
     },
     {
      "gameId": 401856841,
@@ -3769,7 +3772,10 @@
      "modelProb": 0.5173767281312056,
      "why": "Model Navy +8 vs market +1.5, a 6.4-pt gap; trusting 11% of it in this kind of game leaves North Texas by 0.7",
      "closeMarket": 3.25,
-     "closeAt": "2026-10-24T16:23:39.509Z"
+     "closeAt": "2026-10-24T16:23:39.509Z",
+     "result": "W",
+     "profit": 87.71929824561403,
+     "score": "North Texas 49, Navy 39"
     },
     {
      "gameId": 401866447,
@@ -3821,7 +3827,10 @@
      "modelProb": 0.5136921595496833,
      "why": "Model Ball State -6.5 vs market -11.5, a 5.0-pt gap; trusting 11% of it in this kind of game leaves Sacramento State by 0.6",
      "closeMarket": -14.5,
-     "closeAt": "2026-10-24T16:23:39.509Z"
+     "closeAt": "2026-10-24T16:23:39.509Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Sacramento State 17, Ball State 34"
     },
     {
      "gameId": 401856729,
@@ -3980,7 +3989,10 @@
      "modelProb": 0.5123327116726935,
      "why": "Model Buffalo -8 vs market -3.5, a 4.5-pt gap; trusting 11% of it in this kind of game leaves Buffalo by 0.5",
      "closeMarket": -3,
-     "closeAt": "2026-10-24T16:23:39.509Z"
+     "closeAt": "2026-10-24T16:23:39.509Z",
+     "result": "W",
+     "profit": 90.9090909090909,
+     "score": "Bowling Green 24, Buffalo 31"
     },
     {
      "gameId": 401871094,
@@ -4032,7 +4044,10 @@
      "modelProb": 0.5199634566879698,
      "why": "Model Troy -18 vs market -12.5, a 5.1-pt gap; trusting 11% of it in this kind of game leaves Troy by 0.6",
      "closeMarket": -12.75,
-     "closeAt": "2026-10-24T16:23:39.509Z"
+     "closeAt": "2026-10-24T16:23:39.509Z",
+     "result": "L",
+     "profit": -100,
+     "score": "UL Monroe 21, Troy 14"
     }
    ]
   },
