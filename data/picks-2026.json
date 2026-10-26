@@ -3333,7 +3333,17 @@
      "closeAt": "2026-10-16T17:45:24.183Z",
      "result": "L",
      "profit": -100,
-     "score": "Virginia Tech 20, Clemson 16"
+     "score": "Virginia Tech 20, Clemson 16",
+     "close": {
+      "source": "cfbd",
+      "books": [],
+      "skipped": [
+       "draftkings"
+      ],
+      "posted": null,
+      "closed": null
+     },
+     "clvClose": null
     },
     {
      "gameId": 401856728,
@@ -3370,7 +3380,17 @@
      "closeAt": "2026-10-23T18:02:16.538Z",
      "result": "W",
      "profit": 86.95652173913044,
-     "score": "LSU 38, Auburn 17"
+     "score": "LSU 38, Auburn 17",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 6.5,
+      "closed": 7
+     },
+     "clvClose": 0.5
     },
     {
      "gameId": 401856732,
@@ -3407,7 +3427,17 @@
      "closeAt": "2026-10-16T17:45:24.183Z",
      "result": "W",
      "profit": 90.9090909090909,
-     "score": "Ole Miss 27, Texas 34"
+     "score": "Ole Miss 27, Texas 34",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -6.5,
+      "closed": -3
+     },
+     "clvClose": -3.5
     },
     {
      "gameId": 401858500,
@@ -3444,7 +3474,17 @@
      "closeAt": "2026-10-24T16:23:39.509Z",
      "result": "L",
      "profit": -100,
-     "score": "USC 7, Wisconsin 24"
+     "score": "USC 7, Wisconsin 24",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 1.5,
+      "closed": 1.5
+     },
+     "clvClose": 0
     },
     {
      "gameId": 401864527,
@@ -3481,7 +3521,17 @@
      "closeAt": "2026-10-24T16:23:39.509Z",
      "result": "W",
      "profit": 90.9090909090909,
-     "score": "North Dakota State 16, New Mexico 21"
+     "score": "North Dakota State 16, New Mexico 21",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -4.5,
+      "closed": -4.5
+     },
+     "clvClose": 0
     },
     {
      "gameId": 401858496,
@@ -3518,7 +3568,15 @@
      "closeAt": "2026-10-23T18:02:16.538Z",
      "result": "W",
      "profit": 90.9090909090909,
-     "score": "Indiana 13, Michigan 6"
+     "score": "Indiana 13, Michigan 6",
+     "close": {
+      "source": "cfbd",
+      "books": [],
+      "skipped": [],
+      "posted": null,
+      "closed": null
+     },
+     "clvClose": null
     },
     {
      "gameId": 401869845,
@@ -3638,7 +3696,17 @@
      "closeAt": "2026-10-23T18:02:16.538Z",
      "result": "L",
      "profit": -100,
-     "score": "Texas Tech 24, Cincinnati 37"
+     "score": "Texas Tech 24, Cincinnati 37",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 10.5,
+      "closed": 10.5
+     },
+     "clvClose": 0
     },
     {
      "gameId": 401856835,
@@ -3693,7 +3761,17 @@
      "closeAt": "2026-10-24T16:23:39.509Z",
      "result": "L",
      "profit": -100,
-     "score": "BYU 31, UCF 39"
+     "score": "BYU 31, UCF 39",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 6.5,
+      "closed": 7.5
+     },
+     "clvClose": 1
     },
     {
      "gameId": 401856841,
@@ -3748,7 +3826,17 @@
      "closeAt": "2026-10-23T18:02:16.538Z",
      "result": "L",
      "profit": -100,
-     "score": "West Virginia 24, TCU 20"
+     "score": "West Virginia 24, TCU 20",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -8.5,
+      "closed": -10
+     },
+     "clvClose": 1.5
     },
     {
      "gameId": 401862810,
@@ -3797,7 +3885,17 @@
      "closeAt": "2026-10-24T16:23:39.509Z",
      "result": "W",
      "profit": 87.71929824561403,
-     "score": "North Texas 49, Navy 39"
+     "score": "North Texas 49, Navy 39",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 1.5,
+      "closed": 3
+     },
+     "clvClose": 1.5
     },
     {
      "gameId": 401866447,
@@ -3852,7 +3950,17 @@
      "closeAt": "2026-10-24T16:23:39.509Z",
      "result": "L",
      "profit": -100,
-     "score": "Sacramento State 17, Ball State 34"
+     "score": "Sacramento State 17, Ball State 34",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -11.5,
+      "closed": -14.5
+     },
+     "clvClose": -3
     },
     {
      "gameId": 401856729,
@@ -3907,7 +4015,17 @@
      "closeAt": "2026-10-24T16:23:39.509Z",
      "result": "W",
      "profit": 92.5925925925926,
-     "score": "Vanderbilt 17, Kentucky 34"
+     "score": "Vanderbilt 17, Kentucky 34",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -10.5,
+      "closed": -9.5
+     },
+     "clvClose": -1
     },
     {
      "gameId": 401862808,
@@ -4027,7 +4145,17 @@
      "closeAt": "2026-10-24T16:23:39.509Z",
      "result": "W",
      "profit": 90.9090909090909,
-     "score": "Bowling Green 24, Buffalo 31"
+     "score": "Bowling Green 24, Buffalo 31",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -3.5,
+      "closed": -3
+     },
+     "clvClose": -0.5
     },
     {
      "gameId": 401871094,
@@ -4082,7 +4210,17 @@
      "closeAt": "2026-10-24T16:23:39.509Z",
      "result": "L",
      "profit": -100,
-     "score": "UL Monroe 21, Troy 14"
+     "score": "UL Monroe 21, Troy 14",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -12.5,
+      "closed": -13.5
+     },
+     "clvClose": 1
     }
    ]
   },
