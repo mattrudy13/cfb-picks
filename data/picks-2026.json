@@ -4153,11 +4153,271 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5163246545644959,
      "why": "Model Cincinnati +13.5 vs market +9.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
-     "closeMarket": 9.5,
-     "closeAt": "2026-10-23T18:02:16.538Z"
+     "closeMarket": 6.5,
+     "closeAt": "2026-10-26T05:54:37.923Z"
+    },
+    {
+     "gameId": 401871071,
+     "week": 9,
+     "kickoff": "2026-10-27T23:00:00Z",
+     "home": "Western Kentucky",
+     "away": "Delaware",
+     "takenAt": "2026-10-26T05:54:37.923Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "awayMl": -111,
+       "homeMl": -108,
+       "awayLine": -1.5,
+       "homeLine": 1.5
+      },
+      "draftkings": {
+       "awayMl": -105,
+       "homeMl": -115,
+       "awayLine": 1.5,
+       "homeLine": -1.5
+      },
+      "betrivers": {
+       "awayMl": -120,
+       "homeMl": -104,
+       "awayLine": -2.5,
+       "homeLine": 2.5
+      },
+      "betmgm": {
+       "awayMl": -105,
+       "homeMl": -112,
+       "awayLine": 1,
+       "homeLine": -1
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Western Kentucky",
+     "line": 2.5,
+     "price": -129,
+     "book": "betrivers",
+     "modelLine": -4.7852778484595815,
+     "marketLine": 0.25,
+     "edge": 0.5547846369930531,
+     "rawEdge": 5.0352778484595815,
+     "trust": 0.11017954791963978,
+     "modelProb": 0.5687905262495283,
+     "why": "Model Western Kentucky -5 vs market +0.5, a 5.0-pt gap; trusting 11% of it in this kind of game leaves Western Kentucky by 0.6",
+     "closeMarket": 0.25,
+     "closeAt": "2026-10-26T05:54:37.923Z"
+    },
+    {
+     "gameId": 401856844,
+     "week": 9,
+     "kickoff": "2026-10-30T23:30:00Z",
+     "home": "UCF",
+     "away": "Baylor",
+     "takenAt": "2026-10-26T05:54:37.923Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "awayMl": -111,
+       "homeMl": -108,
+       "awayLine": -1.5,
+       "homeLine": 1.5
+      },
+      "draftkings": {
+       "awayMl": -115,
+       "homeMl": -105,
+       "awayLine": -1.5,
+       "homeLine": 1.5
+      },
+      "betrivers": {
+       "awayMl": -118,
+       "homeMl": -105,
+       "awayLine": -1.5,
+       "homeLine": 1.5
+      },
+      "betmgm": {
+       "awayMl": -115,
+       "homeMl": -105,
+       "awayLine": -1.5,
+       "homeLine": 1.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "UCF",
+     "line": 1.5,
+     "price": -110,
+     "book": "betmgm",
+     "modelLine": -2.5190847468032898,
+     "marketLine": 1.5,
+     "edge": 0.6837841322065412,
+     "rawEdge": 4.01908474680329,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5168496158565562,
+     "why": "Model UCF -2.5 vs market +1.5, a 4.0-pt gap; trusting 17% of it in this kind of game leaves UCF by 0.7",
+     "closeMarket": 1.5,
+     "closeAt": "2026-10-26T05:54:37.923Z"
+    },
+    {
+     "gameId": 401866451,
+     "week": 9,
+     "kickoff": "2026-10-31T02:30:00Z",
+     "home": "Sacramento State",
+     "away": "Kent State",
+     "takenAt": "2026-10-26T05:54:37.923Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "awayMl": -430,
+       "homeMl": 330,
+       "awayLine": -10.5,
+       "homeLine": 10.5
+      },
+      "draftkings": {
+       "awayMl": -410,
+       "homeMl": 320,
+       "awayLine": -10.5,
+       "homeLine": 10.5
+      },
+      "betrivers": {
+       "awayMl": -500,
+       "homeMl": 350,
+       "awayLine": -10.5,
+       "homeLine": 10.5
+      },
+      "betmgm": {
+       "awayMl": -425,
+       "homeMl": 333,
+       "awayLine": -10.5,
+       "homeLine": 10.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Sacramento State",
+     "line": 10.5,
+     "price": -106,
+     "book": "fanduel",
+     "modelLine": 4.591864365499373,
+     "marketLine": 10.5,
+     "edge": 0.6509557132571933,
+     "rawEdge": 5.908135634500627,
+     "trust": 0.11017954791963978,
+     "modelProb": 0.5160411160316409,
+     "why": "Model Sacramento State +4.5 vs market +10.5, a 5.9-pt gap; trusting 11% of it in this kind of game leaves Sacramento State by 0.7",
+     "closeMarket": 10.5,
+     "closeAt": "2026-10-26T05:54:37.923Z"
+    },
+    {
+     "gameId": 401862816,
+     "week": 9,
+     "kickoff": "2026-10-31T16:00:00Z",
+     "home": "South Florida",
+     "away": "UAB",
+     "takenAt": "2026-10-26T05:54:37.923Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": -330,
+       "awayMl": 260,
+       "homeLine": -7.5,
+       "awayLine": 7.5
+      },
+      "betmgm": {
+       "homeMl": -300,
+       "awayMl": 250,
+       "homeLine": -7.5,
+       "awayLine": 7.5
+      },
+      "draftkings": {
+       "homeMl": -305,
+       "awayMl": 245,
+       "homeLine": -7.5,
+       "awayLine": 7.5
+      },
+      "betrivers": {
+       "homeMl": -335,
+       "awayMl": 250,
+       "homeLine": -7.5,
+       "awayLine": 7.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "South Florida",
+     "line": -7.5,
+     "price": -108,
+     "book": "betrivers",
+     "modelLine": -12.240780905889935,
+     "marketLine": -7.5,
+     "edge": 0.5223370969970134,
+     "rawEdge": 4.740780905889935,
+     "trust": 0.11017954791963978,
+     "modelProb": 0.5128728850498137,
+     "why": "Model South Florida -12 vs market -7.5, a 4.7-pt gap; trusting 11% of it in this kind of game leaves South Florida by 0.5",
+     "closeMarket": -7.5,
+     "closeAt": "2026-10-26T05:54:37.923Z"
+    },
+    {
+     "gameId": 401858509,
+     "week": 9,
+     "kickoff": "2026-10-31T23:30:00Z",
+     "home": "USC",
+     "away": "Ohio State",
+     "takenAt": "2026-10-26T05:54:37.923Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "awayMl": -265,
+       "homeMl": 215,
+       "awayLine": -7,
+       "homeLine": 7
+      },
+      "fanduel": {
+       "awayMl": -255,
+       "homeMl": 205,
+       "awayLine": -7.5,
+       "homeLine": 7.5
+      },
+      "betrivers": {
+       "awayMl": -265,
+       "homeMl": 205,
+       "awayLine": -7,
+       "homeLine": 7
+      },
+      "betmgm": {
+       "awayMl": -250,
+       "homeMl": 210,
+       "awayLine": -7,
+       "homeLine": 7
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Ohio State",
+     "line": -7,
+     "price": -108,
+     "book": "betrivers",
+     "modelLine": 12.755966068778134,
+     "marketLine": 7,
+     "edge": 0.9792872037545987,
+     "rawEdge": 5.755966068778134,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5241237565709509,
+     "why": "Model USC +13 vs market +7, a 5.8-pt gap; trusting 17% of it in this kind of game leaves Ohio State by 1.0",
+     "closeMarket": 7,
+     "closeAt": "2026-10-26T05:54:37.923Z"
     }
    ]
   }
  },
- "updated": "2026-10-24T16:23:39.568Z"
+ "updated": "2026-10-26T05:54:37.973Z"
 }
