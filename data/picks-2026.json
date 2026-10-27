@@ -4292,7 +4292,7 @@
      "modelProb": 0.5163246545644959,
      "why": "Model Cincinnati +13.5 vs market +9.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
      "closeMarket": 6.5,
-     "closeAt": "2026-10-26T05:54:37.923Z"
+     "closeAt": "2026-10-27T19:07:56.316Z"
     },
     {
      "gameId": 401871071,
@@ -4343,8 +4343,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5687905262495283,
      "why": "Model Western Kentucky -5 vs market +0.5, a 5.0-pt gap; trusting 11% of it in this kind of game leaves Western Kentucky by 0.6",
-     "closeMarket": 0.25,
-     "closeAt": "2026-10-26T05:54:37.923Z"
+     "closeMarket": -1.75,
+     "closeAt": "2026-10-27T19:07:56.316Z"
     },
     {
      "gameId": 401856844,
@@ -4395,8 +4395,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5168496158565562,
      "why": "Model UCF -2.5 vs market +1.5, a 4.0-pt gap; trusting 17% of it in this kind of game leaves UCF by 0.7",
-     "closeMarket": 1.5,
-     "closeAt": "2026-10-26T05:54:37.923Z"
+     "closeMarket": -1.5,
+     "closeAt": "2026-10-27T19:07:56.316Z"
     },
     {
      "gameId": 401866451,
@@ -4447,8 +4447,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5160411160316409,
      "why": "Model Sacramento State +4.5 vs market +10.5, a 5.9-pt gap; trusting 11% of it in this kind of game leaves Sacramento State by 0.7",
-     "closeMarket": 10.5,
-     "closeAt": "2026-10-26T05:54:37.923Z"
+     "closeMarket": 10,
+     "closeAt": "2026-10-27T19:07:56.316Z"
     },
     {
      "gameId": 401862816,
@@ -4499,8 +4499,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5128728850498137,
      "why": "Model South Florida -12 vs market -7.5, a 4.7-pt gap; trusting 11% of it in this kind of game leaves South Florida by 0.5",
-     "closeMarket": -7.5,
-     "closeAt": "2026-10-26T05:54:37.923Z"
+     "closeMarket": -8,
+     "closeAt": "2026-10-27T19:07:56.316Z"
     },
     {
      "gameId": 401858509,
@@ -4551,11 +4551,199 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5241237565709509,
      "why": "Model USC +13 vs market +7, a 5.8-pt gap; trusting 17% of it in this kind of game leaves Ohio State by 1.0",
-     "closeMarket": 7,
-     "closeAt": "2026-10-26T05:54:37.923Z"
+     "closeMarket": 6.5,
+     "closeAt": "2026-10-27T19:07:56.316Z"
+    },
+    {
+     "gameId": 401866452,
+     "week": 9,
+     "kickoff": "2026-10-31T16:00:00Z",
+     "home": "Western Michigan",
+     "away": "Bowling Green",
+     "takenAt": "2026-10-27T19:07:56.316Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "awayMl": 430,
+       "homeMl": -580,
+       "awayLine": 13.5,
+       "homeLine": -13.5
+      },
+      "draftkings": {
+       "awayMl": 410,
+       "homeMl": -550,
+       "awayLine": 13.5,
+       "homeLine": -13.5
+      },
+      "betmgm": {
+       "awayMl": 400,
+       "homeMl": -525,
+       "awayLine": 13,
+       "homeLine": -13
+      },
+      "betrivers": {
+       "awayMl": 400,
+       "homeMl": -590,
+       "awayLine": 12.5,
+       "homeLine": -12.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Western Michigan",
+     "line": -12.5,
+     "price": -114,
+     "book": "betrivers",
+     "modelLine": -17.988504747237354,
+     "marketLine": -13.25,
+     "edge": 0.5220863108656786,
+     "rawEdge": 4.738504747237354,
+     "trust": 0.11017954791963978,
+     "modelProb": 0.5313234138318823,
+     "why": "Model Western Michigan -18 vs market -13, a 4.7-pt gap; trusting 11% of it in this kind of game leaves Western Michigan by 0.5",
+     "closeMarket": -13.25,
+     "closeAt": "2026-10-27T19:07:56.316Z"
+    },
+    {
+     "gameId": 401858282,
+     "week": 9,
+     "kickoff": "2026-10-31T23:30:00Z",
+     "home": "North Carolina",
+     "away": "Miami",
+     "takenAt": "2026-10-27T19:07:56.316Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "awayMl": -675,
+       "homeMl": 490,
+       "awayLine": -14.5,
+       "homeLine": 14.5
+      },
+      "fanduel": {
+       "awayMl": -690,
+       "homeMl": 500,
+       "awayLine": -14.5,
+       "homeLine": 14.5
+      },
+      "betrivers": {
+       "awayMl": -770,
+       "homeMl": 500,
+       "awayLine": -14.5,
+       "homeLine": 14.5
+      },
+      "betmgm": {
+       "awayMl": -650,
+       "homeMl": 500,
+       "awayLine": -14.5,
+       "homeLine": 14.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Miami",
+     "line": -14.5,
+     "price": -108,
+     "book": "draftkings",
+     "modelLine": 17.85556388070996,
+     "marketLine": 14.5,
+     "edge": 0.5708964803640588,
+     "rawEdge": 3.3555638807099584,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5140691430341282,
+     "why": "Model North Carolina +18 vs market +14.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.6",
+     "closeMarket": 14.5,
+     "closeAt": "2026-10-27T19:07:56.316Z"
+    }
+   ]
+  },
+  "10": {
+   "picks": [
+    {
+     "gameId": 401856743,
+     "week": 10,
+     "kickoff": "2026-11-07T17:00:00Z",
+     "home": "Missouri",
+     "away": "Texas",
+     "takenAt": "2026-10-27T19:07:56.316Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": 160,
+       "awayMl": -194,
+       "homeLine": 4.5,
+       "awayLine": -4.5
+      },
+      "betrivers": {
+       "homeMl": 160,
+       "awayMl": -200,
+       "homeLine": 4.5,
+       "awayLine": -4.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Texas",
+     "line": -4.5,
+     "price": -112,
+     "book": "betrivers",
+     "modelLine": 7.719967353920991,
+     "marketLine": 4.5,
+     "edge": 0.5478268614727523,
+     "rawEdge": 3.2199673539209908,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.51350083929282,
+     "why": "Model Missouri +7.5 vs market +4.5, a 3.2-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.5",
+     "closeMarket": 4.5,
+     "closeAt": "2026-10-27T19:07:56.316Z"
+    },
+    {
+     "gameId": 401856849,
+     "week": 10,
+     "kickoff": "2026-11-07T17:00:00Z",
+     "home": "Utah",
+     "away": "BYU",
+     "takenAt": "2026-10-27T19:07:56.316Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "awayMl": 126,
+       "homeMl": -150,
+       "awayLine": 2.5,
+       "homeLine": -2.5
+      },
+      "betrivers": {
+       "awayMl": 125,
+       "homeMl": -155,
+       "awayLine": 3,
+       "homeLine": -3
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Utah",
+     "line": -2.5,
+     "price": -124,
+     "book": "fanduel",
+     "modelLine": -6.90839516490601,
+     "marketLine": -2.75,
+     "edge": 0.7074856113618304,
+     "rawEdge": 4.15839516490601,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5235873310268657,
+     "why": "Model Utah -7 vs market -2.5, a 4.2-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
+     "closeMarket": -2.75,
+     "closeAt": "2026-10-27T19:07:56.316Z"
     }
    ]
   }
  },
- "updated": "2026-10-26T05:54:37.973Z"
+ "updated": "2026-10-27T19:07:56.373Z"
 }
