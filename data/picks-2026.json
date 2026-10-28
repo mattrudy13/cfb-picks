@@ -4344,7 +4344,10 @@
      "modelProb": 0.5687905262495283,
      "why": "Model Western Kentucky -5 vs market +0.5, a 5.0-pt gap; trusting 11% of it in this kind of game leaves Western Kentucky by 0.6",
      "closeMarket": -1.75,
-     "closeAt": "2026-10-27T19:07:56.316Z"
+     "closeAt": "2026-10-27T19:07:56.316Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Delaware 35, Western Kentucky 21"
     },
     {
      "gameId": 401856844,
