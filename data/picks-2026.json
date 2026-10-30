@@ -4291,8 +4291,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5163246545644959,
      "why": "Model Cincinnati +13.5 vs market +9.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
-     "closeMarket": 6.5,
-     "closeAt": "2026-10-27T19:07:56.316Z"
+     "closeMarket": 7,
+     "closeAt": "2026-10-30T18:56:18.729Z"
     },
     {
      "gameId": 401871071,
@@ -4398,8 +4398,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5168496158565562,
      "why": "Model UCF -2.5 vs market +1.5, a 4.0-pt gap; trusting 17% of it in this kind of game leaves UCF by 0.7",
-     "closeMarket": -1.5,
-     "closeAt": "2026-10-27T19:07:56.316Z"
+     "closeMarket": 2.25,
+     "closeAt": "2026-10-30T18:56:18.729Z"
     },
     {
      "gameId": 401866451,
@@ -4450,8 +4450,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5160411160316409,
      "why": "Model Sacramento State +4.5 vs market +10.5, a 5.9-pt gap; trusting 11% of it in this kind of game leaves Sacramento State by 0.7",
-     "closeMarket": 10,
-     "closeAt": "2026-10-27T19:07:56.316Z"
+     "closeMarket": 7.5,
+     "closeAt": "2026-10-30T18:56:18.729Z"
     },
     {
      "gameId": 401862816,
@@ -4502,8 +4502,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5128728850498137,
      "why": "Model South Florida -12 vs market -7.5, a 4.7-pt gap; trusting 11% of it in this kind of game leaves South Florida by 0.5",
-     "closeMarket": -8,
-     "closeAt": "2026-10-27T19:07:56.316Z"
+     "closeMarket": -7.5,
+     "closeAt": "2026-10-30T18:56:18.729Z"
     },
     {
      "gameId": 401858509,
@@ -4555,7 +4555,7 @@
      "modelProb": 0.5241237565709509,
      "why": "Model USC +13 vs market +7, a 5.8-pt gap; trusting 17% of it in this kind of game leaves Ohio State by 1.0",
      "closeMarket": 6.5,
-     "closeAt": "2026-10-27T19:07:56.316Z"
+     "closeAt": "2026-10-30T18:56:18.729Z"
     },
     {
      "gameId": 401866452,
@@ -4606,8 +4606,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5313234138318823,
      "why": "Model Western Michigan -18 vs market -13, a 4.7-pt gap; trusting 11% of it in this kind of game leaves Western Michigan by 0.5",
-     "closeMarket": -13.25,
-     "closeAt": "2026-10-27T19:07:56.316Z"
+     "closeMarket": -13.5,
+     "closeAt": "2026-10-30T18:56:18.729Z"
     },
     {
      "gameId": 401858282,
@@ -4658,8 +4658,112 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5140691430341282,
      "why": "Model North Carolina +18 vs market +14.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.6",
-     "closeMarket": 14.5,
-     "closeAt": "2026-10-27T19:07:56.316Z"
+     "closeMarket": 14.25,
+     "closeAt": "2026-10-30T18:56:18.729Z"
+    },
+    {
+     "gameId": 401856846,
+     "week": 9,
+     "kickoff": "2026-10-31T18:00:00Z",
+     "home": "Colorado",
+     "away": "Kansas State",
+     "takenAt": "2026-10-30T18:56:18.729Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": -125,
+       "awayMl": 104,
+       "homeLine": -1.5,
+       "awayLine": 1.5
+      },
+      "betrivers": {
+       "homeMl": -124,
+       "awayMl": 100,
+       "homeLine": -1.5,
+       "awayLine": 1.5
+      },
+      "draftkings": {
+       "homeMl": -135,
+       "awayMl": 114,
+       "homeLine": -2.5,
+       "awayLine": 2.5
+      },
+      "betmgm": {
+       "homeMl": -130,
+       "awayMl": 110,
+       "homeLine": -2,
+       "awayLine": 2
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Kansas State",
+     "line": 2.5,
+     "price": -115,
+     "book": "draftkings",
+     "modelLine": 9.396373364089515,
+     "marketLine": -1.75,
+     "edge": 0.7377129032397032,
+     "rawEdge": 11.146373364089515,
+     "trust": 0.06618411918771777,
+     "modelProb": 0.536619057709427,
+     "why": "Model Colorado +9.5 vs market -1.5, a 11.1-pt gap; trusting 7% of it in this kind of game leaves Kansas State by 0.7",
+     "closeMarket": -1.75,
+     "closeAt": "2026-10-30T18:56:18.729Z"
+    },
+    {
+     "gameId": 401856736,
+     "week": 9,
+     "kickoff": "2026-10-31T20:15:00Z",
+     "home": "Oklahoma",
+     "away": "South Carolina",
+     "takenAt": "2026-10-30T18:56:18.729Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "homeMl": -170,
+       "awayMl": 142,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      },
+      "fanduel": {
+       "homeMl": -160,
+       "awayMl": 132,
+       "homeLine": -2.5,
+       "awayLine": 2.5
+      },
+      "betrivers": {
+       "homeMl": -165,
+       "awayMl": 132,
+       "homeLine": -3,
+       "awayLine": 3
+      },
+      "betmgm": {
+       "homeMl": -165,
+       "awayMl": 140,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Oklahoma",
+     "line": -2.5,
+     "price": -128,
+     "book": "fanduel",
+     "modelLine": -6.544541823948874,
+     "marketLine": -3.25,
+     "edge": 0.5605145360268501,
+     "rawEdge": 3.294541823948874,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5322676185136745,
+     "why": "Model Oklahoma -6.5 vs market -3, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Oklahoma by 0.6",
+     "closeMarket": -3.25,
+     "closeAt": "2026-10-30T18:56:18.729Z"
     }
    ]
   },
@@ -4702,8 +4806,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.51350083929282,
      "why": "Model Missouri +7.5 vs market +4.5, a 3.2-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.5",
-     "closeMarket": 4.5,
-     "closeAt": "2026-10-27T19:07:56.316Z"
+     "closeMarket": 3.5,
+     "closeAt": "2026-10-30T18:56:18.729Z"
     },
     {
      "gameId": 401856849,
@@ -4742,11 +4846,11 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5235873310268657,
      "why": "Model Utah -7 vs market -2.5, a 4.2-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
-     "closeMarket": -2.75,
-     "closeAt": "2026-10-27T19:07:56.316Z"
+     "closeMarket": -3,
+     "closeAt": "2026-10-30T18:56:18.729Z"
     }
    ]
   }
  },
- "updated": "2026-10-27T19:07:56.373Z"
+ "updated": "2026-10-30T18:56:18.764Z"
 }
