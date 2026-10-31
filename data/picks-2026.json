@@ -4399,7 +4399,10 @@
      "modelProb": 0.5168496158565562,
      "why": "Model UCF -2.5 vs market +1.5, a 4.0-pt gap; trusting 17% of it in this kind of game leaves UCF by 0.7",
      "closeMarket": 2.25,
-     "closeAt": "2026-10-30T18:56:18.729Z"
+     "closeAt": "2026-10-30T18:56:18.729Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Baylor 41, UCF 9"
     },
     {
      "gameId": 401866451,
@@ -4451,7 +4454,10 @@
      "modelProb": 0.5160411160316409,
      "why": "Model Sacramento State +4.5 vs market +10.5, a 5.9-pt gap; trusting 11% of it in this kind of game leaves Sacramento State by 0.7",
      "closeMarket": 7.5,
-     "closeAt": "2026-10-30T18:56:18.729Z"
+     "closeAt": "2026-10-30T18:56:18.729Z",
+     "result": "W",
+     "profit": 94.33962264150944,
+     "score": "Kent State 10, Sacramento State 31"
     },
     {
      "gameId": 401862816,
@@ -4503,7 +4509,10 @@
      "modelProb": 0.5128728850498137,
      "why": "Model South Florida -12 vs market -7.5, a 4.7-pt gap; trusting 11% of it in this kind of game leaves South Florida by 0.5",
      "closeMarket": -7.5,
-     "closeAt": "2026-10-30T18:56:18.729Z"
+     "closeAt": "2026-10-30T18:56:18.729Z",
+     "result": "W",
+     "profit": 92.5925925925926,
+     "score": "UAB 10, South Florida 30"
     },
     {
      "gameId": 401858509,
@@ -4607,7 +4616,10 @@
      "modelProb": 0.5313234138318823,
      "why": "Model Western Michigan -18 vs market -13, a 4.7-pt gap; trusting 11% of it in this kind of game leaves Western Michigan by 0.5",
      "closeMarket": -13.5,
-     "closeAt": "2026-10-30T18:56:18.729Z"
+     "closeAt": "2026-10-30T18:56:18.729Z",
+     "result": "W",
+     "profit": 87.71929824561403,
+     "score": "Bowling Green 10, Western Michigan 23"
     },
     {
      "gameId": 401858282,
