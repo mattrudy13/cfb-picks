@@ -4292,7 +4292,7 @@
      "modelProb": 0.5163246545644959,
      "why": "Model Cincinnati +13.5 vs market +9.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
      "closeMarket": 7,
-     "closeAt": "2026-10-30T18:56:18.729Z"
+     "closeAt": "2026-10-31T17:27:34.544Z"
     },
     {
      "gameId": 401871071,
@@ -4555,7 +4555,7 @@
      "modelProb": 0.5241237565709509,
      "why": "Model USC +13 vs market +7, a 5.8-pt gap; trusting 17% of it in this kind of game leaves Ohio State by 1.0",
      "closeMarket": 6.5,
-     "closeAt": "2026-10-30T18:56:18.729Z"
+     "closeAt": "2026-10-31T17:27:34.544Z"
     },
     {
      "gameId": 401866452,
@@ -4658,8 +4658,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5140691430341282,
      "why": "Model North Carolina +18 vs market +14.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.6",
-     "closeMarket": 14.25,
-     "closeAt": "2026-10-30T18:56:18.729Z"
+     "closeMarket": 14,
+     "closeAt": "2026-10-31T17:27:34.544Z"
     },
     {
      "gameId": 401856846,
@@ -4710,8 +4710,8 @@
      "trust": 0.06618411918771777,
      "modelProb": 0.536619057709427,
      "why": "Model Colorado +9.5 vs market -1.5, a 11.1-pt gap; trusting 7% of it in this kind of game leaves Kansas State by 0.7",
-     "closeMarket": -1.75,
-     "closeAt": "2026-10-30T18:56:18.729Z"
+     "closeMarket": -3,
+     "closeAt": "2026-10-31T17:27:34.544Z"
     },
     {
      "gameId": 401856736,
@@ -4763,7 +4763,7 @@
      "modelProb": 0.5322676185136745,
      "why": "Model Oklahoma -6.5 vs market -3, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Oklahoma by 0.6",
      "closeMarket": -3.25,
-     "closeAt": "2026-10-30T18:56:18.729Z"
+     "closeAt": "2026-10-31T17:27:34.544Z"
     }
    ]
   },
@@ -4852,5 +4852,5 @@
    ]
   }
  },
- "updated": "2026-10-30T18:56:18.764Z"
+ "updated": "2026-10-31T17:27:34.584Z"
 }
