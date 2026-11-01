@@ -4261,7 +4261,17 @@
      "closeAt": "2026-10-23T18:02:16.538Z",
      "result": "W",
      "profit": 90.9090909090909,
-     "score": "Northwestern 26, Oregon 34"
+     "score": "Northwestern 26, Oregon 34",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -7.5,
+      "closed": -4
+     },
+     "clvClose": -3.5
     },
     {
      "gameId": 401856848,
@@ -4548,7 +4558,17 @@
      "closeAt": "2026-10-30T18:56:18.729Z",
      "result": "W",
      "profit": 92.5925925925926,
-     "score": "UAB 10, South Florida 30"
+     "score": "UAB 10, South Florida 30",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -7.5,
+      "closed": -7.5
+     },
+     "clvClose": 0
     },
     {
      "gameId": 401858509,
@@ -4658,7 +4678,17 @@
      "closeAt": "2026-10-30T18:56:18.729Z",
      "result": "W",
      "profit": 87.71929824561403,
-     "score": "Bowling Green 10, Western Michigan 23"
+     "score": "Bowling Green 10, Western Michigan 23",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -13.5,
+      "closed": -14
+     },
+     "clvClose": 0.5
     },
     {
      "gameId": 401858282,
