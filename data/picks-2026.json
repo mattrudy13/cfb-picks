@@ -4353,7 +4353,17 @@
      "closeAt": "2026-10-27T19:07:56.316Z",
      "result": "L",
      "profit": -100,
-     "score": "Delaware 35, Western Kentucky 21"
+     "score": "Delaware 35, Western Kentucky 21",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -1.5,
+      "closed": -2.5
+     },
+     "clvClose": 1
     },
     {
      "gameId": 401856844,
@@ -4408,7 +4418,17 @@
      "closeAt": "2026-10-30T18:56:18.729Z",
      "result": "L",
      "profit": -100,
-     "score": "Baylor 41, UCF 9"
+     "score": "Baylor 41, UCF 9",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 1.5,
+      "closed": 2.5
+     },
+     "clvClose": -1
     },
     {
      "gameId": 401866451,
@@ -4463,7 +4483,17 @@
      "closeAt": "2026-10-30T18:56:18.729Z",
      "result": "W",
      "profit": 94.33962264150944,
-     "score": "Kent State 10, Sacramento State 31"
+     "score": "Kent State 10, Sacramento State 31",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 10.5,
+      "closed": 7.5
+     },
+     "clvClose": 3
     },
     {
      "gameId": 401862816,
@@ -4570,7 +4600,10 @@
      "modelProb": 0.5241237565709509,
      "why": "Model USC +13 vs market +7, a 5.8-pt gap; trusting 17% of it in this kind of game leaves Ohio State by 1.0",
      "closeMarket": 6.5,
-     "closeAt": "2026-10-31T17:27:34.544Z"
+     "closeAt": "2026-10-31T17:27:34.544Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Ohio State 18, USC 30"
     },
     {
      "gameId": 401866452,
@@ -4677,7 +4710,10 @@
      "modelProb": 0.5140691430341282,
      "why": "Model North Carolina +18 vs market +14.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.6",
      "closeMarket": 14,
-     "closeAt": "2026-10-31T17:27:34.544Z"
+     "closeAt": "2026-10-31T17:27:34.544Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Miami 38, North Carolina 35"
     },
     {
      "gameId": 401856846,
