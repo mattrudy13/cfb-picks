@@ -4308,7 +4308,17 @@
      "closeAt": "2026-10-31T17:27:34.544Z",
      "result": "W",
      "profit": 90.9090909090909,
-     "score": "Utah 49, Cincinnati 25"
+     "score": "Utah 49, Cincinnati 25",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 9.5,
+      "closed": 7
+     },
+     "clvClose": -2.5
     },
     {
      "gameId": 401871071,
@@ -4623,7 +4633,17 @@
      "closeAt": "2026-10-31T17:27:34.544Z",
      "result": "L",
      "profit": -100,
-     "score": "Ohio State 18, USC 30"
+     "score": "Ohio State 18, USC 30",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 7,
+      "closed": 6.5
+     },
+     "clvClose": -0.5
     },
     {
      "gameId": 401866452,
@@ -4743,7 +4763,17 @@
      "closeAt": "2026-10-31T17:27:34.544Z",
      "result": "L",
      "profit": -100,
-     "score": "Miami 38, North Carolina 35"
+     "score": "Miami 38, North Carolina 35",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 14.5,
+      "closed": 13.5
+     },
+     "clvClose": -1
     },
     {
      "gameId": 401856846,
@@ -4798,7 +4828,17 @@
      "closeAt": "2026-10-31T17:27:34.544Z",
      "result": "L",
      "profit": -100,
-     "score": "Kansas State 24, Colorado 27"
+     "score": "Kansas State 24, Colorado 27",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -2.5,
+      "closed": -3
+     },
+     "clvClose": -0.5
     },
     {
      "gameId": 401856736,
@@ -4853,7 +4893,17 @@
      "closeAt": "2026-10-31T17:27:34.544Z",
      "result": "L",
      "profit": -100,
-     "score": "South Carolina 42, Oklahoma 25"
+     "score": "South Carolina 42, Oklahoma 25",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -3.5,
+      "closed": -3.5
+     },
+     "clvClose": 0
     }
    ]
   },
