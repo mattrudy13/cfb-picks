@@ -13,6 +13,8 @@ on:
     - cron: "0 2 * 11-12 1"
     - cron: "0 15 * 11-12 2,5"
     - cron: "0 14 * 11-12 6"
+    # hub's cron Worker (hub/worker/src/index.js) also starts this at these ET times (:20 past), because
+    # GitHub's schedule runs hours late. Change the times in both places.
   workflow_dispatch:
 
 permissions:
