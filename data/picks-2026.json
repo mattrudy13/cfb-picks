@@ -5091,8 +5091,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5350460565823678,
      "why": "Model Northwestern +2 vs market -1.5, a 4.0-pt gap; trusting 17% of it in this kind of game leaves Iowa by 0.7",
-     "closeMarket": 2.5,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeMarket": 3,
+     "closeAt": "2026-11-07T18:25:00.124Z"
     },
     {
      "gameId": 401858286,
@@ -5195,8 +5195,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.514186667328326,
      "why": "Model Kennesaw State -2.5 vs market +2.5, a 5.2-pt gap; trusting 11% of it in this kind of game leaves Kennesaw State by 0.6",
-     "closeMarket": 1.5,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeMarket": 1.25,
+     "closeAt": "2026-11-07T18:25:00.124Z"
     },
     {
      "gameId": 401856744,
@@ -5247,8 +5247,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.512664322899985,
      "why": "Model South Carolina -4.5 vs market -7.5, a 3.0-pt gap; trusting 17% of it in this kind of game leaves Texas A&M by 0.5",
-     "closeMarket": -6.75,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeMarket": -6.5,
+     "closeAt": "2026-11-07T18:25:00.124Z"
     },
     {
      "gameId": 401856742,
@@ -5299,8 +5299,8 @@
      "trust": 0.06618411918771777,
      "modelProb": 0.5250266375825514,
      "why": "Model Mississippi State -11 vs market -3, a 7.8-pt gap; trusting 7% of it in this kind of game leaves Mississippi State by 0.5",
-     "closeMarket": -2.75,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeMarket": -2.5,
+     "closeAt": "2026-11-07T18:25:00.124Z"
     },
     {
      "gameId": 401856854,
@@ -5404,7 +5404,7 @@
      "modelProb": 0.5251555948112501,
      "why": "Model LSU -3 vs market -6, a 3.1-pt gap; trusting 17% of it in this kind of game leaves Alabama by 0.5",
      "closeMarket": -6,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeAt": "2026-11-07T18:25:00.124Z"
     },
     {
      "gameId": 401858291,
@@ -5456,7 +5456,7 @@
      "modelProb": 0.5178180609868109,
      "why": "Model Notre Dame -3 vs market -7.5, a 4.3-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.7",
      "closeMarket": -7,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeAt": "2026-11-07T18:25:00.124Z"
     },
     {
      "gameId": 401864535,
@@ -5507,8 +5507,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5153913215029673,
      "why": "Model UNLV -10 vs market -4.5, a 5.7-pt gap; trusting 11% of it in this kind of game leaves UNLV by 0.6",
-     "closeMarket": -4,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeMarket": -3.5,
+     "closeAt": "2026-11-07T18:25:00.124Z"
     }
    ]
   },
@@ -5546,7 +5546,7 @@
      "modelProb": 0.5124600801150092,
      "why": "Model Toledo -19 vs market -14.5, a 4.6-pt gap; trusting 11% of it in this kind of game leaves Toledo by 0.5",
      "closeMarket": -13.5,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeAt": "2026-11-07T18:25:00.124Z"
     },
     {
      "gameId": 401856864,
@@ -5585,7 +5585,7 @@
     {
      "gameId": 401856883,
      "week": 11,
-     "kickoff": "2026-11-14T17:00:00Z",
+     "kickoff": "2026-11-14T20:30:00Z",
      "home": "Georgia",
      "away": "Missouri",
      "takenAt": "2026-11-06T15:21:14.602Z",
@@ -5620,7 +5620,7 @@
      "modelProb": 0.5172532206164397,
      "why": "Model Georgia -16.5 vs market -12.5, a 4.1-pt gap; trusting 17% of it in this kind of game leaves Georgia by 0.7",
      "closeMarket": -12.5,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeAt": "2026-11-07T18:25:00.124Z"
     },
     {
      "gameId": 401858522,
@@ -5699,11 +5699,45 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5266961818294165,
      "why": "Model Boise State -10.5 vs market -5, a 5.3-pt gap; trusting 11% of it in this kind of game leaves Boise State by 0.6",
-     "closeMarket": -5.5,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeMarket": -6.5,
+     "closeAt": "2026-11-07T18:25:00.124Z"
+    },
+    {
+     "gameId": 401856885,
+     "week": 11,
+     "kickoff": "2026-11-14T20:30:00Z",
+     "home": "LSU",
+     "away": "Texas",
+     "takenAt": "2026-11-07T18:25:00.124Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": -205,
+       "awayMl": 168,
+       "homeLine": -6.5,
+       "awayLine": 6.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Texas",
+     "line": 6.5,
+     "price": -120,
+     "book": "fanduel",
+     "modelLine": -3.1991379533788806,
+     "marketLine": -6.5,
+     "edge": 0.5615898226275446,
+     "rawEdge": 3.3008620466211194,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5138398834870948,
+     "why": "Model LSU -3 vs market -6.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.6",
+     "closeMarket": -6.5,
+     "closeAt": "2026-11-07T18:25:00.124Z"
     }
    ]
   }
  },
- "updated": "2026-11-07T14:21:05.315Z"
+ "updated": "2026-11-07T18:25:00.178Z"
 }
