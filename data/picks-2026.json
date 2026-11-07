@@ -4990,7 +4990,10 @@
      "modelProb": 0.5235873310268657,
      "why": "Model Utah -7 vs market -2.5, a 4.2-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
      "closeMarket": -4.5,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeAt": "2026-11-07T14:21:05.260Z",
+     "result": "W",
+     "profit": 80.64516129032258,
+     "score": "BYU 20, Utah 28"
     },
     {
      "gameId": 401866457,
@@ -5040,7 +5043,10 @@
      "modelProb": 0.5468226391587223,
      "why": "Model Sacramento State +19.5 vs market +25.5, a 5.9-pt gap; trusting 11% of it in this kind of game leaves Sacramento State by 0.7",
      "closeMarket": 25.25,
-     "closeAt": "2026-11-03T20:47:10.781Z"
+     "closeAt": "2026-11-03T20:47:10.781Z",
+     "result": "W",
+     "profit": 81.9672131147541,
+     "score": "Toledo 20, Sacramento State 17"
     },
     {
      "gameId": 401858513,
