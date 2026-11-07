@@ -320,6 +320,15 @@ Already-recorded moneyline picks are still graded.
   - **(assumed)** A book whose CFBD close is more than 4 points (moneylines: 10 points of implied chance)
     from the last snapshot's median is treated as bad data and skipped. In 2024–2025, about 2% of games
     had CFBD's books 4+ points apart.
+    **Reviewed 2026-11-07 after 81 graded picks (decided: keep 4).** Only one book was ever skipped
+    (Virginia Tech @ Clemson, week 8), and that was a bug, not bad data: the kickoff moved from a placeholder
+    noon to 7 PM after the pick, and `record-picks` stopped updating `closeMarket` once a snapshot's start
+    didn't match the pick's. Against the real last snapshot (−2.75) DraftKings' −3 close was 0.25 points off.
+    Of 54 spread picks with a DraftKings close, 5 were more than 2 points from the stored last snapshot,
+    and the 3 biggest gaps were all moved kickoffs. Fixed the same day: a snapshot's start time now replaces
+    the pick's `kickoff` and the close keeps updating. The three graded picks it hit (Clemson, Texas,
+    Oregon) were corrected once from git history and carry a `fixed` note; Clemson's line move went from
+    none to +4.5. The locked line, price and result didn't change.
   - The provisional → official rule (Model v3) counts `clvClose` only. The pages show the move "so far"
     (to the latest snapshot) until the close is in, and the record counts only moves to the close.
   - **CFBD's 2026 books (checked 2026-10-12):** DraftKings on every game, plus Bovada (offshore, not used).

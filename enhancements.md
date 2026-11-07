@@ -16,8 +16,7 @@ Done 2026-10-12:
   lower bound on the average move above 0. Checked at every snapshot, so it can fall back. In SPEC.md.
 
 Next, in date order:
-1. **Review the bad-data threshold after 3–4 graded weeks, before pick 100** (Picks & tracking).
-2. **Pre-register v4 before the 2026 season ends** (Model & research).
+1. **Pre-register v4 before the 2026 season ends** (Model & research).
 
 ## Gaps found (fixed 2026-10-12)
 
@@ -91,7 +90,8 @@ honest headline.
 Each pick is recorded at the best line, not the median. Record how much better the best line was than the
 median, so the record shows how much profit came from shopping and how much from the model.
 
-**Review the bad-data threshold after a few weeks. — S · Med**
+**Review the bad-data threshold after a few weeks. — S · Med** Done 2026-11-07: kept at 4; its one skip was
+a kickoff-change bug, now fixed (SPEC.md, "Picks").
 `grade-picks` skips a book whose CFBD close is more than 4 points (moneylines: 10 points of implied chance)
 from our last snapshot's median, treating it as bad data. The 4 is an assumption based on 2024–2025, where
 about 2% of games had CFBD's books 4+ points apart. Each pick lists its skipped books (`close.skipped`).

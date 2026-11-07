@@ -119,12 +119,20 @@ for (const g of data.games) {
 }
 
 // Existing picks stay as recorded. Unstarted ones get this snapshot's market as their close.
-let updated = 0;
+// Kickoff times move after a pick is made (an early pick often has a placeholder noon start until the TV
+// slot is set), so the snapshot's start wins: the pick follows the real kickoff, and its close keeps
+// updating. Until 2026-11-07 a changed start froze `closeMarket` at the first snapshot, which made
+// grade-picks throw out Clemson–Virginia Tech's real 4.5-point move as bad data.
+let updated = 0, moved = 0;
 for (const p of existing) {
   const o = odds.games[p.gameId];
-  if (!o || Date.parse(p.kickoff) <= now || o.commence !== p.kickoff) continue;
+  if (!o || Date.parse(p.kickoff) <= now || Date.parse(o.commence) <= now) continue;
   const market = p.cat === "spread" ? o.spread?.median : o.ml && (p.side === "home" ? o.ml.medianHome : o.ml.medianAway);
   if (market == null) continue;
+  if (o.commence !== p.kickoff) {
+    p.kickoff = o.commence;
+    moved++;
+  }
   Object.assign(p, { closeMarket: market, closeAt: odds.takenAt });
   updated++;
 }
@@ -140,4 +148,4 @@ for (const p of fresh) {
 
 store.updated = new Date(now).toISOString();
 fs.writeFileSync(file, JSON.stringify(store, null, 1));
-console.log(`${added} new ${version} picks (${status}), ${updated} earlier picks' closing line updated, at ${odds.takenAt}`);
+console.log(`${added} new ${version} picks (${status}), ${updated} earlier picks' closing line updated (${moved} with a new kickoff), at ${odds.takenAt}`);
