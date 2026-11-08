@@ -4950,7 +4950,10 @@
      "modelProb": 0.51350083929282,
      "why": "Model Missouri +7.5 vs market +4.5, a 3.2-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.5",
      "closeMarket": 2.5,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeAt": "2026-11-07T14:21:05.260Z",
+     "result": "W",
+     "profit": 89.28571428571429,
+     "score": "Texas 34, Missouri 20"
     },
     {
      "gameId": 401856849,
@@ -5150,7 +5153,10 @@
      "modelProb": 0.5411492554617277,
      "why": "Model NC State +0.5 vs market +4.5, a 4.0-pt gap; trusting 17% of it in this kind of game leaves NC State by 0.7",
      "closeMarket": 4.5,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeAt": "2026-11-07T14:21:05.260Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Duke 41, NC State 3"
     },
     {
      "gameId": 401871073,
@@ -5202,7 +5208,10 @@
      "modelProb": 0.514186667328326,
      "why": "Model Kennesaw State -2.5 vs market +2.5, a 5.2-pt gap; trusting 11% of it in this kind of game leaves Kennesaw State by 0.6",
      "closeMarket": 1.25,
-     "closeAt": "2026-11-07T18:25:00.124Z"
+     "closeAt": "2026-11-07T18:25:00.124Z",
+     "result": "W",
+     "profit": 90.9090909090909,
+     "score": "Delaware 40, Kennesaw State 42"
     },
     {
      "gameId": 401856744,
@@ -5254,7 +5263,10 @@
      "modelProb": 0.512664322899985,
      "why": "Model South Carolina -4.5 vs market -7.5, a 3.0-pt gap; trusting 17% of it in this kind of game leaves Texas A&M by 0.5",
      "closeMarket": -6.5,
-     "closeAt": "2026-11-07T18:25:00.124Z"
+     "closeAt": "2026-11-07T18:25:00.124Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Texas A&M 9, South Carolina 17"
     },
     {
      "gameId": 401856742,
@@ -5306,7 +5318,10 @@
      "modelProb": 0.5250266375825514,
      "why": "Model Mississippi State -11 vs market -3, a 7.8-pt gap; trusting 7% of it in this kind of game leaves Mississippi State by 0.5",
      "closeMarket": -2.5,
-     "closeAt": "2026-11-07T18:25:00.124Z"
+     "closeAt": "2026-11-07T18:25:00.124Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Vanderbilt 25, Mississippi State 23"
     },
     {
      "gameId": 401856854,
@@ -5358,7 +5373,10 @@
      "modelProb": 0.5146135966934444,
      "why": "Model Kansas State -2.5 vs market +6.5, a 9.0-pt gap; trusting 7% of it in this kind of game leaves Kansas State by 0.6",
      "closeMarket": 6.5,
-     "closeAt": "2026-11-07T14:21:05.260Z"
+     "closeAt": "2026-11-07T14:21:05.260Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Oklahoma State 66, Kansas State 28"
     },
     {
      "gameId": 401856740,
@@ -5410,7 +5428,10 @@
      "modelProb": 0.5251555948112501,
      "why": "Model LSU -3 vs market -6, a 3.1-pt gap; trusting 17% of it in this kind of game leaves Alabama by 0.5",
      "closeMarket": -6,
-     "closeAt": "2026-11-07T18:25:00.124Z"
+     "closeAt": "2026-11-07T18:25:00.124Z",
+     "result": "W",
+     "profit": 95.23809523809523,
+     "score": "Alabama 31, LSU 13"
     },
     {
      "gameId": 401858291,
