@@ -5049,7 +5049,17 @@
      "closeAt": "2026-11-03T20:47:10.781Z",
      "result": "W",
      "profit": 81.9672131147541,
-     "score": "Toledo 20, Sacramento State 17"
+     "score": "Toledo 20, Sacramento State 17",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 25.5,
+      "closed": 25.5
+     },
+     "clvClose": 0
     },
     {
      "gameId": 401858513,
@@ -5101,7 +5111,10 @@
      "modelProb": 0.5350460565823678,
      "why": "Model Northwestern +2 vs market -1.5, a 4.0-pt gap; trusting 17% of it in this kind of game leaves Iowa by 0.7",
      "closeMarket": 3,
-     "closeAt": "2026-11-07T18:25:00.124Z"
+     "closeAt": "2026-11-07T18:25:00.124Z",
+     "result": "W",
+     "profit": 86.95652173913044,
+     "score": "Iowa 24, Northwestern 10"
     },
     {
      "gameId": 401858286,
@@ -5483,7 +5496,10 @@
      "modelProb": 0.5178180609868109,
      "why": "Model Notre Dame -3 vs market -7.5, a 4.3-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.7",
      "closeMarket": -7,
-     "closeAt": "2026-11-07T18:25:00.124Z"
+     "closeAt": "2026-11-07T18:25:00.124Z",
+     "result": "W",
+     "profit": 89.28571428571429,
+     "score": "Miami 24, Notre Dame 31"
     },
     {
      "gameId": 401864535,
@@ -5535,7 +5551,10 @@
      "modelProb": 0.5153913215029673,
      "why": "Model UNLV -10 vs market -4.5, a 5.7-pt gap; trusting 11% of it in this kind of game leaves UNLV by 0.6",
      "closeMarket": -3.5,
-     "closeAt": "2026-11-07T18:25:00.124Z"
+     "closeAt": "2026-11-07T18:25:00.124Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Wyoming 41, UNLV 35"
     }
    ]
   },
