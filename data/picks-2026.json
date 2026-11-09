@@ -5592,7 +5592,7 @@
      "modelProb": 0.5124600801150092,
      "why": "Model Toledo -19 vs market -14.5, a 4.6-pt gap; trusting 11% of it in this kind of game leaves Toledo by 0.5",
      "closeMarket": -14.5,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401856864,
@@ -5625,8 +5625,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5132004074005225,
      "why": "Model Arizona +4.5 vs market +1.5, a 3.1-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.5",
-     "closeMarket": 2.25,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeMarket": 2.5,
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401856883,
@@ -5666,7 +5666,7 @@
      "modelProb": 0.5172532206164397,
      "why": "Model Georgia -16.5 vs market -12.5, a 4.1-pt gap; trusting 17% of it in this kind of game leaves Georgia by 0.7",
      "closeMarket": -14.5,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401858522,
@@ -5706,7 +5706,7 @@
      "modelProb": 0.5267501095447136,
      "why": "Model Ohio State -19 vs market -10, a 8.9-pt gap; trusting 7% of it in this kind of game leaves Ohio State by 0.6",
      "closeMarket": -11.5,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401860914,
@@ -5746,7 +5746,7 @@
      "modelProb": 0.5266961818294165,
      "why": "Model Boise State -10.5 vs market -5, a 5.3-pt gap; trusting 11% of it in this kind of game leaves Boise State by 0.6",
      "closeMarket": -10.5,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401856885,
@@ -5779,8 +5779,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5138398834870948,
      "why": "Model LSU -3 vs market -6.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.6",
-     "closeMarket": -4.25,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeMarket": -3.5,
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401856860,
@@ -5832,7 +5832,7 @@
      "modelProb": 0.5187624434694416,
      "why": "Model Colorado +15 vs market +10.5, a 4.5-pt gap; trusting 17% of it in this kind of game leaves Houston by 0.8",
      "closeMarket": 10.5,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401858296,
@@ -5884,7 +5884,7 @@
      "modelProb": 0.5125194162437806,
      "why": "Model Miami -16.5 vs market -13.5, a 3.0-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.5",
      "closeMarket": -13.5,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401858300,
@@ -5935,8 +5935,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5301241946647406,
      "why": "Model NC State -4 vs market +3, a 7.2-pt gap; trusting 17% of it in this kind of game leaves NC State by 1.2",
-     "closeMarket": 3,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeMarket": 2.75,
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401856889,
@@ -5987,8 +5987,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5144520387650906,
      "why": "Model Vanderbilt +22 vs market +18.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Alabama by 0.6",
-     "closeMarket": 18.5,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeMarket": 17.5,
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401858295,
@@ -6040,7 +6040,7 @@
      "modelProb": 0.513849116518165,
      "why": "Model Virginia -9 vs market -12.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves California by 0.6",
      "closeMarket": -12.5,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401858519,
@@ -6092,7 +6092,7 @@
      "modelProb": 0.5123544406440245,
      "why": "Model Iowa -20.5 vs market -17.5, a 2.9-pt gap; trusting 17% of it in this kind of game leaves Iowa by 0.5",
      "closeMarket": -17.5,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeAt": "2026-11-09T09:01:27.705Z"
     },
     {
      "gameId": 401856882,
@@ -6144,10 +6144,10 @@
      "modelProb": 0.5139043461193368,
      "why": "Model Arkansas +11 vs market +7.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves South Carolina by 0.6",
      "closeMarket": 7.5,
-     "closeAt": "2026-11-09T02:21:06.368Z"
+     "closeAt": "2026-11-09T09:01:27.705Z"
     }
    ]
   }
  },
- "updated": "2026-11-09T02:21:06.415Z"
+ "updated": "2026-11-09T09:01:27.760Z"
 }
