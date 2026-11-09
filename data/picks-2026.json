@@ -4953,7 +4953,15 @@
      "closeAt": "2026-11-07T14:21:05.260Z",
      "result": "W",
      "profit": 89.28571428571429,
-     "score": "Texas 34, Missouri 20"
+     "score": "Texas 34, Missouri 20",
+     "close": {
+      "source": "cfbd",
+      "books": [],
+      "skipped": [],
+      "posted": null,
+      "closed": null
+     },
+     "clvClose": null
     },
     {
      "gameId": 401856849,
@@ -4996,7 +5004,15 @@
      "closeAt": "2026-11-07T14:21:05.260Z",
      "result": "W",
      "profit": 80.64516129032258,
-     "score": "BYU 20, Utah 28"
+     "score": "BYU 20, Utah 28",
+     "close": {
+      "source": "cfbd",
+      "books": [],
+      "skipped": [],
+      "posted": null,
+      "closed": null
+     },
+     "clvClose": null
     },
     {
      "gameId": 401866457,
@@ -5114,7 +5130,17 @@
      "closeAt": "2026-11-07T18:25:00.124Z",
      "result": "W",
      "profit": 86.95652173913044,
-     "score": "Iowa 24, Northwestern 10"
+     "score": "Iowa 24, Northwestern 10",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -2.5,
+      "closed": 3
+     },
+     "clvClose": 5.5
     },
     {
      "gameId": 401858286,
@@ -5169,7 +5195,17 @@
      "closeAt": "2026-11-07T14:21:05.260Z",
      "result": "L",
      "profit": -100,
-     "score": "Duke 41, NC State 3"
+     "score": "Duke 41, NC State 3",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 4.5,
+      "closed": 4.5
+     },
+     "clvClose": 0
     },
     {
      "gameId": 401871073,
@@ -5224,7 +5260,17 @@
      "closeAt": "2026-11-07T18:25:00.124Z",
      "result": "W",
      "profit": 90.9090909090909,
-     "score": "Delaware 40, Kennesaw State 42"
+     "score": "Delaware 40, Kennesaw State 42",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 2.5,
+      "closed": 1.5
+     },
+     "clvClose": 1
     },
     {
      "gameId": 401856744,
@@ -5279,7 +5325,17 @@
      "closeAt": "2026-11-07T18:25:00.124Z",
      "result": "L",
      "profit": -100,
-     "score": "Texas A&M 9, South Carolina 17"
+     "score": "Texas A&M 9, South Carolina 17",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -7.5,
+      "closed": -6.5
+     },
+     "clvClose": 1
     },
     {
      "gameId": 401856742,
@@ -5334,7 +5390,17 @@
      "closeAt": "2026-11-07T18:25:00.124Z",
      "result": "L",
      "profit": -100,
-     "score": "Vanderbilt 25, Mississippi State 23"
+     "score": "Vanderbilt 25, Mississippi State 23",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -3,
+      "closed": -3
+     },
+     "clvClose": 0
     },
     {
      "gameId": 401856854,
@@ -5389,7 +5455,17 @@
      "closeAt": "2026-11-07T14:21:05.260Z",
      "result": "L",
      "profit": -100,
-     "score": "Oklahoma State 66, Kansas State 28"
+     "score": "Oklahoma State 66, Kansas State 28",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 6.5,
+      "closed": 7
+     },
+     "clvClose": -0.5
     },
     {
      "gameId": 401856740,
@@ -5444,7 +5520,17 @@
      "closeAt": "2026-11-07T18:25:00.124Z",
      "result": "W",
      "profit": 95.23809523809523,
-     "score": "Alabama 31, LSU 13"
+     "score": "Alabama 31, LSU 13",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -6,
+      "closed": -6
+     },
+     "clvClose": 0
     },
     {
      "gameId": 401858291,
@@ -5499,7 +5585,17 @@
      "closeAt": "2026-11-07T18:25:00.124Z",
      "result": "W",
      "profit": 89.28571428571429,
-     "score": "Miami 24, Notre Dame 31"
+     "score": "Miami 24, Notre Dame 31",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -7.5,
+      "closed": -7.5
+     },
+     "clvClose": 0
     },
     {
      "gameId": 401864535,
@@ -5554,7 +5650,17 @@
      "closeAt": "2026-11-07T18:25:00.124Z",
      "result": "L",
      "profit": -100,
-     "score": "Wyoming 41, UNLV 35"
+     "score": "Wyoming 41, UNLV 35",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -4.5,
+      "closed": -3
+     },
+     "clvClose": -1.5
     }
    ]
   },
