@@ -5591,13 +5591,13 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5124600801150092,
      "why": "Model Toledo -19 vs market -14.5, a 4.6-pt gap; trusting 11% of it in this kind of game leaves Toledo by 0.5",
-     "closeMarket": -13.5,
-     "closeAt": "2026-11-07T18:25:00.124Z"
+     "closeMarket": -14.5,
+     "closeAt": "2026-11-09T02:21:06.368Z"
     },
     {
      "gameId": 401856864,
      "week": 11,
-     "kickoff": "2026-11-14T17:00:00Z",
+     "kickoff": "2026-11-15T00:30:00Z",
      "home": "Arizona",
      "away": "Utah",
      "takenAt": "2026-11-06T15:21:14.602Z",
@@ -5625,8 +5625,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5132004074005225,
      "why": "Model Arizona +4.5 vs market +1.5, a 3.1-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.5",
-     "closeMarket": 1.5,
-     "closeAt": "2026-11-06T20:41:48.885Z"
+     "closeMarket": 2.25,
+     "closeAt": "2026-11-09T02:21:06.368Z"
     },
     {
      "gameId": 401856883,
@@ -5665,8 +5665,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5172532206164397,
      "why": "Model Georgia -16.5 vs market -12.5, a 4.1-pt gap; trusting 17% of it in this kind of game leaves Georgia by 0.7",
-     "closeMarket": -12.5,
-     "closeAt": "2026-11-07T18:25:00.124Z"
+     "closeMarket": -14.5,
+     "closeAt": "2026-11-09T02:21:06.368Z"
     },
     {
      "gameId": 401858522,
@@ -5705,8 +5705,8 @@
      "trust": 0.06618411918771777,
      "modelProb": 0.5267501095447136,
      "why": "Model Ohio State -19 vs market -10, a 8.9-pt gap; trusting 7% of it in this kind of game leaves Ohio State by 0.6",
-     "closeMarket": -10,
-     "closeAt": "2026-11-06T15:21:14.602Z"
+     "closeMarket": -11.5,
+     "closeAt": "2026-11-09T02:21:06.368Z"
     },
     {
      "gameId": 401860914,
@@ -5745,8 +5745,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5266961818294165,
      "why": "Model Boise State -10.5 vs market -5, a 5.3-pt gap; trusting 11% of it in this kind of game leaves Boise State by 0.6",
-     "closeMarket": -6.5,
-     "closeAt": "2026-11-07T18:25:00.124Z"
+     "closeMarket": -10.5,
+     "closeAt": "2026-11-09T02:21:06.368Z"
     },
     {
      "gameId": 401856885,
@@ -5779,11 +5779,375 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5138398834870948,
      "why": "Model LSU -3 vs market -6.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.6",
-     "closeMarket": -6.5,
-     "closeAt": "2026-11-07T18:25:00.124Z"
+     "closeMarket": -4.25,
+     "closeAt": "2026-11-09T02:21:06.368Z"
+    },
+    {
+     "gameId": 401856860,
+     "week": 11,
+     "kickoff": "2026-11-14T03:15:00Z",
+     "home": "Colorado",
+     "away": "Houston",
+     "takenAt": "2026-11-09T02:21:06.368Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "homeMl": 340,
+       "awayMl": -440,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      },
+      "fanduel": {
+       "homeMl": 340,
+       "awayMl": -450,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      },
+      "betrivers": {
+       "homeMl": 325,
+       "awayMl": -455,
+       "homeLine": 11,
+       "awayLine": -11
+      },
+      "betmgm": {
+       "homeMl": 340,
+       "awayMl": -450,
+       "homeLine": 10.5,
+       "awayLine": -10.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Houston",
+     "line": -10.5,
+     "price": -108,
+     "book": "betmgm",
+     "modelLine": 14.975666073958916,
+     "marketLine": 10.5,
+     "edge": 0.7614642723974494,
+     "rawEdge": 4.475666073958916,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5187624434694416,
+     "why": "Model Colorado +15 vs market +10.5, a 4.5-pt gap; trusting 17% of it in this kind of game leaves Houston by 0.8",
+     "closeMarket": 10.5,
+     "closeAt": "2026-11-09T02:21:06.368Z"
+    },
+    {
+     "gameId": 401858296,
+     "week": 11,
+     "kickoff": "2026-11-14T17:00:00Z",
+     "home": "Miami",
+     "away": "Duke",
+     "takenAt": "2026-11-09T02:21:06.368Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "awayMl": 440,
+       "homeMl": -600,
+       "awayLine": 13.5,
+       "homeLine": -13.5
+      },
+      "fanduel": {
+       "awayMl": 430,
+       "homeMl": -580,
+       "awayLine": 13.5,
+       "homeLine": -13.5
+      },
+      "betrivers": {
+       "awayMl": 475,
+       "homeMl": -715,
+       "awayLine": 14,
+       "homeLine": -14
+      },
+      "betmgm": {
+       "awayMl": 425,
+       "homeMl": -550,
+       "awayLine": 13.5,
+       "homeLine": -13.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Miami",
+     "line": -13.5,
+     "price": -108,
+     "book": "draftkings",
+     "modelLine": -16.48581639164462,
+     "marketLine": -13.5,
+     "edge": 0.5079897536155906,
+     "rawEdge": 2.9858163916446188,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5125194162437806,
+     "why": "Model Miami -16.5 vs market -13.5, a 3.0-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.5",
+     "closeMarket": -13.5,
+     "closeAt": "2026-11-09T02:21:06.368Z"
+    },
+    {
+     "gameId": 401858300,
+     "week": 11,
+     "kickoff": "2026-11-14T17:00:00Z",
+     "home": "NC State",
+     "away": "Syracuse",
+     "takenAt": "2026-11-09T02:21:06.368Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": 125,
+       "awayMl": -150,
+       "homeLine": 2.5,
+       "awayLine": -2.5
+      },
+      "draftkings": {
+       "homeMl": 120,
+       "awayMl": -142,
+       "homeLine": 3,
+       "awayLine": -3
+      },
+      "betrivers": {
+       "homeMl": 118,
+       "awayMl": -148,
+       "homeLine": 3,
+       "awayLine": -3
+      },
+      "betmgm": {
+       "homeMl": 120,
+       "awayMl": -145,
+       "homeLine": 3,
+       "awayLine": -3
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "NC State",
+     "line": 3,
+     "price": -112,
+     "book": "betmgm",
+     "modelLine": -4.190141094848346,
+     "marketLine": 3,
+     "edge": 1.2232895543926932,
+     "rawEdge": 7.190141094848346,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5301241946647406,
+     "why": "Model NC State -4 vs market +3, a 7.2-pt gap; trusting 17% of it in this kind of game leaves NC State by 1.2",
+     "closeMarket": 3,
+     "closeAt": "2026-11-09T02:21:06.368Z"
+    },
+    {
+     "gameId": 401856889,
+     "week": 11,
+     "kickoff": "2026-11-14T17:45:00Z",
+     "home": "Vanderbilt",
+     "away": "Alabama",
+     "takenAt": "2026-11-09T02:21:06.368Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "awayMl": -1200,
+       "homeMl": 750,
+       "awayLine": -18.5,
+       "homeLine": 18.5
+      },
+      "fanduel": {
+       "awayMl": -1250,
+       "homeMl": 760,
+       "awayLine": -18.5,
+       "homeLine": 18.5
+      },
+      "betrivers": {
+       "awayMl": -2000,
+       "homeMl": 850,
+       "awayLine": -20,
+       "homeLine": 20
+      },
+      "betmgm": {
+       "awayMl": -1100,
+       "homeMl": 750,
+       "awayLine": -18.5,
+       "homeLine": 18.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Alabama",
+     "line": -18.5,
+     "price": -105,
+     "book": "betmgm",
+     "modelLine": 21.9469261370258,
+     "marketLine": 18.5,
+     "edge": 0.5864403330287854,
+     "rawEdge": 3.4469261370258018,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5144520387650906,
+     "why": "Model Vanderbilt +22 vs market +18.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Alabama by 0.6",
+     "closeMarket": 18.5,
+     "closeAt": "2026-11-09T02:21:06.368Z"
+    },
+    {
+     "gameId": 401858295,
+     "week": 11,
+     "kickoff": "2026-11-14T20:30:00Z",
+     "home": "Virginia",
+     "away": "California",
+     "takenAt": "2026-11-09T02:21:06.368Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "awayMl": 375,
+       "homeMl": -490,
+       "awayLine": 12.5,
+       "homeLine": -12.5
+      },
+      "draftkings": {
+       "awayMl": 390,
+       "homeMl": -520,
+       "awayLine": 12.5,
+       "homeLine": -12.5
+      },
+      "betmgm": {
+       "awayMl": 380,
+       "homeMl": -500,
+       "awayLine": 12.5,
+       "homeLine": -12.5
+      },
+      "betrivers": {
+       "awayMl": 375,
+       "homeMl": -530,
+       "awayLine": 12.5,
+       "homeLine": -12.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "California",
+     "line": 12.5,
+     "price": -108,
+     "book": "betmgm",
+     "modelLine": -9.196934953050917,
+     "marketLine": -12.5,
+     "edge": 0.5619646285255057,
+     "rawEdge": 3.303065046949083,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.513849116518165,
+     "why": "Model Virginia -9 vs market -12.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves California by 0.6",
+     "closeMarket": -12.5,
+     "closeAt": "2026-11-09T02:21:06.368Z"
+    },
+    {
+     "gameId": 401858519,
+     "week": 11,
+     "kickoff": "2026-11-15T00:00:00Z",
+     "home": "Iowa",
+     "away": "Purdue",
+     "takenAt": "2026-11-09T02:21:06.368Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": -1000,
+       "awayMl": 660,
+       "homeLine": -17.5,
+       "awayLine": 17.5
+      },
+      "draftkings": {
+       "homeMl": -950,
+       "awayMl": 625,
+       "homeLine": -17.5,
+       "awayLine": 17.5
+      },
+      "betmgm": {
+       "homeMl": -900,
+       "awayMl": 650,
+       "homeLine": -17.5,
+       "awayLine": 17.5
+      },
+      "betrivers": {
+       "homeMl": -1000,
+       "awayMl": 600,
+       "homeLine": -17.5,
+       "awayLine": 17.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Iowa",
+     "line": -17.5,
+     "price": -105,
+     "book": "draftkings",
+     "modelLine": -20.446457820164238,
+     "marketLine": -17.5,
+     "edge": 0.501293510978257,
+     "rawEdge": 2.9464578201642375,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5123544406440245,
+     "why": "Model Iowa -20.5 vs market -17.5, a 2.9-pt gap; trusting 17% of it in this kind of game leaves Iowa by 0.5",
+     "closeMarket": -17.5,
+     "closeAt": "2026-11-09T02:21:06.368Z"
+    },
+    {
+     "gameId": 401856882,
+     "week": 11,
+     "kickoff": "2026-11-15T00:45:00Z",
+     "home": "Arkansas",
+     "away": "South Carolina",
+     "takenAt": "2026-11-09T02:21:06.368Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": 235,
+       "awayMl": -285,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      },
+      "draftkings": {
+       "homeMl": 250,
+       "awayMl": -310,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      },
+      "betrivers": {
+       "homeMl": 265,
+       "awayMl": -360,
+       "homeLine": 8,
+       "awayLine": -8
+      },
+      "betmgm": {
+       "homeMl": 240,
+       "awayMl": -300,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "South Carolina",
+     "line": -7.5,
+     "price": -104,
+     "book": "fanduel",
+     "modelLine": 10.81624286162165,
+     "marketLine": 7.5,
+     "edge": 0.5642066266763102,
+     "rawEdge": 3.3162428616216495,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5139043461193368,
+     "why": "Model Arkansas +11 vs market +7.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves South Carolina by 0.6",
+     "closeMarket": 7.5,
+     "closeAt": "2026-11-09T02:21:06.368Z"
     }
    ]
   }
  },
- "updated": "2026-11-07T18:25:00.178Z"
+ "updated": "2026-11-09T02:21:06.415Z"
 }
