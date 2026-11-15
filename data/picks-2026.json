@@ -5735,7 +5735,10 @@
      "modelProb": 0.5132004074005225,
      "why": "Model Arizona +4.5 vs market +1.5, a 3.1-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.5",
      "closeMarket": 1.5,
-     "closeAt": "2026-11-14T18:54:09.533Z"
+     "closeAt": "2026-11-14T18:54:09.533Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Utah 40, Arizona 39"
     },
     {
      "gameId": 401856883,
@@ -5861,7 +5864,10 @@
      "modelProb": 0.5266961818294165,
      "why": "Model Boise State -10.5 vs market -5, a 5.3-pt gap; trusting 11% of it in this kind of game leaves Boise State by 0.6",
      "closeMarket": -16.5,
-     "closeAt": "2026-11-14T18:54:09.533Z"
+     "closeAt": "2026-11-14T18:54:09.533Z",
+     "result": "W",
+     "profit": 86.95652173913044,
+     "score": "Oregon State 41, Boise State 46"
     },
     {
      "gameId": 401856885,
@@ -5895,7 +5901,10 @@
      "modelProb": 0.5138398834870948,
      "why": "Model LSU -3 vs market -6.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.6",
      "closeMarket": -4.5,
-     "closeAt": "2026-11-14T18:54:09.533Z"
+     "closeAt": "2026-11-14T18:54:09.533Z",
+     "result": "W",
+     "profit": 83.33333333333334,
+     "score": "Texas 22, LSU 21"
     },
     {
      "gameId": 401856860,
@@ -6222,7 +6231,10 @@
      "modelProb": 0.5123544406440245,
      "why": "Model Iowa -20.5 vs market -17.5, a 2.9-pt gap; trusting 17% of it in this kind of game leaves Iowa by 0.5",
      "closeMarket": -17.5,
-     "closeAt": "2026-11-14T18:54:09.533Z"
+     "closeAt": "2026-11-14T18:54:09.533Z",
+     "result": "W",
+     "profit": 95.23809523809523,
+     "score": "Purdue 7, Iowa 28"
     },
     {
      "gameId": 401856882,
@@ -6274,7 +6286,10 @@
      "modelProb": 0.5139043461193368,
      "why": "Model Arkansas +11 vs market +7.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves South Carolina by 0.6",
      "closeMarket": 7.5,
-     "closeAt": "2026-11-14T18:54:09.533Z"
+     "closeAt": "2026-11-14T18:54:09.533Z",
+     "result": "L",
+     "profit": -100,
+     "score": "South Carolina 6, Arkansas 34"
     },
     {
      "gameId": 401856861,
@@ -6436,7 +6451,10 @@
      "modelProb": 0.5193317527163499,
      "why": "Model Penn State -8 vs market -11, a 3.1-pt gap; trusting 17% of it in this kind of game leaves Minnesota by 0.5",
      "closeMarket": -12.5,
-     "closeAt": "2026-11-14T18:54:09.533Z"
+     "closeAt": "2026-11-14T18:54:09.533Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Minnesota 14, Penn State 42"
     }
    ]
   },
