@@ -16,7 +16,8 @@ Done 2026-10-12:
   lower bound on the average move above 0. Checked at every snapshot, so it can fall back. In SPEC.md.
 
 Next, in date order:
-1. **Pre-register v4 before the 2026 season ends** (Model & research).
+1. **Pre-register v4 before the 2026 season ends.** Done 2026-11-15: SPEC.md, "Model v4" (predict the line
+   move). Next: write `scripts/backtest-v4.mjs`, commit its `--fit` output, then run `--test` from ~Dec 14.
 
 ## Gaps found (fixed 2026-10-12)
 
@@ -38,7 +39,7 @@ Four places where the code didn't match the spec or its own comments. All fixed;
 All of these follow the existing pattern: write the rules in SPEC.md first, and choose thresholds only on
 seasons before the test season.
 
-**Treat 2026 as the holdout. Pre-register v4 before 2027. — S · High**
+**Treat 2026 as the holdout. Pre-register v4 before 2027. — S · High** (pre-registered 2026-11-15)
 2022–2025 have now been tested against three models, so they can't give a clean answer anymore. The 2026
 live season is the first truly unseen data. Don't refit anything on it mid-season. Write v4's rules
 before the 2026 results are known, then test them on 2026 once the season ends.
@@ -50,7 +51,7 @@ backtest tested key numbers. An empirical cover-probability table (margin vs. li
 would give a better win chance per pick. It would also remove the fat-tails problem that led to dropping
 moneylines, if those ever come back.
 
-**Target the line move directly. — L · Med**
+**Target the line move directly. — L · Med** (chosen as v4, 2026-11-15)
 The v3 results show the edge only exists before the market moves (55% vs. the opener, 49% vs. the close).
 The trust layer already fits on closing lines. A model whose target is the closing line itself
 (close − open, predicted from the model's gap and game type) aims at what's actually being measured. The

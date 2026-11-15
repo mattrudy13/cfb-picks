@@ -291,6 +291,78 @@ Underdog moneylines are **no longer recorded** (decided 2026-10-11): with truste
 cleared $10 of expected profit came from the normal curve's fat tails on long underdogs, not the model.
 Already-recorded moneyline picks are still graded.
 
+## Model v4 (decided 2026-11-15, written before running it)
+
+**Why.** v3's backtest beat the opener (55.3%) but not the close (49.1%), and its picks beat the close by
++1.40 points. Its only edge is getting ahead of line moves. v3's trust layer asks how much of the model's
+gap shows up in the **result**. v4 asks how much of it the **market closes** between the opener and the
+close, and picks the games where that predicted move is largest. Rudy chose this over steadying v3's trust
+layer, key-number cover odds or schedule features (2026-11-15).
+
+**Holdout.** 2026 is the test season. 2021–2025 have been used to choose three models, so they can't give a
+clean answer anymore. This section was written on 2026-11-15, with 2026 played through week 12. What had been
+seen of 2026 when it was written: v3's live record (26–29 on 71 spread picks, +0.17 average move to the close
+on 52, as of 2026-11-13) and a count of games with both an opener and a close. No v4-style number, and no
+line-move statistic of any kind, had been computed on 2026. Nothing below may be changed after the 2026 test
+is run.
+
+**The rule (decided):**
+1. **Model margin:** v3's live margin (`bothQb`, v2's rating settings), computed point-in-time by the
+   backtest's walk-forward series as for earlier seasons. v4 changes only how picks are chosen, so any
+   difference from v3 comes from that.
+2. **Target:** the line move toward the home team, `open − close` in spread points (= the market's home
+   margin at the close minus at the opener). Opener and close are `lineValue` (median of US books, then the
+   fallback books), the same as the earlier backtests.
+3. **Inputs:** the model's gap from the opener, `gap = model + open`, and that gap times each of v3's four
+   flags (G5 vs G5, Power 4 vs G5, QB change, week ≤ 6). This is `trustRow(gap, flags)` in `model.js`:
+   five coefficients `c`, no intercept, so a zero gap predicts no move.
+4. **Fit:** OLS of the target on those five columns, over regular-season FBS-vs-FBS games with an opener
+   and a close.
+5. **Predicted move:** `move = trustFactor(c, flags) × gap`, the share of the gap the market is expected to
+   close, clamped to [0, 1] like v3's trust. So v4 never bets against its own model, and never predicts a
+   move past the model's number.
+6. **Picks:** every regular-season FBS-vs-FBS game with `|move| ≥ X`, on the side of the move, bet at the
+   opener. There's no start week; the week ≤ 6 term already handles the early season.
+7. **Choosing X:** the grid is 0.25, 0.5, 0.75, 1, 1.5 and 2 points. It's chosen walk-forward on 2022–2025,
+   with each season's `c` fit on 2021 through the season before it, and the out-of-fold picks pooled. X is
+   the value with the highest **average move to the close** among those with at least 200 pooled picks
+   (≈ 50 a season); if none has 200, the one with the most picks.
+8. **Coefficients for 2026:** `c` refit on all of 2021–2025, with X from step 7.
+
+**Test (decided):** score 2026 once with that `c` and X. The games are 2026's CFBD regular season, which
+runs through conference championship weekend (Dec 5) and also includes Army–Navy (Dec 12). Bowls and the
+CFP are reported separately and don't count.
+
+**Pass bar (decided, Rudy 2026-11-15):** at least **40 picks**, and the one-sided **95% lower bound on the
+average move to the close above 0** (`avg − 1.645 × sd / √n`, the same math as v3's official rule in
+`record-picks.mjs`). Win % at the opener is reported but not required. At ~60 picks its 95% margin is
+about ±13 points, while the move's is about ±0.5 (2021–2025 lines moved with an SD of 1.8–2.5 points), so
+the move is the only measure one season can answer. Fewer than 40 picks counts as not passing.
+
+**Reported, not part of the decision:** win % at the opener and at the close, ROI at −110, the cautious
+version (ignore each team's latest week), results by week bucket and by game type, the bowls and CFP, and
+v3 rerun the same way on 2026 (bet at the opener, its own threshold) for comparison.
+
+**How it's run (decided):** `scripts/backtest-v4.mjs` in two steps, so 2026 can't leak into the choices.
+1. `--fit` uses only 2021–2025. It writes `c`, X and the walk-forward table to `data/backtest-v4.json`, and
+   that file is committed **before** step 2 is run.
+2. `--test` reads the committed `c` and X, scores 2026 and adds the results. It changes nothing from step 1.
+
+Run `--test` once CFBD has closing lines for Army–Navy (from about Mon Dec 14, 2026).
+
+**After the test (decided, Rudy 2026-11-15):** if v4 passes, it replaces v3 for 2027 as **provisional**,
+and becomes official on the same rule as v3 (≥ 100 spread picks with a move to the close, 95% lower bound
+above 0). If it fails, v3 stays. Either way, the result is written up here. v3 is not changed during the
+rest of 2026.
+
+**Known gaps:**
+- CFBD's 2026 lines carry only DraftKings (plus Bovada as a fallback). So 2026's opener and close each come
+  from one book, while 2021–2025 used the median of up to three. One book's line is noisier, which makes
+  moves look bigger in both directions.
+- CFBD doesn't say when an opener was posted. Live picks are taken at our first snapshot after the opener,
+  not at the opener itself, so a 2027 live record will catch less of each move than this test does (the
+  same gap v3 has).
+
 ## Picks
 
 - **Spreads (decided):** every FBS-vs-FBS game where the **trusted edge** (the game's trust factor × the model

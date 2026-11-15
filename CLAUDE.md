@@ -71,6 +71,9 @@ model spread −M.
 - Each pick records its `model`; picks without one are v2. Records are kept separate per model.
 - CLV that counts is `clvClose`, set by `grade-picks` from CFBD's closing lines (`data/raw/lines-<season>.json`),
   compared book by book against the `books` saved on the pick at posting. See SPEC.md, "Picks".
+- v4 (predict the line move) is pre-registered in SPEC.md, "Model v4", with 2026 as its holdout. Its
+  backtest runs in two steps (`--fit` committed before `--test`); don't compute anything v4-like on 2026
+  before then.
 - Status: v3 picks are "provisional" until the live record shows `clvClose` > 0 over ≥ 100 spread picks.
 - Moneyline recording is off (`RECORD_MONEYLINES = false` in `record-picks.mjs`, since 2026-10-11);
   already-recorded moneylines are still graded.
