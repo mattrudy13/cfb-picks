@@ -5775,7 +5775,10 @@
      "modelProb": 0.5172532206164397,
      "why": "Model Georgia -16.5 vs market -12.5, a 4.1-pt gap; trusting 17% of it in this kind of game leaves Georgia by 0.7",
      "closeMarket": -16.5,
-     "closeAt": "2026-11-14T18:54:09.533Z"
+     "closeAt": "2026-11-14T18:54:09.533Z",
+     "result": "W",
+     "profit": 90.9090909090909,
+     "score": "Missouri 21, Georgia 48"
     },
     {
      "gameId": 401858522,
@@ -6164,7 +6167,10 @@
      "modelProb": 0.513849116518165,
      "why": "Model Virginia -9 vs market -12.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves California by 0.6",
      "closeMarket": -11.5,
-     "closeAt": "2026-11-14T18:54:09.533Z"
+     "closeAt": "2026-11-14T18:54:09.533Z",
+     "result": "L",
+     "profit": -100,
+     "score": "California 7, Virginia 36"
     },
     {
      "gameId": 401858519,
@@ -6320,7 +6326,10 @@
      "modelProb": 0.512717540446554,
      "why": "Model West Virginia 0 vs market -3, a 3.0-pt gap; trusting 17% of it in this kind of game leaves Kansas by 0.5",
      "closeMarket": -2.25,
-     "closeAt": "2026-11-14T18:54:09.533Z"
+     "closeAt": "2026-11-14T18:54:09.533Z",
+     "result": "W",
+     "profit": 86.95652173913044,
+     "score": "Kansas 37, West Virginia 14"
     },
     {
      "gameId": 401862825,
@@ -6372,7 +6381,10 @@
      "modelProb": 0.5259252921567764,
      "why": "Model Charlotte +16 vs market +11, a 5.0-pt gap; trusting 11% of it in this kind of game leaves East Carolina by 0.6",
      "closeMarket": 11,
-     "closeAt": "2026-11-14T14:21:21.163Z"
+     "closeAt": "2026-11-14T14:21:21.163Z",
+     "result": "L",
+     "profit": -100,
+     "score": "East Carolina 17, Charlotte 16"
     },
     {
      "gameId": 401858524,
