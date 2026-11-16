@@ -5701,7 +5701,15 @@
      "closeAt": "2026-11-10T21:12:02.385Z",
      "result": "W",
      "profit": 95.23809523809523,
-     "score": "Massachusetts 0, Toledo 24"
+     "score": "Massachusetts 0, Toledo 24",
+     "close": {
+      "source": "cfbd",
+      "books": [],
+      "skipped": [],
+      "posted": null,
+      "closed": null
+     },
+     "clvClose": null
     },
     {
      "gameId": 401856864,
@@ -5738,7 +5746,17 @@
      "closeAt": "2026-11-14T18:54:09.533Z",
      "result": "L",
      "profit": -100,
-     "score": "Utah 40, Arizona 39"
+     "score": "Utah 40, Arizona 39",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 1.5,
+      "closed": 2.5
+     },
+     "clvClose": 1
     },
     {
      "gameId": 401856883,
@@ -5781,7 +5799,17 @@
      "closeAt": "2026-11-14T18:54:09.533Z",
      "result": "W",
      "profit": 90.9090909090909,
-     "score": "Missouri 21, Georgia 48"
+     "score": "Missouri 21, Georgia 48",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -12.5,
+      "closed": -16.5
+     },
+     "clvClose": 4
     },
     {
      "gameId": 401858522,
@@ -5824,7 +5852,17 @@
      "closeAt": "2026-11-14T14:21:21.163Z",
      "result": "L",
      "profit": -100,
-     "score": "Northwestern 19, Ohio State 28"
+     "score": "Northwestern 19, Ohio State 28",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -9.5,
+      "closed": -14.5
+     },
+     "clvClose": 5
     },
     {
      "gameId": 401860914,
@@ -5867,7 +5905,17 @@
      "closeAt": "2026-11-14T18:54:09.533Z",
      "result": "W",
      "profit": 86.95652173913044,
-     "score": "Oregon State 41, Boise State 46"
+     "score": "Oregon State 41, Boise State 46",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -4.5,
+      "closed": -17.5
+     },
+     "clvClose": 13
     },
     {
      "gameId": 401856885,
@@ -5904,7 +5952,15 @@
      "closeAt": "2026-11-14T18:54:09.533Z",
      "result": "W",
      "profit": 83.33333333333334,
-     "score": "Texas 22, LSU 21"
+     "score": "Texas 22, LSU 21",
+     "close": {
+      "source": "cfbd",
+      "books": [],
+      "skipped": [],
+      "posted": null,
+      "closed": null
+     },
+     "clvClose": null
     },
     {
      "gameId": 401856860,
@@ -5959,7 +6015,17 @@
      "closeAt": "2026-11-13T21:11:31.247Z",
      "result": "L",
      "profit": -100,
-     "score": "Houston 32, Colorado 42"
+     "score": "Houston 32, Colorado 42",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 10.5,
+      "closed": 7.5
+     },
+     "clvClose": -3
     },
     {
      "gameId": 401858296,
@@ -6014,7 +6080,17 @@
      "closeAt": "2026-11-14T14:21:21.163Z",
      "result": "L",
      "profit": -100,
-     "score": "Duke 25, Miami 36"
+     "score": "Duke 25, Miami 36",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -13.5,
+      "closed": -14
+     },
+     "clvClose": 0.5
     },
     {
      "gameId": 401858300,
@@ -6069,7 +6145,17 @@
      "closeAt": "2026-11-14T14:21:21.163Z",
      "result": "P",
      "profit": 0,
-     "score": "Syracuse 34, NC State 31"
+     "score": "Syracuse 34, NC State 31",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 3,
+      "closed": 3
+     },
+     "clvClose": 0
     },
     {
      "gameId": 401856889,
@@ -6124,7 +6210,17 @@
      "closeAt": "2026-11-14T14:21:21.163Z",
      "result": "L",
      "profit": -100,
-     "score": "Alabama 21, Vanderbilt 6"
+     "score": "Alabama 21, Vanderbilt 6",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 18.5,
+      "closed": 15.5
+     },
+     "clvClose": -3
     },
     {
      "gameId": 401858295,
@@ -6179,7 +6275,17 @@
      "closeAt": "2026-11-14T18:54:09.533Z",
      "result": "L",
      "profit": -100,
-     "score": "California 7, Virginia 36"
+     "score": "California 7, Virginia 36",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -12.5,
+      "closed": -11.5
+     },
+     "clvClose": 1
     },
     {
      "gameId": 401858519,
@@ -6234,7 +6340,17 @@
      "closeAt": "2026-11-14T18:54:09.533Z",
      "result": "W",
      "profit": 95.23809523809523,
-     "score": "Purdue 7, Iowa 28"
+     "score": "Purdue 7, Iowa 28",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -17.5,
+      "closed": -19.5
+     },
+     "clvClose": 2
     },
     {
      "gameId": 401856882,
@@ -6289,7 +6405,17 @@
      "closeAt": "2026-11-14T18:54:09.533Z",
      "result": "L",
      "profit": -100,
-     "score": "South Carolina 6, Arkansas 34"
+     "score": "South Carolina 6, Arkansas 34",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 7.5,
+      "closed": 6.5
+     },
+     "clvClose": -1
     },
     {
      "gameId": 401856861,
@@ -6344,7 +6470,17 @@
      "closeAt": "2026-11-14T18:54:09.533Z",
      "result": "W",
      "profit": 86.95652173913044,
-     "score": "Kansas 37, West Virginia 14"
+     "score": "Kansas 37, West Virginia 14",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -3,
+      "closed": -1.5
+     },
+     "clvClose": 1.5
     },
     {
      "gameId": 401862825,
@@ -6399,7 +6535,17 @@
      "closeAt": "2026-11-14T14:21:21.163Z",
      "result": "L",
      "profit": -100,
-     "score": "East Carolina 17, Charlotte 16"
+     "score": "East Carolina 17, Charlotte 16",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 10.5,
+      "closed": 12.5
+     },
+     "clvClose": 2
     },
     {
      "gameId": 401858524,
@@ -6454,7 +6600,17 @@
      "closeAt": "2026-11-14T18:54:09.533Z",
      "result": "L",
      "profit": -100,
-     "score": "Minnesota 14, Penn State 42"
+     "score": "Minnesota 14, Penn State 42",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -11.5,
+      "closed": -12.5
+     },
+     "clvClose": -1
     }
    ]
   },
@@ -6572,7 +6728,10 @@
      "modelProb": 0.5157382479933896,
      "why": "Model Oklahoma +1.5 vs market -2.5, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Ole Miss by 0.6",
      "closeMarket": -2.5,
-     "closeAt": "2026-11-14T18:54:09.533Z"
+     "closeAt": "2026-11-14T18:54:09.533Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Ole Miss 17, Oklahoma 24"
     },
     {
      "gameId": 401858310,
