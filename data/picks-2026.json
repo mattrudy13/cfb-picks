@@ -6491,13 +6491,13 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5211772816291013,
      "why": "Model Ohio -16.5 vs market -8.5, a 7.8-pt gap; trusting 11% of it in this kind of game leaves Ohio by 0.9",
-     "closeMarket": -8.5,
-     "closeAt": "2026-11-14T18:54:09.533Z"
+     "closeMarket": -10.5,
+     "closeAt": "2026-11-16T02:20:54.473Z"
     },
     {
      "gameId": 401856872,
      "week": 12,
-     "kickoff": "2026-11-21T17:00:00Z",
+     "kickoff": "2026-11-21T20:30:00Z",
      "home": "TCU",
      "away": "Utah",
      "takenAt": "2026-11-13T15:21:00.235Z",
@@ -6525,8 +6525,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5179632456045368,
      "why": "Model TCU +10 vs market +5.5, a 4.3-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
-     "closeMarket": 5.5,
-     "closeAt": "2026-11-14T14:21:21.163Z"
+     "closeMarket": 6.5,
+     "closeAt": "2026-11-16T02:20:54.473Z"
     },
     {
      "gameId": 401856887,
@@ -6573,9 +6573,217 @@
      "why": "Model Oklahoma +1.5 vs market -2.5, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Ole Miss by 0.6",
      "closeMarket": -2.5,
      "closeAt": "2026-11-14T18:54:09.533Z"
+    },
+    {
+     "gameId": 401858310,
+     "week": 12,
+     "kickoff": "2026-11-21T20:30:00Z",
+     "home": "Georgia Tech",
+     "away": "Wake Forest",
+     "takenAt": "2026-11-16T02:20:54.473Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": 920,
+       "awayMl": -1700,
+       "homeLine": 21.5,
+       "awayLine": -21.5
+      },
+      "draftkings": {
+       "homeMl": 900,
+       "awayMl": -1600,
+       "homeLine": 21.5,
+       "awayLine": -21.5
+      },
+      "betmgm": {
+       "homeMl": 950,
+       "awayMl": -1400,
+       "homeLine": 21.5,
+       "awayLine": -21.5
+      },
+      "betrivers": {
+       "homeMl": 800,
+       "awayMl": -1667,
+       "homeLine": 20.5,
+       "awayLine": -20.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Georgia Tech",
+     "line": 21.5,
+     "price": -112,
+     "book": "betmgm",
+     "modelLine": 18.09040011162679,
+     "marketLine": 21.5,
+     "edge": 0.5800898581940018,
+     "rawEdge": 3.4095998883732115,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.514295607474781,
+     "why": "Model Georgia Tech +18 vs market +21.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Georgia Tech by 0.6",
+     "closeMarket": 21.5,
+     "closeAt": "2026-11-16T02:20:54.473Z"
+    },
+    {
+     "gameId": 401858302,
+     "week": 12,
+     "kickoff": "2026-11-22T00:00:00Z",
+     "home": "Miami",
+     "away": "Virginia Tech",
+     "takenAt": "2026-11-16T02:20:54.473Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "homeMl": -1350,
+       "awayMl": 800,
+       "homeLine": -20.5,
+       "awayLine": 20.5
+      },
+      "fanduel": {
+       "homeMl": -1400,
+       "awayMl": 810,
+       "homeLine": -20.5,
+       "awayLine": 20.5
+      },
+      "betrivers": {
+       "homeMl": -1430,
+       "awayMl": 750,
+       "homeLine": -19.5,
+       "awayLine": 19.5
+      },
+      "betmgm": {
+       "homeMl": -1200,
+       "awayMl": 850,
+       "homeLine": -20.5,
+       "awayLine": 20.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Miami",
+     "line": -19.5,
+     "price": -113,
+     "book": "betrivers",
+     "modelLine": -24.442841086224806,
+     "marketLine": -20.5,
+     "edge": 0.6708124711022624,
+     "rawEdge": 3.9428410862248064,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5411108062730207,
+     "why": "Model Miami -24.5 vs market -20.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.7",
+     "closeMarket": -20.5,
+     "closeAt": "2026-11-16T02:20:54.473Z"
+    },
+    {
+     "gameId": 401856868,
+     "week": 12,
+     "kickoff": "2026-11-21T20:30:00Z",
+     "home": "West Virginia",
+     "away": "Houston",
+     "takenAt": "2026-11-16T02:20:54.473Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "awayMl": -250,
+       "homeMl": 205,
+       "awayLine": -6.5,
+       "homeLine": 6.5
+      },
+      "betrivers": {
+       "awayMl": -245,
+       "homeMl": 190,
+       "awayLine": -7,
+       "homeLine": 7
+      },
+      "draftkings": {
+       "awayMl": -245,
+       "homeMl": 200,
+       "awayLine": -7,
+       "homeLine": 7
+      },
+      "betmgm": {
+       "awayMl": -250,
+       "homeMl": 210,
+       "awayLine": -7,
+       "homeLine": 7
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Houston",
+     "line": -6.5,
+     "price": -120,
+     "book": "fanduel",
+     "modelLine": 10.807609146251657,
+     "marketLine": 7,
+     "edge": 0.6478048809302225,
+     "rawEdge": 3.8076091462516573,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5282685638297855,
+     "why": "Model West Virginia +11 vs market +7, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Houston by 0.6",
+     "closeMarket": 7,
+     "closeAt": "2026-11-16T02:20:54.473Z"
+    },
+    {
+     "gameId": 401862834,
+     "week": 12,
+     "kickoff": "2026-11-21T17:00:00Z",
+     "home": "Navy",
+     "away": "Memphis",
+     "takenAt": "2026-11-16T02:20:54.473Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "awayMl": -160,
+       "homeMl": 132,
+       "awayLine": -3.5,
+       "homeLine": 3.5
+      },
+      "draftkings": {
+       "awayMl": -170,
+       "homeMl": 142,
+       "awayLine": -3,
+       "homeLine": 3
+      },
+      "betrivers": {
+       "awayMl": -167,
+       "homeMl": 133,
+       "awayLine": -3.5,
+       "homeLine": 3.5
+      },
+      "betmgm": {
+       "awayMl": -165,
+       "homeMl": 138,
+       "awayLine": -3.5,
+       "homeLine": 3.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Memphis",
+     "line": -3,
+     "price": -118,
+     "book": "draftkings",
+     "modelLine": 9.06013169868409,
+     "marketLine": 3.5,
+     "edge": 0.6126127969346719,
+     "rawEdge": 5.56013169868409,
+     "trust": 0.11017954791963978,
+     "modelProb": 0.5274032285711903,
+     "why": "Model Navy +9 vs market +3.5, a 5.6-pt gap; trusting 11% of it in this kind of game leaves Memphis by 0.6",
+     "closeMarket": 3.5,
+     "closeAt": "2026-11-16T02:20:54.473Z"
     }
    ]
   }
  },
- "updated": "2026-11-14T18:54:09.589Z"
+ "updated": "2026-11-16T02:20:54.523Z"
 }
