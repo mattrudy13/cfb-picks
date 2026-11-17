@@ -6647,8 +6647,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5211772816291013,
      "why": "Model Ohio -16.5 vs market -8.5, a 7.8-pt gap; trusting 11% of it in this kind of game leaves Ohio by 0.9",
-     "closeMarket": -10.5,
-     "closeAt": "2026-11-16T08:56:41.811Z"
+     "closeMarket": -10.25,
+     "closeAt": "2026-11-17T15:21:14.638Z"
     },
     {
      "gameId": 401856872,
@@ -6681,8 +6681,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5179632456045368,
      "why": "Model TCU +10 vs market +5.5, a 4.3-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
-     "closeMarket": 6.5,
-     "closeAt": "2026-11-16T08:56:41.811Z"
+     "closeMarket": 7,
+     "closeAt": "2026-11-17T15:21:14.638Z"
     },
     {
      "gameId": 401856887,
@@ -6782,8 +6782,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.514295607474781,
      "why": "Model Georgia Tech +18 vs market +21.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Georgia Tech by 0.6",
-     "closeMarket": 21,
-     "closeAt": "2026-11-16T08:56:41.811Z"
+     "closeMarket": 20.75,
+     "closeAt": "2026-11-17T15:21:14.638Z"
     },
     {
      "gameId": 401858302,
@@ -6834,8 +6834,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5411108062730207,
      "why": "Model Miami -24.5 vs market -20.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.7",
-     "closeMarket": -20.5,
-     "closeAt": "2026-11-16T08:56:41.811Z"
+     "closeMarket": -20.75,
+     "closeAt": "2026-11-17T15:21:14.638Z"
     },
     {
      "gameId": 401856868,
@@ -6886,8 +6886,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5282685638297855,
      "why": "Model West Virginia +11 vs market +7, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Houston by 0.6",
-     "closeMarket": 7,
-     "closeAt": "2026-11-16T08:56:41.811Z"
+     "closeMarket": 7.5,
+     "closeAt": "2026-11-17T15:21:14.638Z"
     },
     {
      "gameId": 401862834,
@@ -6939,10 +6939,10 @@
      "modelProb": 0.5274032285711903,
      "why": "Model Navy +9 vs market +3.5, a 5.6-pt gap; trusting 11% of it in this kind of game leaves Memphis by 0.6",
      "closeMarket": 3.5,
-     "closeAt": "2026-11-16T08:56:41.811Z"
+     "closeAt": "2026-11-17T15:21:14.638Z"
     }
    ]
   }
  },
- "updated": "2026-11-16T08:56:41.866Z"
+ "updated": "2026-11-17T15:21:14.680Z"
 }
