@@ -6648,7 +6648,10 @@
      "modelProb": 0.5211772816291013,
      "why": "Model Ohio -16.5 vs market -8.5, a 7.8-pt gap; trusting 11% of it in this kind of game leaves Ohio by 0.9",
      "closeMarket": -10.25,
-     "closeAt": "2026-11-17T22:47:17.608Z"
+     "closeAt": "2026-11-17T22:47:17.608Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Ball State 28, Ohio 35"
     },
     {
      "gameId": 401856872,
