@@ -6685,7 +6685,7 @@
      "modelProb": 0.5179632456045368,
      "why": "Model TCU +10 vs market +5.5, a 4.3-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
      "closeMarket": 7.25,
-     "closeAt": "2026-11-20T15:21:07.460Z"
+     "closeAt": "2026-11-20T22:07:51.267Z"
     },
     {
      "gameId": 401856887,
@@ -6786,7 +6786,7 @@
      "modelProb": 0.514295607474781,
      "why": "Model Georgia Tech +18 vs market +21.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Georgia Tech by 0.6",
      "closeMarket": 20.5,
-     "closeAt": "2026-11-20T15:21:07.460Z"
+     "closeAt": "2026-11-20T22:07:51.267Z"
     },
     {
      "gameId": 401858302,
@@ -6838,7 +6838,7 @@
      "modelProb": 0.5411108062730207,
      "why": "Model Miami -24.5 vs market -20.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.7",
      "closeMarket": -20.5,
-     "closeAt": "2026-11-20T15:21:07.460Z"
+     "closeAt": "2026-11-20T22:07:51.267Z"
     },
     {
      "gameId": 401856868,
@@ -6890,7 +6890,7 @@
      "modelProb": 0.5282685638297855,
      "why": "Model West Virginia +11 vs market +7, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Houston by 0.6",
      "closeMarket": 7.5,
-     "closeAt": "2026-11-20T15:21:07.460Z"
+     "closeAt": "2026-11-20T22:07:51.267Z"
     },
     {
      "gameId": 401862834,
@@ -6941,8 +6941,8 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5274032285711903,
      "why": "Model Navy +9 vs market +3.5, a 5.6-pt gap; trusting 11% of it in this kind of game leaves Memphis by 0.6",
-     "closeMarket": 2.75,
-     "closeAt": "2026-11-20T15:21:07.460Z"
+     "closeMarket": 2.5,
+     "closeAt": "2026-11-20T22:07:51.267Z"
     },
     {
      "gameId": 401858527,
@@ -6993,8 +6993,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5198601471069756,
      "why": "Model Illinois +5.5 vs market +9, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Illinois by 0.6",
-     "closeMarket": 8.75,
-     "closeAt": "2026-11-20T15:21:07.460Z"
+     "closeMarket": 8.5,
+     "closeAt": "2026-11-20T22:07:51.267Z"
     }
    ]
   },
@@ -7038,7 +7038,7 @@
      "modelProb": 0.5132515904608357,
      "why": "Model Texas A&M +10.5 vs market +7.5, a 3.2-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.5",
      "closeMarket": 7.5,
-     "closeAt": "2026-11-20T15:21:07.460Z"
+     "closeAt": "2026-11-20T22:07:51.267Z"
     },
     {
      "gameId": 401858541,
@@ -7072,7 +7072,7 @@
      "modelProb": 0.516148287870273,
      "why": "Model Oregon -16.5 vs market -12.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Oregon by 0.7",
      "closeMarket": -12.5,
-     "closeAt": "2026-11-20T15:21:07.460Z"
+     "closeAt": "2026-11-20T22:07:51.267Z"
     },
     {
      "gameId": 401856761,
@@ -7112,10 +7112,10 @@
      "modelProb": 0.520115841675207,
      "why": "Model Kentucky +3.5 vs market -1.5, a 4.8-pt gap; trusting 17% of it in this kind of game leaves Louisville by 0.8",
      "closeMarket": -1.5,
-     "closeAt": "2026-11-20T15:21:07.460Z"
+     "closeAt": "2026-11-20T22:07:51.267Z"
     }
    ]
   }
  },
- "updated": "2026-11-20T15:21:07.509Z"
+ "updated": "2026-11-20T22:07:51.340Z"
 }
