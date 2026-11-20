@@ -6684,8 +6684,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5179632456045368,
      "why": "Model TCU +10 vs market +5.5, a 4.3-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
-     "closeMarket": 7,
-     "closeAt": "2026-11-17T22:47:17.608Z"
+     "closeMarket": 7.25,
+     "closeAt": "2026-11-20T15:21:07.460Z"
     },
     {
      "gameId": 401856887,
@@ -6786,7 +6786,7 @@
      "modelProb": 0.514295607474781,
      "why": "Model Georgia Tech +18 vs market +21.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Georgia Tech by 0.6",
      "closeMarket": 20.5,
-     "closeAt": "2026-11-17T22:47:17.608Z"
+     "closeAt": "2026-11-20T15:21:07.460Z"
     },
     {
      "gameId": 401858302,
@@ -6837,8 +6837,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5411108062730207,
      "why": "Model Miami -24.5 vs market -20.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.7",
-     "closeMarket": -20.75,
-     "closeAt": "2026-11-17T22:47:17.608Z"
+     "closeMarket": -20.5,
+     "closeAt": "2026-11-20T15:21:07.460Z"
     },
     {
      "gameId": 401856868,
@@ -6889,8 +6889,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5282685638297855,
      "why": "Model West Virginia +11 vs market +7, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Houston by 0.6",
-     "closeMarket": 8.5,
-     "closeAt": "2026-11-17T22:47:17.608Z"
+     "closeMarket": 7.5,
+     "closeAt": "2026-11-20T15:21:07.460Z"
     },
     {
      "gameId": 401862834,
@@ -6941,11 +6941,181 @@
      "trust": 0.11017954791963978,
      "modelProb": 0.5274032285711903,
      "why": "Model Navy +9 vs market +3.5, a 5.6-pt gap; trusting 11% of it in this kind of game leaves Memphis by 0.6",
-     "closeMarket": 3.5,
-     "closeAt": "2026-11-17T22:47:17.608Z"
+     "closeMarket": 2.75,
+     "closeAt": "2026-11-20T15:21:07.460Z"
+    },
+    {
+     "gameId": 401858527,
+     "week": 12,
+     "kickoff": "2026-11-21T19:30:00Z",
+     "home": "Illinois",
+     "away": "Iowa",
+     "takenAt": "2026-11-20T15:21:07.460Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "homeMl": 260,
+       "awayMl": -325,
+       "homeLine": 8.5,
+       "awayLine": -8.5
+      },
+      "fanduel": {
+       "homeMl": 275,
+       "awayMl": -345,
+       "homeLine": 8.5,
+       "awayLine": -8.5
+      },
+      "betrivers": {
+       "homeMl": 285,
+       "awayMl": -385,
+       "homeLine": 9,
+       "awayLine": -9
+      },
+      "betmgm": {
+       "homeMl": 270,
+       "awayMl": -325,
+       "homeLine": 9,
+       "awayLine": -9
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Illinois",
+     "line": 9,
+     "price": -108,
+     "book": "betmgm",
+     "modelLine": 5.4816996636126945,
+     "marketLine": 8.75,
+     "edge": 0.5560499591566141,
+     "rawEdge": 3.2683003363873055,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5198601471069756,
+     "why": "Model Illinois +5.5 vs market +9, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Illinois by 0.6",
+     "closeMarket": 8.75,
+     "closeAt": "2026-11-20T15:21:07.460Z"
+    }
+   ]
+  },
+  "13": {
+   "picks": [
+    {
+     "gameId": 401856756,
+     "week": 13,
+     "kickoff": "2026-11-28T00:30:00Z",
+     "home": "Texas A&M",
+     "away": "Texas",
+     "takenAt": "2026-11-20T15:21:07.460Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "homeMl": 250,
+       "awayMl": -310,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      },
+      "fanduel": {
+       "homeMl": 215,
+       "awayMl": -265,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Texas",
+     "line": -7.5,
+     "price": 100,
+     "book": "fanduel",
+     "modelLine": 10.660498995520847,
+     "marketLine": 7.5,
+     "edge": 0.5377092545039683,
+     "rawEdge": 3.1604989955208467,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5132515904608357,
+     "why": "Model Texas A&M +10.5 vs market +7.5, a 3.2-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.5",
+     "closeMarket": 7.5,
+     "closeAt": "2026-11-20T15:21:07.460Z"
+    },
+    {
+     "gameId": 401858541,
+     "week": 13,
+     "kickoff": "2026-11-28T16:00:00Z",
+     "home": "Oregon",
+     "away": "Washington",
+     "takenAt": "2026-11-20T15:21:07.460Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "homeMl": -425,
+       "awayMl": 330,
+       "homeLine": -12.5,
+       "awayLine": 12.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Oregon",
+     "line": -12.5,
+     "price": -110,
+     "book": "draftkings",
+     "modelLine": -16.351705445778823,
+     "marketLine": -12.5,
+     "edge": 0.6553071735677901,
+     "rawEdge": 3.8517054457788227,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.516148287870273,
+     "why": "Model Oregon -16.5 vs market -12.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Oregon by 0.7",
+     "closeMarket": -12.5,
+     "closeAt": "2026-11-20T15:21:07.460Z"
+    },
+    {
+     "gameId": 401856761,
+     "week": 13,
+     "kickoff": "2026-11-28T17:00:00Z",
+     "home": "Kentucky",
+     "away": "Louisville",
+     "takenAt": "2026-11-20T15:21:07.460Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": -115,
+       "awayMl": -104,
+       "homeLine": -1.5,
+       "awayLine": 1.5
+      },
+      "draftkings": {
+       "homeMl": -118,
+       "awayMl": -102,
+       "homeLine": -1.5,
+       "awayLine": 1.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Louisville",
+     "line": 1.5,
+     "price": -110,
+     "book": "fanduel",
+     "modelLine": 3.2987764846416363,
+     "marketLine": -1.5,
+     "edge": 0.8164364329002388,
+     "rawEdge": 4.798776484641636,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.520115841675207,
+     "why": "Model Kentucky +3.5 vs market -1.5, a 4.8-pt gap; trusting 17% of it in this kind of game leaves Louisville by 0.8",
+     "closeMarket": -1.5,
+     "closeAt": "2026-11-20T15:21:07.460Z"
     }
    ]
   }
  },
- "updated": "2026-11-17T22:47:17.673Z"
+ "updated": "2026-11-20T15:21:07.509Z"
 }
