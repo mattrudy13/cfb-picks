@@ -6786,7 +6786,10 @@
      "modelProb": 0.514295607474781,
      "why": "Model Georgia Tech +18 vs market +21.5, a 3.4-pt gap; trusting 17% of it in this kind of game leaves Georgia Tech by 0.6",
      "closeMarket": 21,
-     "closeAt": "2026-11-21T14:21:11.520Z"
+     "closeAt": "2026-11-21T14:21:11.520Z",
+     "result": "W",
+     "profit": 89.28571428571429,
+     "score": "Wake Forest 50, Georgia Tech 29"
     },
     {
      "gameId": 401858302,
@@ -6890,7 +6893,10 @@
      "modelProb": 0.5282685638297855,
      "why": "Model West Virginia +11 vs market +7, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Houston by 0.6",
      "closeMarket": 7,
-     "closeAt": "2026-11-21T14:21:11.520Z"
+     "closeAt": "2026-11-21T14:21:11.520Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Houston 34, West Virginia 31"
     },
     {
      "gameId": 401862834,
@@ -6942,7 +6948,10 @@
      "modelProb": 0.5274032285711903,
      "why": "Model Navy +9 vs market +3.5, a 5.6-pt gap; trusting 11% of it in this kind of game leaves Memphis by 0.6",
      "closeMarket": 2.5,
-     "closeAt": "2026-11-21T14:21:11.520Z"
+     "closeAt": "2026-11-21T14:21:11.520Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Memphis 34, Navy 38"
     },
     {
      "gameId": 401858527,
