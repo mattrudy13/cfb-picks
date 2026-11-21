@@ -6685,7 +6685,7 @@
      "modelProb": 0.5179632456045368,
      "why": "Model TCU +10 vs market +5.5, a 4.3-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
      "closeMarket": 8.5,
-     "closeAt": "2026-11-21T14:21:11.520Z"
+     "closeAt": "2026-11-21T20:18:29.723Z"
     },
     {
      "gameId": 401856887,
@@ -6838,7 +6838,7 @@
      "modelProb": 0.5411108062730207,
      "why": "Model Miami -24.5 vs market -20.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.7",
      "closeMarket": -20.5,
-     "closeAt": "2026-11-21T14:21:11.520Z"
+     "closeAt": "2026-11-21T20:18:29.723Z"
     },
     {
      "gameId": 401856868,
@@ -6995,6 +6995,58 @@
      "why": "Model Illinois +5.5 vs market +9, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Illinois by 0.6",
      "closeMarket": 8.5,
      "closeAt": "2026-11-21T14:21:11.520Z"
+    },
+    {
+     "gameId": 401856755,
+     "week": 12,
+     "kickoff": "2026-11-21T20:30:00Z",
+     "home": "Texas",
+     "away": "Arkansas",
+     "takenAt": "2026-11-21T20:18:29.723Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "awayMl": 800,
+       "homeMl": -1350,
+       "awayLine": 18.5,
+       "homeLine": -18.5
+      },
+      "fanduel": {
+       "awayMl": 760,
+       "homeMl": -1250,
+       "awayLine": 18.5,
+       "homeLine": -18.5
+      },
+      "betrivers": {
+       "awayMl": 800,
+       "homeMl": -1667,
+       "awayLine": 18.5,
+       "homeLine": -18.5
+      },
+      "betmgm": {
+       "awayMl": 850,
+       "homeMl": -1200,
+       "awayLine": 18.5,
+       "homeLine": -18.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Texas",
+     "line": -18.5,
+     "price": -110,
+     "book": "fanduel",
+     "modelLine": -22.30972024825191,
+     "marketLine": -18.5,
+     "edge": 0.6481640517713924,
+     "rawEdge": 3.80972024825191,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5159723597668066,
+     "why": "Model Texas -22.5 vs market -18.5, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.6",
+     "closeMarket": -18.5,
+     "closeAt": "2026-11-21T20:18:29.723Z"
     }
    ]
   },
@@ -7117,5 +7169,5 @@
    ]
   }
  },
- "updated": "2026-11-21T14:21:11.577Z"
+ "updated": "2026-11-21T20:18:29.834Z"
 }
