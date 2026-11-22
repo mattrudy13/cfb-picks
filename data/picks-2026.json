@@ -6651,7 +6651,15 @@
      "closeAt": "2026-11-17T22:47:17.608Z",
      "result": "L",
      "profit": -100,
-     "score": "Ball State 28, Ohio 35"
+     "score": "Ball State 28, Ohio 35",
+     "close": {
+      "source": "cfbd",
+      "books": [],
+      "skipped": [],
+      "posted": null,
+      "closed": null
+     },
+     "clvClose": null
     },
     {
      "gameId": 401856872,
@@ -6685,7 +6693,10 @@
      "modelProb": 0.5179632456045368,
      "why": "Model TCU +10 vs market +5.5, a 4.3-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.7",
      "closeMarket": 8.5,
-     "closeAt": "2026-11-21T20:18:29.723Z"
+     "closeAt": "2026-11-21T20:18:29.723Z",
+     "result": "W",
+     "profit": 90.9090909090909,
+     "score": "Utah 38, TCU 17"
     },
     {
      "gameId": 401856887,
@@ -6734,7 +6745,17 @@
      "closeAt": "2026-11-14T18:54:09.533Z",
      "result": "L",
      "profit": -100,
-     "score": "Ole Miss 17, Oklahoma 24"
+     "score": "Ole Miss 17, Oklahoma 24",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -2.5,
+      "closed": -2.5
+     },
+     "clvClose": 0
     },
     {
      "gameId": 401858310,
@@ -6841,7 +6862,10 @@
      "modelProb": 0.5411108062730207,
      "why": "Model Miami -24.5 vs market -20.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.7",
      "closeMarket": -20.5,
-     "closeAt": "2026-11-21T20:18:29.723Z"
+     "closeAt": "2026-11-21T20:18:29.723Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Virginia Tech 20, Miami 28"
     },
     {
      "gameId": 401856868,
