@@ -6810,7 +6810,17 @@
      "closeAt": "2026-11-21T14:21:11.520Z",
      "result": "W",
      "profit": 89.28571428571429,
-     "score": "Wake Forest 50, Georgia Tech 29"
+     "score": "Wake Forest 50, Georgia Tech 29",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 21.5,
+      "closed": 22.5
+     },
+     "clvClose": -1
     },
     {
      "gameId": 401858302,
@@ -6920,7 +6930,17 @@
      "closeAt": "2026-11-21T14:21:11.520Z",
      "result": "L",
      "profit": -100,
-     "score": "Houston 34, West Virginia 31"
+     "score": "Houston 34, West Virginia 31",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 7,
+      "closed": 6.5
+     },
+     "clvClose": -0.5
     },
     {
      "gameId": 401862834,
@@ -6975,7 +6995,17 @@
      "closeAt": "2026-11-21T14:21:11.520Z",
      "result": "L",
      "profit": -100,
-     "score": "Memphis 34, Navy 38"
+     "score": "Memphis 34, Navy 38",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 3,
+      "closed": 1.5
+     },
+     "clvClose": -1.5
     },
     {
      "gameId": 401858527,
