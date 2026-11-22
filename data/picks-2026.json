@@ -7003,7 +7003,10 @@
      "modelProb": 0.5198601471069756,
      "why": "Model Illinois +5.5 vs market +9, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Illinois by 0.6",
      "closeMarket": 8.5,
-     "closeAt": "2026-11-21T14:21:11.520Z"
+     "closeAt": "2026-11-21T14:21:11.520Z",
+     "result": "L",
+     "profit": -100,
+     "score": "Iowa 34, Illinois 17"
     },
     {
      "gameId": 401856755,
@@ -7055,7 +7058,10 @@
      "modelProb": 0.5159723597668066,
      "why": "Model Texas -22.5 vs market -18.5, a 3.8-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.6",
      "closeMarket": -18.5,
-     "closeAt": "2026-11-21T20:18:29.723Z"
+     "closeAt": "2026-11-21T20:18:29.723Z",
+     "result": "W",
+     "profit": 90.9090909090909,
+     "score": "Arkansas 3, Texas 45"
     }
    ]
   },
