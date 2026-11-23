@@ -7158,13 +7158,13 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5132515904608357,
      "why": "Model Texas A&M +10.5 vs market +7.5, a 3.2-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.5",
-     "closeMarket": 7.5,
-     "closeAt": "2026-11-21T14:21:11.520Z"
+     "closeMarket": 11.25,
+     "closeAt": "2026-11-23T02:20:56.488Z"
     },
     {
      "gameId": 401858541,
      "week": 13,
-     "kickoff": "2026-11-28T16:00:00Z",
+     "kickoff": "2026-11-29T00:30:00Z",
      "home": "Oregon",
      "away": "Washington",
      "takenAt": "2026-11-20T15:21:07.460Z",
@@ -7192,8 +7192,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.516148287870273,
      "why": "Model Oregon -16.5 vs market -12.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Oregon by 0.7",
-     "closeMarket": -12.5,
-     "closeAt": "2026-11-20T22:07:51.267Z"
+     "closeMarket": -13.75,
+     "closeAt": "2026-11-23T02:20:56.488Z"
     },
     {
      "gameId": 401856761,
@@ -7232,11 +7232,219 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.520115841675207,
      "why": "Model Kentucky +3.5 vs market -1.5, a 4.8-pt gap; trusting 17% of it in this kind of game leaves Louisville by 0.8",
-     "closeMarket": -1.5,
-     "closeAt": "2026-11-21T14:21:11.520Z"
+     "closeMarket": 2.75,
+     "closeAt": "2026-11-23T02:20:56.488Z"
+    },
+    {
+     "gameId": 401856880,
+     "week": 13,
+     "kickoff": "2026-11-28T02:00:00Z",
+     "home": "Utah",
+     "away": "West Virginia",
+     "takenAt": "2026-11-23T02:20:56.488Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": -1450,
+       "awayMl": 860,
+       "homeLine": -20.5,
+       "awayLine": 20.5
+      },
+      "betrivers": {
+       "homeMl": -2500,
+       "awayMl": 950,
+       "homeLine": -20.5,
+       "awayLine": 20.5
+      },
+      "draftkings": {
+       "homeMl": -1450,
+       "awayMl": 850,
+       "homeLine": -21,
+       "awayLine": 21
+      },
+      "betmgm": {
+       "homeMl": -1400,
+       "awayMl": 950,
+       "homeLine": -20.5,
+       "awayLine": 20.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Utah",
+     "line": -20.5,
+     "price": -112,
+     "book": "betrivers",
+     "modelLine": -25.950343410421123,
+     "marketLine": -20.5,
+     "edge": 0.9272903095877055,
+     "rawEdge": 5.450343410421123,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.52284430880205,
+     "why": "Model Utah -26 vs market -20.5, a 5.5-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.9",
+     "closeMarket": -20.5,
+     "closeAt": "2026-11-23T02:20:56.488Z"
+    },
+    {
+     "gameId": 401858311,
+     "week": 13,
+     "kickoff": "2026-11-28T17:00:00Z",
+     "home": "Miami",
+     "away": "Boston College",
+     "takenAt": "2026-11-23T02:20:56.488Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "awayMl": 1400,
+       "homeMl": -4000,
+       "awayLine": 25.5,
+       "homeLine": -25.5
+      },
+      "betrivers": {
+       "awayMl": 1300,
+       "homeMl": -5000,
+       "awayLine": 25.5,
+       "homeLine": -25.5
+      },
+      "draftkings": {
+       "awayMl": 1400,
+       "homeMl": -3200,
+       "awayLine": 25.5,
+       "homeLine": -25.5
+      },
+      "betmgm": {
+       "awayMl": 1550,
+       "homeMl": -3000,
+       "awayLine": 25.5,
+       "homeLine": -25.5
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Miami",
+     "line": -25.5,
+     "price": -106,
+     "book": "fanduel",
+     "modelLine": -29.23276853685872,
+     "marketLine": -25.5,
+     "edge": 0.6350719269440541,
+     "rawEdge": 3.732768536858721,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5156499054718603,
+     "why": "Model Miami -29 vs market -25.5, a 3.7-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.6",
+     "closeMarket": -25.5,
+     "closeAt": "2026-11-23T02:20:56.488Z"
+    },
+    {
+     "gameId": 401858543,
+     "week": 13,
+     "kickoff": "2026-11-28T20:30:00Z",
+     "home": "UCLA",
+     "away": "USC",
+     "takenAt": "2026-11-23T02:20:56.488Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "homeMl": 210,
+       "awayMl": -258,
+       "homeLine": 7,
+       "awayLine": -7
+      },
+      "fanduel": {
+       "homeMl": 210,
+       "awayMl": -255,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      },
+      "betrivers": {
+       "homeMl": 205,
+       "awayMl": -265,
+       "homeLine": 7.5,
+       "awayLine": -7.5
+      },
+      "betmgm": {
+       "homeMl": 210,
+       "awayMl": -250,
+       "homeLine": 7,
+       "awayLine": -7
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "UCLA",
+     "line": 7.5,
+     "price": -125,
+     "book": "betrivers",
+     "modelLine": -3.005271174576819,
+     "marketLine": 7.25,
+     "edge": 1.7447732860642715,
+     "rawEdge": 10.25527117457682,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5490449209989611,
+     "why": "Model UCLA -3 vs market +7.5, a 10.3-pt gap; trusting 17% of it in this kind of game leaves UCLA by 1.7",
+     "closeMarket": 7.25,
+     "closeAt": "2026-11-23T02:20:56.488Z"
+    },
+    {
+     "gameId": 401856765,
+     "week": 13,
+     "kickoff": "2026-11-29T00:00:00Z",
+     "home": "Vanderbilt",
+     "away": "Tennessee",
+     "takenAt": "2026-11-23T02:20:56.488Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "draftkings": {
+       "awayMl": -440,
+       "homeMl": 340,
+       "awayLine": -11.5,
+       "homeLine": 11.5
+      },
+      "fanduel": {
+       "awayMl": -490,
+       "homeMl": 375,
+       "awayLine": -12.5,
+       "homeLine": 12.5
+      },
+      "betrivers": {
+       "awayMl": -560,
+       "homeMl": 380,
+       "awayLine": -12.5,
+       "homeLine": 12.5
+      },
+      "betmgm": {
+       "awayMl": -475,
+       "homeMl": 375,
+       "awayLine": -11.5,
+       "homeLine": 11.5
+      }
+     },
+     "cat": "spread",
+     "side": "away",
+     "team": "Tennessee",
+     "line": -11.5,
+     "price": -110,
+     "book": "betmgm",
+     "modelLine": 17.15748884622266,
+     "marketLine": 12,
+     "edge": 0.8774657060626253,
+     "rawEdge": 5.157488846222659,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5339122122214078,
+     "why": "Model Vanderbilt +17 vs market +12, a 5.2-pt gap; trusting 17% of it in this kind of game leaves Tennessee by 0.9",
+     "closeMarket": 12,
+     "closeAt": "2026-11-23T02:20:56.488Z"
     }
    ]
   }
  },
- "updated": "2026-11-21T20:18:29.834Z"
+ "updated": "2026-11-23T02:20:56.551Z"
 }
