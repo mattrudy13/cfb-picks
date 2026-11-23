@@ -6696,7 +6696,17 @@
      "closeAt": "2026-11-21T20:18:29.723Z",
      "result": "W",
      "profit": 90.9090909090909,
-     "score": "Utah 38, TCU 17"
+     "score": "Utah 38, TCU 17",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 5.5,
+      "closed": 9.5
+     },
+     "clvClose": 4
     },
     {
      "gameId": 401856887,
@@ -6875,7 +6885,17 @@
      "closeAt": "2026-11-21T20:18:29.723Z",
      "result": "L",
      "profit": -100,
-     "score": "Virginia Tech 20, Miami 28"
+     "score": "Virginia Tech 20, Miami 28",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -20.5,
+      "closed": -21.5
+     },
+     "clvClose": 1
     },
     {
      "gameId": 401856868,
@@ -7060,7 +7080,17 @@
      "closeAt": "2026-11-21T14:21:11.520Z",
      "result": "L",
      "profit": -100,
-     "score": "Iowa 34, Illinois 17"
+     "score": "Iowa 34, Illinois 17",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": 8.5,
+      "closed": 7.5
+     },
+     "clvClose": 1
     },
     {
      "gameId": 401856755,
@@ -7115,7 +7145,17 @@
      "closeAt": "2026-11-21T20:18:29.723Z",
      "result": "W",
      "profit": 90.9090909090909,
-     "score": "Arkansas 3, Texas 45"
+     "score": "Arkansas 3, Texas 45",
+     "close": {
+      "source": "cfbd",
+      "books": [
+       "draftkings"
+      ],
+      "skipped": [],
+      "posted": -18.5,
+      "closed": -18.5
+     },
+     "clvClose": 0
     }
    ]
   },
