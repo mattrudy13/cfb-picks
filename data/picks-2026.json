@@ -7199,7 +7199,7 @@
      "modelProb": 0.5132515904608357,
      "why": "Model Texas A&M +10.5 vs market +7.5, a 3.2-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.5",
      "closeMarket": 11.25,
-     "closeAt": "2026-11-23T10:12:45.962Z"
+     "closeAt": "2026-11-24T15:20:59.039Z"
     },
     {
      "gameId": 401858541,
@@ -7232,8 +7232,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.516148287870273,
      "why": "Model Oregon -16.5 vs market -12.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Oregon by 0.7",
-     "closeMarket": -13.5,
-     "closeAt": "2026-11-23T10:12:45.962Z"
+     "closeMarket": -14,
+     "closeAt": "2026-11-24T15:20:59.039Z"
     },
     {
      "gameId": 401856761,
@@ -7273,7 +7273,7 @@
      "modelProb": 0.520115841675207,
      "why": "Model Kentucky +3.5 vs market -1.5, a 4.8-pt gap; trusting 17% of it in this kind of game leaves Louisville by 0.8",
      "closeMarket": 2.75,
-     "closeAt": "2026-11-23T10:12:45.962Z"
+     "closeAt": "2026-11-24T15:20:59.039Z"
     },
     {
      "gameId": 401856880,
@@ -7324,8 +7324,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.52284430880205,
      "why": "Model Utah -26 vs market -20.5, a 5.5-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.9",
-     "closeMarket": -20.5,
-     "closeAt": "2026-11-23T10:12:45.962Z"
+     "closeMarket": -22.5,
+     "closeAt": "2026-11-24T15:20:59.039Z"
     },
     {
      "gameId": 401858311,
@@ -7377,7 +7377,7 @@
      "modelProb": 0.5156499054718603,
      "why": "Model Miami -29 vs market -25.5, a 3.7-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.6",
      "closeMarket": -25.5,
-     "closeAt": "2026-11-23T10:12:45.962Z"
+     "closeAt": "2026-11-24T15:20:59.039Z"
     },
     {
      "gameId": 401858543,
@@ -7428,8 +7428,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5490449209989611,
      "why": "Model UCLA -3 vs market +7.5, a 10.3-pt gap; trusting 17% of it in this kind of game leaves UCLA by 1.7",
-     "closeMarket": 6.5,
-     "closeAt": "2026-11-23T10:12:45.962Z"
+     "closeMarket": 7,
+     "closeAt": "2026-11-24T15:20:59.039Z"
     },
     {
      "gameId": 401856765,
@@ -7480,11 +7480,11 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5339122122214078,
      "why": "Model Vanderbilt +17 vs market +12, a 5.2-pt gap; trusting 17% of it in this kind of game leaves Tennessee by 0.9",
-     "closeMarket": 12,
-     "closeAt": "2026-11-23T10:12:45.962Z"
+     "closeMarket": 13.75,
+     "closeAt": "2026-11-24T15:20:59.039Z"
     }
    ]
   }
  },
- "updated": "2026-11-23T10:12:46.011Z"
+ "updated": "2026-11-24T15:20:59.087Z"
 }
