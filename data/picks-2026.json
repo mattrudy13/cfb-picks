@@ -7198,8 +7198,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5132515904608357,
      "why": "Model Texas A&M +10.5 vs market +7.5, a 3.2-pt gap; trusting 17% of it in this kind of game leaves Texas by 0.5",
-     "closeMarket": 11.5,
-     "closeAt": "2026-11-24T23:45:55.699Z"
+     "closeMarket": 11.25,
+     "closeAt": "2026-11-27T15:21:14.842Z"
     },
     {
      "gameId": 401858541,
@@ -7232,8 +7232,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.516148287870273,
      "why": "Model Oregon -16.5 vs market -12.5, a 3.9-pt gap; trusting 17% of it in this kind of game leaves Oregon by 0.7",
-     "closeMarket": -14.25,
-     "closeAt": "2026-11-24T23:45:55.699Z"
+     "closeMarket": -13.5,
+     "closeAt": "2026-11-27T15:21:14.842Z"
     },
     {
      "gameId": 401856761,
@@ -7272,8 +7272,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.520115841675207,
      "why": "Model Kentucky +3.5 vs market -1.5, a 4.8-pt gap; trusting 17% of it in this kind of game leaves Louisville by 0.8",
-     "closeMarket": 2.5,
-     "closeAt": "2026-11-24T23:45:55.699Z"
+     "closeMarket": 2.75,
+     "closeAt": "2026-11-27T15:21:14.842Z"
     },
     {
      "gameId": 401856880,
@@ -7324,8 +7324,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.52284430880205,
      "why": "Model Utah -26 vs market -20.5, a 5.5-pt gap; trusting 17% of it in this kind of game leaves Utah by 0.9",
-     "closeMarket": -25,
-     "closeAt": "2026-11-24T23:45:55.699Z"
+     "closeMarket": -26,
+     "closeAt": "2026-11-27T15:21:14.842Z"
     },
     {
      "gameId": 401858311,
@@ -7376,8 +7376,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5156499054718603,
      "why": "Model Miami -29 vs market -25.5, a 3.7-pt gap; trusting 17% of it in this kind of game leaves Miami by 0.6",
-     "closeMarket": -25.5,
-     "closeAt": "2026-11-24T23:45:55.699Z"
+     "closeMarket": -24.5,
+     "closeAt": "2026-11-27T15:21:14.842Z"
     },
     {
      "gameId": 401858543,
@@ -7428,8 +7428,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5490449209989611,
      "why": "Model UCLA -3 vs market +7.5, a 10.3-pt gap; trusting 17% of it in this kind of game leaves UCLA by 1.7",
-     "closeMarket": 7,
-     "closeAt": "2026-11-24T23:45:55.699Z"
+     "closeMarket": 6.5,
+     "closeAt": "2026-11-27T15:21:14.842Z"
     },
     {
      "gameId": 401856765,
@@ -7480,8 +7480,8 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5339122122214078,
      "why": "Model Vanderbilt +17 vs market +12, a 5.2-pt gap; trusting 17% of it in this kind of game leaves Tennessee by 0.9",
-     "closeMarket": 13.75,
-     "closeAt": "2026-11-24T23:45:55.699Z"
+     "closeMarket": 13.5,
+     "closeAt": "2026-11-27T15:21:14.842Z"
     },
     {
      "gameId": 401856763,
@@ -7532,11 +7532,115 @@
      "trust": 0.17013429058703258,
      "modelProb": 0.5315186976054717,
      "why": "Model Missouri +1.5 vs market -1.5, a 3.1-pt gap; trusting 17% of it in this kind of game leaves Oklahoma by 0.5",
-     "closeMarket": -1.75,
-     "closeAt": "2026-11-24T23:45:55.699Z"
+     "closeMarket": -2,
+     "closeAt": "2026-11-27T15:21:14.842Z"
+    },
+    {
+     "gameId": 401862840,
+     "week": 13,
+     "kickoff": "2026-11-27T17:01:00Z",
+     "home": "UTSA",
+     "away": "Tulsa",
+     "takenAt": "2026-11-27T15:21:14.842Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "awayMl": -113,
+       "homeMl": -106,
+       "awayLine": -1.5,
+       "homeLine": 1.5
+      },
+      "betrivers": {
+       "awayMl": -108,
+       "homeMl": -114,
+       "awayLine": 1,
+       "homeLine": -1
+      },
+      "draftkings": {
+       "awayMl": -118,
+       "homeMl": -102,
+       "awayLine": -1.5,
+       "homeLine": 1.5
+      },
+      "betmgm": {
+       "awayMl": -112,
+       "homeMl": -105,
+       "awayLine": -1,
+       "homeLine": 1
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "UTSA",
+     "line": 1.5,
+     "price": -114,
+     "book": "fanduel",
+     "modelLine": -5.15102100728077,
+     "marketLine": 1.25,
+     "edge": 0.7052616008063125,
+     "rawEdge": 6.40102100728077,
+     "trust": 0.11017954791963978,
+     "modelProb": 0.523532607094336,
+     "why": "Model UTSA -5 vs market +1.5, a 6.4-pt gap; trusting 11% of it in this kind of game leaves UTSA by 0.7",
+     "closeMarket": 1.25,
+     "closeAt": "2026-11-27T15:21:14.842Z"
+    },
+    {
+     "gameId": 401858536,
+     "week": 13,
+     "kickoff": "2026-11-27T17:00:00Z",
+     "home": "Iowa",
+     "away": "Nebraska",
+     "takenAt": "2026-11-27T15:21:14.842Z",
+     "model": "v3",
+     "status": "provisional",
+     "shadow": false,
+     "books": {
+      "fanduel": {
+       "homeMl": -178,
+       "awayMl": 150,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      },
+      "draftkings": {
+       "homeMl": -198,
+       "awayMl": 164,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      },
+      "betmgm": {
+       "homeMl": -190,
+       "awayMl": 155,
+       "homeLine": -3.5,
+       "awayLine": 3.5
+      },
+      "betrivers": {
+       "homeMl": -195,
+       "awayMl": 155,
+       "homeLine": -4,
+       "awayLine": 4
+      }
+     },
+     "cat": "spread",
+     "side": "home",
+     "team": "Iowa",
+     "line": -3.5,
+     "price": -110,
+     "book": "draftkings",
+     "modelLine": -6.84042073837902,
+     "marketLine": -3.5,
+     "edge": 0.5683201125863262,
+     "rawEdge": 3.34042073837902,
+     "trust": 0.17013429058703258,
+     "modelProb": 0.5140056774363637,
+     "why": "Model Iowa -7 vs market -3.5, a 3.3-pt gap; trusting 17% of it in this kind of game leaves Iowa by 0.6",
+     "closeMarket": -3.5,
+     "closeAt": "2026-11-27T15:21:14.842Z"
     }
    ]
   }
  },
- "updated": "2026-11-24T23:45:55.755Z"
+ "updated": "2026-11-27T15:21:14.886Z"
 }
